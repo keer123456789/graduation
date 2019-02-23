@@ -1,0 +1,182 @@
+JFDML JFormDesigner: "6.0.6.1.193" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"title": "bigchaindb"
+			"foreground": sfield java.awt.Color white
+			"background": sfield java.awt.Color lightGray
+			"visible": true
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btConn"
+					"text": "连接"
+					"background": new com.jformdesigner.model.SwingColor( "ArrowButton.background" )
+					"foreground": sfield java.awt.Color black
+					"autoscrolls": true
+					"font": new java.awt.Font( "微软雅黑", 1, 14 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btConnActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 400
+					"y": 70
+					"width": 95
+					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btKey"
+					"text": "获取密钥"
+					"font": new java.awt.Font( "微软雅黑", 1, 14 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btKeyActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 395
+					"y": 10
+					"width": 100
+					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textKey"
+					"font": new java.awt.Font( "微软雅黑", 0, 12 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 10
+					"width": 165
+					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "输入秘钥"
+					"font": new java.awt.Font( "幼圆", 1, 21 )
+					"horizontalAlignment": 0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 35
+					"y": 15
+					"width": 100
+					"height": 35
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "输入秘钥"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 65
+					"height": 35
+					"x": 0
+					"y": 110
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "节点HOST"
+					"font": new java.awt.Font( "幼圆", 1, 18 )
+					"horizontalAlignment": 0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 40
+					"y": 70
+					"width": 95
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textConn"
+					"text": "http://127.0.0.1:9984"
+					"font": new java.awt.Font( "微软雅黑", 0, 12 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 70
+					"width": 170
+					"height": 35
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"background": new java.awt.Color( 255, 0, 0, 255 )
+					"foreground": sfield java.awt.Color red
+					"text": " "
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 350
+					"y": 75
+					"width": 20
+					"height": 20
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 10
+				"height": 110
+				"width": 745
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel3"
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane1"
+					add( new FormComponent( "javax.swing.JTree" ) {
+						name: "tree1"
+						"font": new java.awt.Font( "微软雅黑", 1, 12 )
+						addEvent( new FormEvent( "javax.swing.event.TreeSelectionListener", "valueChanged", "tree1ValueChanged", true ) )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 0
+					"width": 185
+					"height": 510
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": -5
+				"y": 125
+				"height": 510
+				"width": 190
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel5"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btRUN"
+					"text": "运行"
+					"font": new java.awt.Font( "微软雅黑", 1, 12 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btRUNActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 445
+					"y": 150
+					"width": 68
+					"height": 30
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane4"
+					add( new FormComponent( "javax.swing.JTextPane" ) {
+						name: "tpBDQL"
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 0
+					"y": 0
+					"width": 550
+					"height": 150
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 190
+				"y": 445
+				"height": 185
+				"width": 550
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel4"
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane2"
+					add( new FormComponent( "javax.swing.JTable" ) {
+						name: "table"
+						"font": new java.awt.Font( "微软雅黑", 1, 12 )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 5
+					"y": 5
+					"width": 540
+					"height": 310
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 190
+				"y": 125
+				"height": 320
+				"width": 545
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 60, 65 )
+			"size": new java.awt.Dimension( 760, 670 )
+		} )
+	}
+}
