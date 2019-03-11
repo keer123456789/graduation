@@ -72,7 +72,7 @@
                         节点IP
                     </li>
                     <li>
-                        <input type="test" value="http://127.0.0.1:9984">
+                        <input type="text" id="ip" value="http://127.0.0.1:9984">
                     </li>
                     <li>
                         <button class=" btn btn-primary " id="btn_conn">连接</button>
@@ -622,15 +622,43 @@
     /**
      * 点击获取秘钥按钮事件
      */
-    $("#btn_key").click(function(){
+    $("#btn_key").click(function () {
         $.get({
             url: "/getKey",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             }
-        },function (allData){
-            $("#text_key").val(allData);
+        }, function (allData) {
+            if (allData.status == 1) {
+                alert(allData.message)
+            } else {
+                $("#text_key").val(allData.data);
+            }
         });
+    });
+
+    /**
+     * 点击链接按钮事件
+     */
+    $("#btn_conn").click(function () {
+
+        if ($("#text_key").val() != "") {
+            var ip = {
+                ip: $("#ip").val()
+            }
+            var IP = JSON.stringify(ip);
+            $.post({
+                url: "/startConn",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }, IP, function (allData) {
+
+            });
+        }
+        else{
+            alert("请输入秘钥！！！");
+        }
     });
 
 </script>
