@@ -10,4 +10,6 @@ public interface IService {
     ParserResult getCloumnsName(String key);
 
     ParserResult getTableData(String key,String operation);
+
+    ParserResult runBDQL(String BDQL);
 }

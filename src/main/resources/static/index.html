@@ -104,7 +104,7 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" id="txt_run" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" id="btn_run">运行</button>
@@ -508,6 +508,9 @@
             }
         });
 
+        /**
+         * 点击jstree的叶子节点触发事件
+         */
         $(window).bind('click.jstree', function (event) {
             var eventNodeName = event.target.nodeName;
             if (eventNodeName == 'INS') {
@@ -532,6 +535,26 @@
                        }
                     },function (data) {
                         console.log(data);
+                        $("#table_list_2").GridUnload();
+                        $("#table_list_2").jqGrid({
+                            data: data.data.data,
+                            datatype: "local",
+                            height: 450,
+                            autowidth: true,
+                            shrinkToFit: true,
+                            rowNum: 10,
+                            rowList: [10, 20, 30],
+                            colNames: data.data.cloumNames,
+                            colModel: data.data.cloumAttr,
+                            pager: "#pager_list_2",
+                            viewrecords: true,
+                            caption: name,
+                            add: true,
+                            edit: true,
+                            addtext: 'Add',
+                            edittext: 'Edit',
+                            hidegrid: false
+                        }).trigger("reloadGrid");
                     });
                 }
             }
@@ -606,6 +629,18 @@
         }
     });
 
+    $("#btn_run").click(function () {
+        var bdql={"bdql":$("#txt_run").val()}
+        var BDQL=JSON.stringify(bdql);
+        $.post({
+            url: "/runBDQL",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        },BDQL,function (data) {
+            $("#txt_run").val(data.data.message);
+        })
+    })
 </script>
 </body>
 </html>

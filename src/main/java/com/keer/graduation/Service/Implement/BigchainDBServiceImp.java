@@ -5,6 +5,7 @@ import com.keer.graduation.BDQLParser.BDQLUtil;
 import com.keer.graduation.Bigchaindb.BigchainDBRunner;
 import com.keer.graduation.Bigchaindb.BigchainDBUtil;
 import com.keer.graduation.Bigchaindb.KeyPairHolder;
+import com.keer.graduation.Domain.MetaData;
 import com.keer.graduation.Domain.ParserResult;
 import com.keer.graduation.Domain.Table;
 import com.keer.graduation.Service.IService;
@@ -63,7 +64,7 @@ public class BigchainDBServiceImp implements IService {
 
     @Override
     public ParserResult getCloumnsName(String key) {
-        ParserResult parserResult=new ParserResult();
+        ParserResult parserResult = new ParserResult();
         Map<String, Table> map = null;
         try {
             map = BDQLUtil.getAlltablesByPubKey(KeyPairHolder.pubKeyToString((EdDSAPublicKey) KeyPairHolder.getKeyPairFromString(key).getPublic()));
@@ -74,7 +75,7 @@ public class BigchainDBServiceImp implements IService {
             parserResult.setStatus(ParserResult.ERROR);
             return parserResult;
         }
-        List<Map> list=buildJstreeData(map);
+        List<Map> list = buildJstreeData(map);
         parserResult.setData(list);
         parserResult.setMessage("表名获取成功！！");
         parserResult.setStatus(ParserResult.SUCCESS);
@@ -82,24 +83,45 @@ public class BigchainDBServiceImp implements IService {
     }
 
     @Override
-    public ParserResult getTableData(String key,String operation) {
+    public ParserResult getTableData(String key, String operation) {
         ParserResult parserResult = new ParserResult();
-        Assets assets = BigchainDBUtil.getAssetByKey(key);
-        Table table=new Table();
-        if(assets!=null){
-           table.setTableName(key);
-        }else{
-            parserResult.setData(null);
-            parserResult.setMessage("查询表数据错误！！！");
-            parserResult.setStatus(ParserResult.ERROR);
-            return parserResult;//TODO 错误
+        Table table = new Table();
+        table.setTableName(key);
+        if (operation.equals("asset")) {
+            Assets assets = BigchainDBUtil.getAssetByKey(key);
+
+            if (assets != null) {
+                table.setTableData(assets);
+                table.setType("CREATE");
+            } else {
+                parserResult.setData(null);
+                parserResult.setMessage("查询表数据错误！！！");
+                parserResult.setStatus(ParserResult.ERROR);
+                return parserResult;//TODO 错误
+            }
+        } else {
+            List<MetaData> metaDataList = BigchainDBUtil.getMetaDatasByKey(key);
+            if (metaDataList != null) {
+                table.setTableData(metaDataList);
+                table.setType("TRANSFER");
+            } else {
+                parserResult.setData(null);
+                parserResult.setMessage("查询表数据错误！！！");
+                parserResult.setStatus(ParserResult.ERROR);
+                return parserResult;//TODO 错误
+            }
         }
-        table.setTableData(assets);
-        Map map=  buildjqGridData(table);
+
+        Map map = buildjqGridData(table);
         parserResult.setStatus(ParserResult.SUCCESS);
-        parserResult.setMessage("表："+key+"  数据查询成功！！");
+        parserResult.setMessage("表：" + key + "  数据查询成功！！");
         parserResult.setData(map);
         return parserResult;
+    }
+
+    @Override
+    public ParserResult runBDQL(String BDQL) {
+        return BDQLUtil.work(BDQL);
     }
 
     private List<Map> buildJstreeData(Map<String, Table> map) {
@@ -123,12 +145,12 @@ public class BigchainDBServiceImp implements IService {
         list.add(asset);
         list.add(metadata);
         for (String key : map.keySet()) {
-            Map node=new HashMap();
-            if (map.get(key).getType().equals("CREATE")){
+            Map node = new HashMap();
+            if (map.get(key).getType().equals("CREATE")) {
                 node.put("id", key);
                 node.put("parent", "asset");
                 node.put("text", key);
-            }else{
+            } else {
                 node.put("id", key);
                 node.put("parent", "metadata");
                 node.put("text", key);
@@ -139,22 +161,21 @@ public class BigchainDBServiceImp implements IService {
     }
 
 
-
-    private Map buildjqGridData(Table table){
-        List cloumNames =table.getColumnName();
-        List data=table.getData();
-        List cloumAttr =new ArrayList();
-        for(Object cloumName:cloumNames ){
-            Map map=new HashMap<>();
-            map.put("name",cloumName.toString());
-            map.put("index",cloumName.toString());
-            map.put("width",60);
+    private Map buildjqGridData(Table table) {
+        List cloumNames = table.getColumnName();
+        List data = table.getData();
+        List cloumAttr = new ArrayList();
+        for (Object cloumName : cloumNames) {
+            Map map = new HashMap<>();
+            map.put("name", cloumName.toString());
+            map.put("index", cloumName.toString());
+            map.put("width", 60);
             cloumAttr.add(map);
         }
-        Map map=new HashMap();
-        map.put("cloumNames",cloumNames);
-        map.put("data",data);
-        map.put("cloumAttr",cloumAttr);
+        Map map = new HashMap();
+        map.put("cloumNames", cloumNames);
+        map.put("data", data);
+        map.put("cloumAttr", cloumAttr);
         return map;
     }
 }

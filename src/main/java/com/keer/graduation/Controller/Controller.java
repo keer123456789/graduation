@@ -26,22 +26,43 @@ public class Controller {
         return bigchainDBServiceImp.getKey();
     }
 
+    /**
+     * 连接BigchainDB节点
+     * @param map
+     * @return
+     */
     @PostMapping("/startConn")
     public  ParserResult startConn(@RequestBody Map map){
         String ip =map.get("ip").toString();
         return bigchainDBServiceImp.startConn(ip);
     }
 
+    /***
+     * 获取数据中所有表名，组成jstree的数据格式
+     * @param map
+     * @return
+     */
     @PostMapping("/getCloumns")
     public  ParserResult getCloumnsName(@RequestBody Map map){
         String key =map.get("key").toString();
         return bigchainDBServiceImp.getCloumnsName(key);
     }
+
+    /**
+     * 获得相应表的数据
+     * @param name
+     * @param operation
+     * @return
+     */
     @RequestMapping(value = "/getTableData/{name}/{operation}",method = RequestMethod.GET)
     public ParserResult getTableData(@PathVariable String name,@PathVariable String operation){
-        ParserResult parserResult=new ParserResult();
-        return parserResult;
+        return bigchainDBServiceImp.getTableData(name,operation);
     }
 
 
+    @PostMapping("/runBDQL")
+    public ParserResult runBDQL(@RequestBody Map map){
+        String BDQL=map.get("bdql").toString();
+        return bigchainDBServiceImp.runBDQL(BDQL);
+    }
 }
