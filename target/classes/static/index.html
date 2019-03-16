@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>BDQL可视化界面</title>
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <link href="css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <style>
+        /* Additional style to fix warning dialog position */
+        #alertmod_table_list_2 {
+            top: 900px !important;
+        }
+    </style>
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+
+                    <div class="dropdown profile-element">
+                        <span>
+                            <img alt="image" class="img-rounded" src="img/form.png"/>
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                    <strong class="font-bold">B D Q L</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">数据库bigchaindb </span>
+                                </span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-refresh" id="refresh"></i>
+                </li>
+                <li>
+                    <div id="using_json"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>连接配置</h2>
+                <ul class="breadcrumb">
+                    <li>
+                        <a>获取秘钥</a>
+                    </li>
+                    <li>
+                        <input type="password" id="text_key">
+                    </li>
+                    <li>
+                        <button class=" btn btn-primary " id="btn_key">获取秘钥</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>
+                        节点IP
+                    </li>
+                    <li>
+                        <input type="text" id="ip" value="http://127.0.0.1:9984">
+                    </li>
+                    <li>
+                        <button class=" btn btn-primary " id="btn_conn">连接</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>jQuery Grid Plugin – jqGrid</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="jqGrid_wrapper">
+                                <table id="table_list_2"></table>
+                                <div id="pager_list_2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox ">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" id="txt_run" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="btn_run">运行</button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+<script src="js/plugins/jsTree/jstree.min.js"></script>
+
+<!-- jqGrid -->
+<script src="js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+<script src="js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+
+
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<style>
+    .jstree-open > .jstree-anchor > .fa-folder:before {
+        content: "\f07c";
+    }
+
+    .jstree-default .jstree-icon.none {
+        width: 0;
+    }
+</style>
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function () {
+        // Examle data for jqGrid
+        var mydata = [
+            {
+                id: "1",
+                invdate: "2010-05-24",
+                name: "test",
+                note: "note",
+                tax: "10.00",
+                total: "2111.00"
+            },
+            {
+                id: "2",
+                invdate: "2010-05-25",
+                name: "test2",
+                note: "note2",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "3",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "4",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "5",
+                invdate: "2007-10-05",
+                name: "test2",
+                note: "note2",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "6",
+                invdate: "2007-09-06",
+                name: "test3",
+                note: "note3",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "7",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "8",
+                invdate: "2007-10-03",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "21.00",
+                total: "320.00"
+            },
+            {
+                id: "9",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "10",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "11",
+                invdate: "2007-10-01",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "12",
+                invdate: "2007-10-02",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "13",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "14",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "15",
+                invdate: "2007-10-05",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "16",
+                invdate: "2007-09-06",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "17",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "18",
+                invdate: "2007-10-03",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "19",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "20",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "21",
+                invdate: "2007-10-01",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "22",
+                invdate: "2007-10-02",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "23",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "24",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "25",
+                invdate: "2007-10-05",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "26",
+                invdate: "2007-09-06",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            },
+            {
+                id: "27",
+                invdate: "2007-10-04",
+                name: "test",
+                note: "note",
+                amount: "200.00",
+                tax: "10.00",
+                total: "210.00"
+            },
+            {
+                id: "28",
+                invdate: "2007-10-03",
+                name: "test2",
+                note: "note2",
+                amount: "300.00",
+                tax: "20.00",
+                total: "320.00"
+            },
+            {
+                id: "29",
+                invdate: "2007-09-01",
+                name: "test3",
+                note: "note3",
+                amount: "400.00",
+                tax: "30.00",
+                total: "430.00"
+            }
+        ];
+
+        // Configuration for jqGrid Example 2
+        $("#table_list_2").jqGrid({
+            data: mydata,
+            datatype: "local",
+            height: 450,
+            autowidth: true,
+            shrinkToFit: true,
+            rowNum: 10,
+            rowList: [10, 20, 30],
+            colNames: ['序号', '日期', '客户', '金额', '运费', '总额', '备注'],
+            colModel: [
+                {
+                    name: 'id',
+                    index: 'id',
+                    editable: true,
+                    width: 60,
+                    sorttype: "int",
+                    search: true
+                },
+                {
+                    name: 'invdate',
+                    index: 'invdate',
+                    editable: true,
+                    width: 90,
+                    sorttype: "date",
+                    formatter: "date"
+                },
+                {
+                    name: 'name',
+                    index: 'name',
+                    editable: true,
+                    width: 100
+                },
+                {
+                    name: 'amount',
+                    index: 'amount',
+                    editable: true,
+                    width: 80,
+                    align: "right",
+                    sorttype: "float",
+                    formatter: "number"
+                },
+                {
+                    name: 'tax',
+                    index: 'tax',
+                    editable: true,
+                    width: 80,
+                    align: "right",
+                    sorttype: "float"
+                },
+                {
+                    name: 'total',
+                    index: 'total',
+                    editable: true,
+                    width: 80,
+                    align: "right",
+                    sorttype: "float"
+                },
+                {
+                    name: 'note',
+                    index: 'note',
+                    editable: true,
+                    width: 100,
+                    sortable: false
+                }
+            ],
+            pager: "#pager_list_2",
+            viewrecords: true,
+            caption: "jqGrid 示例2",
+            add: true,
+            edit: true,
+            addtext: 'Add',
+            edittext: 'Edit',
+            hidegrid: false
+        });
+
+        // Add selection
+        $("#table_list_2").setSelection(4, true);
+
+
+        // Setup buttons
+        $("#table_list_2").jqGrid('navGrid', '#pager_list_2', {
+            edit: true,
+            add: true,
+            del: true,
+            search: true
+        }, {
+            height: 200,
+            reloadAfterSubmit: true
+        });
+
+        // Add responsive to jqGrid
+        $(window).bind('resize', function () {
+            var width = $('.jqGrid_wrapper').width();
+            $('#table_list_2').setGridWidth(width);
+        });
+
+
+        $('#using_json').jstree({
+            'core': {
+                'data': [
+                    {"id": "ajson1", "parent": "#", "text": "bigchaindb"}
+                ]
+            }
+        });
+
+        /**
+         * 点击jstree的叶子节点触发事件
+         */
+        $(window).bind('click.jstree', function (event) {
+            var eventNodeName = event.target.nodeName;
+            if (eventNodeName == 'INS') {
+                return;
+            } else if (eventNodeName == 'A') {
+                var $subject = $(event.target).parent();
+                if ($subject.find('ul').length > 0) {
+                } else {
+                    //选择的id值
+                    var id = $(event.target).parents('li').attr('id');
+                    id = '#' + id + '_anchor';
+                    var name =$(id).text();
+                    var Name='#'+name;
+                    var operation=$(Name).parent().parent().attr("id");
+                    console.log(operation);
+                    console.log(name);
+                    var url="getTableData/"+name+"/"+operation;
+                    $.get({
+                       url: url,
+                       headers: {
+                           "Content-Type": "application/json; charset=utf-8"
+                       }
+                    },function (data) {
+                        console.log(data);
+                        $("#table_list_2").GridUnload();
+                        $("#table_list_2").jqGrid({
+                            data: data.data.data,
+                            datatype: "local",
+                            height: 450,
+                            autowidth: true,
+                            shrinkToFit: true,
+                            rowNum: 10,
+                            rowList: [10, 20, 30],
+                            colNames: data.data.cloumNames,
+                            colModel: data.data.cloumAttr,
+                            pager: "#pager_list_2",
+                            viewrecords: true,
+                            caption: name,
+                            add: true,
+                            edit: true,
+                            addtext: 'Add',
+                            edittext: 'Edit',
+                            hidegrid: false
+                        }).trigger("reloadGrid");
+                    });
+                }
+            }
+        });
+    });
+
+</script>
+<script>
+    /**
+     * 点击获取秘钥按钮事件
+     */
+    $("#btn_key").click(function () {
+        $.get({
+            url: "/getKey",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }, function (allData) {
+            if (allData.status == 1) {
+                alert(allData.message);
+            } else {
+                $("#text_key").val(allData.data);
+
+            }
+        });
+    });
+
+    /**
+     * 点击链接按钮事件
+     */
+    $("#btn_conn").click(function () {
+
+        if ($("#text_key").val() != "") {
+            var ip = {
+                ip: $("#ip").val()
+            }
+            var IP = JSON.stringify(ip);
+            $.post({
+                url: "/startConn",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }, IP, function (allData) {
+                if(allData.status==0) {
+                    alert(allData.message);
+                    var key={key:$("#text_key").val()};
+                    var KEY=JSON.stringify(key);
+                    $.post({
+                        url:"/getCloumns",
+                        headers:{
+                            "Content-Type": "application/json; charset=utf-8"
+                        }
+                    },KEY,function(data){
+                        //刷新树
+                        var mydata = data.data;
+
+                        $('#using_json').data('jstree', false).empty();
+                        $('#using_json').jstree({
+                            'core': {
+                                'data': mydata
+                            }
+                        });
+                    });
+
+                }else{
+                    alert(allData.message);
+                }
+            });
+        }
+        else {
+            alert("请输入秘钥！！！");
+        }
+    });
+
+    /**
+     * 点击运行按钮
+     */
+    $("#btn_run").click(function () {
+        var bdql={"bdql":$("#txt_run").val()}
+        var BDQL=JSON.stringify(bdql);
+        $.post({
+            url: "/runBDQL",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        },BDQL,function (data) {
+            if(data.status==1) {
+                $("#txt_run").val(data.message);
+            }else{
+                if(data.message=="insert"||data.message=="update"){
+                    $("#txt_run").val(data.data);
+                }else{
+                    $("#txt_run").val("查询成功");
+                    $("#table_list_2").GridUnload();
+                    $("#table_list_2").jqGrid({
+                        data: data.data.data,
+                        datatype: "local",
+                        height: 450,
+                        autowidth: true,
+                        shrinkToFit: true,
+                        rowNum: 10,
+                        rowList: [10, 20, 30],
+                        colNames: data.data.cloumNames,
+                        colModel: data.data.cloumAttr,
+                        pager: "#pager_list_2",
+                        viewrecords: true,
+                        caption: "查询结果",
+                        add: true,
+                        edit: true,
+                        addtext: 'Add',
+                        edittext: 'Edit',
+                        hidegrid: false
+                    }).trigger("reloadGrid");
+                }
+            }
+        })
+    })
+
+    /**
+     * 点击刷新按钮
+     */
+    $("#refresh").click(function () {
+        var key={key:$("#text_key").val()};
+        var KEY=JSON.stringify(key);
+        $.post({
+            url:"/getCloumns",
+            headers:{
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        },KEY,function(data){
+            //刷新树
+            var mydata = data.data;
+
+            $('#using_json').data('jstree', false).empty();
+            $('#using_json').jstree({
+                'core': {
+                    'data': mydata
+                }
+            });
+        });
+
+    })
+</script>
+</body>
+</html>
