@@ -32,4 +32,16 @@ public class Controller {
         return bigchainDBServiceImp.startConn(ip);
     }
 
+    @PostMapping("/getCloumns")
+    public  ParserResult getCloumnsName(@RequestBody Map map){
+        String key =map.get("key").toString();
+        return bigchainDBServiceImp.getCloumnsName(key);
+    }
+    @RequestMapping(value = "/getTableData/{name}/{operation}",method = RequestMethod.GET)
+    public ParserResult getTableData(@PathVariable String name,@PathVariable String operation){
+        ParserResult parserResult=new ParserResult();
+        return parserResult;
+    }
+
+
 }

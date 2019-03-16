@@ -34,7 +34,7 @@ public class KeyPairHolder {
         }
     }
 
-    public static KeyPair getKeyPairFromTXT(String key) {
+    public static KeyPair getKeyPairFromString(String key) {
         try {
             return KeyPairUtils.decodeKeyPair(key);
         } catch (Exception e) {

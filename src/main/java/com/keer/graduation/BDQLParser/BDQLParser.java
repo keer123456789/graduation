@@ -337,7 +337,7 @@ public class BDQLParser {
 
             logger.info(BigchainDBUtil.checkTransactionExit(id) + "");
             ParserResult result1 = new ParserResult();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 result1 = BDQLUtil.work("UPDATE Person SET FirstName = '" + i + "' , SecondName='"+j+"',age= '"+(i+j)+"',time='"+(i+j+10)+"' WHERE ID='" + id + "'");
                 logger.info("交易ID：" + result1.getData());
                 Thread.sleep(2000);
@@ -345,13 +345,13 @@ public class BDQLParser {
             }
         }
 
-//        Outputs outputs = OutputsApi.getOutputs(KeyPairHolder.pubKeyToString(KeyPairHolder.getPublic()));
-//        logger.info("交易总数1：" + outputs.getOutput().size());
-//        for (Output output : outputs.getOutput()) {
-//            logger.info("交易ID：" + output.getTransactionId() + ",密钥：" + output.getPublicKeys());
-//        }
-//        result=BDQLUtil.work("Select * from Computer where cpu= i7");
-//        logger.info(result.getData().toString());
+        Outputs outputs = OutputsApi.getOutputs(KeyPairHolder.pubKeyToString(KeyPairHolder.getPublic()));
+        logger.info("交易总数1：" + outputs.getOutput().size());
+        for (Output output : outputs.getOutput()) {
+            logger.info("交易ID：" + output.getTransactionId() + ",密钥：" + output.getPublicKeys());
+        }
+        result=BDQLUtil.work("Select * from Computer where cpu= i7");
+        logger.info(result.getData().toString());
 
     }
 }

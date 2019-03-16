@@ -6,4 +6,8 @@ public interface IService {
     ParserResult getKey();
 
     ParserResult startConn(String url);
+
+    ParserResult getCloumnsName(String key);
+
+    ParserResult getTableData(String key,String operation);
 }

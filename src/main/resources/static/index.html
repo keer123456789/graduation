@@ -503,102 +503,12 @@
         $('#using_json').jstree({
             'core': {
                 'data': [
-                    'Empty Folder',
-                    {
-                        'text': 'Resources',
-                        'state': {
-                            'opened': true
-                        },
-                        'children': [
-                            {
-                                'text': 'css',
-                                'children': [
-                                    {
-                                        'text': 'animate.css',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'bootstrap.css',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'main.css',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'style.css',
-                                        'icon': 'img/form1.png'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            },
-                            {
-                                'text': 'js',
-                                'children': [
-                                    {
-                                        'text': 'bootstrap.js',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'hplus.min.js',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'jquery.min.js',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'jsTree.min.js',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'custom.min.js',
-                                        'icon': 'img/form1.png'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            },
-                            {
-                                'text': 'html',
-                                'children': [
-                                    {
-                                        'text': 'layout.html',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'navigation.html',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'navbar.html',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'footer.html',
-                                        'icon': 'img/form1.png'
-                                    },
-                                    {
-                                        'text': 'sidebar.html',
-                                        'icon': 'img/form1.png'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            }
-                        ]
-                    },
-                    'Fonts',
-                    'Images',
-                    'Scripts',
-                    'Templates',
+                    {"id": "ajson1", "parent": "#", "text": "bigchaindb"}
                 ]
             }
-        }).bind('click.jstree', function (event) {
+        });
+
+        $(window).bind('click.jstree', function (event) {
             var eventNodeName = event.target.nodeName;
             if (eventNodeName == 'INS') {
                 return;
@@ -609,9 +519,20 @@
                     //选择的id值
                     var id = $(event.target).parents('li').attr('id');
                     id = '#' + id + '_anchor';
-                    var name = $(id).text();
-                    //TODO 点击节点触发事件动作
-                    alert(name);
+                    var name =$(id).text();
+                    var Name='#'+name;
+                    var operation=$(Name).parent().parent().attr("id");
+                    console.log(operation);
+                    console.log(name);
+                    var url="getTableData/"+name+"/"+operation;
+                    $.get({
+                       url: url,
+                       headers: {
+                           "Content-Type": "application/json; charset=utf-8"
+                       }
+                    },function (data) {
+                        console.log(data);
+                    });
                 }
             }
         });
@@ -630,9 +551,10 @@
             }
         }, function (allData) {
             if (allData.status == 1) {
-                alert(allData.message)
+                alert(allData.message);
             } else {
                 $("#text_key").val(allData.data);
+
             }
         });
     });
@@ -653,10 +575,33 @@
                     "Content-Type": "application/json; charset=utf-8"
                 }
             }, IP, function (allData) {
+                if(allData.status==0) {
+                    alert(allData.message);
+                    var key={key:$("#text_key").val()};
+                    var KEY=JSON.stringify(key);
+                    $.post({
+                        url:"/getCloumns",
+                        headers:{
+                            "Content-Type": "application/json; charset=utf-8"
+                        }
+                    },KEY,function(data){
+                        //刷新树
+                        var mydata = data.data;
 
+                        $('#using_json').data('jstree', false).empty();
+                        $('#using_json').jstree({
+                            'core': {
+                                'data': mydata
+                            }
+                        });
+                    });
+
+                }else{
+                    alert(allData.message);
+                }
             });
         }
-        else{
+        else {
             alert("请输入秘钥！！！");
         }
     });

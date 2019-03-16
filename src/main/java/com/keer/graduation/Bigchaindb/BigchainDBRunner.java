@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.bigchaindb.builders.BigchainDbConfigBuilder;
 import com.keer.graduation.Util.HttpUtil;
 
+import com.keer.graduation.Util.PropertyUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,8 +18,8 @@ public class BigchainDBRunner {
     private static Logger logger = LoggerFactory.getLogger(BigchainDBRunner.class);
     //获取配置文件的BigchainDB的url
 
-    @Value("blockchaindb.base-url")
-    private static String url ;
+
+    private static String url= PropertyUtil.getProperties("blockchaindb.base-url") ;
 
     /**
      * 连接BigchainDB
