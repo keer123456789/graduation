@@ -6,11 +6,13 @@ import com.bigchaindb.model.Assets;
 import com.bigchaindb.model.Transaction;
 import com.google.gson.internal.LinkedTreeMap;
 import com.keer.graduation.Bigchaindb.BigchainDBRunner;
-
+import net.sf.jsqlparser.expression.Expression;
+import net.sf.jsqlparser.expression.operators.relational.*;
 
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * 表结构
@@ -147,6 +149,76 @@ public class Table {
 
     }
 
+    public void setTableData(Assets assets, Expression expression){
+        setTableData(assets);
+        setTablesWhere(expression);
+    }
+    public void setTableData(List<MetaData> metaDatas, Expression expression){
+        setTableData(metaDatas);
+        setTablesWhere(expression);
+    }
+
+    private void setTablesWhere(Expression expression){
+        List<Map> newList=new ArrayList<>();
+        if(expression instanceof EqualsTo){
+            String left=((EqualsTo)expression).getLeftExpression().toString();
+            String right=((EqualsTo)expression).getRightExpression().toString();
+            for(Map map:this.data){
+                if(map.get(left).toString().equals(right)){
+                    newList.add(map);
+
+                }
+            }
+            this.data=newList;
+        }
+        if(expression instanceof GreaterThan){
+            String left=((GreaterThan)expression).getLeftExpression().toString();
+            String right=((GreaterThan)expression).getRightExpression().toString();
+            int R=Integer.parseInt(right);
+            for(Map map:this.data){
+                if(Integer.parseInt(map.get(left).toString())>R){
+                    newList.add(map);
+                }
+            }
+            this.data=newList;
+
+        }
+        if(expression instanceof GreaterThanEquals){
+            String left=((GreaterThanEquals)expression).getLeftExpression().toString();
+            String right=((GreaterThanEquals)expression).getRightExpression().toString();
+            int R=Integer.parseInt(right);
+            for(Map map:this.data){
+                if(Integer.parseInt(map.get(left).toString())>=R){
+                    newList.add(map);
+                }
+            }
+            this.data=newList;
+        }
+        if(expression instanceof MinorThan){
+            String left=((MinorThan)expression).getLeftExpression().toString();
+            String right=((MinorThan)expression).getRightExpression().toString();
+            int R=Integer.parseInt(right);
+            for(Map map:this.data){
+                if(Integer.parseInt(map.get(left).toString())<R){
+                    newList.add(map);
+                }
+            }
+            this.data=newList;
+        }
+        if(expression instanceof MinorThanEquals){
+            String left=((MinorThanEquals)expression).getLeftExpression().toString();
+            String right=((MinorThanEquals)expression).getRightExpression().toString();
+            int R=Integer.parseInt(right);
+            for(Map map:this.data){
+                if(Integer.parseInt(map.get(left).toString())<=R){
+                    newList.add(map);
+                }
+            }
+            this.data=newList;
+        }
+
+    }
+
 
     public List<Map> getData() {
         return data;
@@ -187,14 +259,14 @@ public class Table {
 
     }
 
-    public static void main(String[] args) throws IOException {
-        BigchainDBRunner.StartConn();
-        Table table = new Table();
-        table.setType("TRANSFER");
-        table.setTableName("Person");
+    private static boolean isInteger(String str) {
+        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        return pattern.matcher(str).matches();
+    }
 
-//        List<MetaData> metaDatas = BigchainDBUtil.getMetaDatasByKey("Person");
-//        table.setTableData(metaDatas);
-//        System.out.println("hhh");
+    public static void main(String[] args) throws IOException {
+        String a="dfasdf";
+        int b=Integer.parseInt(a);
+        System.out.println(b);
     }
 }

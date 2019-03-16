@@ -78,6 +78,9 @@ public class BDQLParser {
         } else if (statement instanceof Update) {
             return updateParser((Update) statement);
         }
+        result.setStatus(ParserResult.ERROR);
+        result.setMessage("此种语法还未推出！！！");
+        result.setData(null);
         return result;
     }
 
@@ -106,7 +109,7 @@ public class BDQLParser {
         PlainSelect selectBody = (PlainSelect) select.getSelectBody();
 
 
-        EqualsTo expression = (EqualsTo) selectBody.getWhere();
+        Expression expression =  selectBody.getWhere();
         //获得表名
         TablesNamesFinder tablesNamesFinder = new TablesNamesFinder();
         List<String> tableNames = tablesNamesFinder.getTableList(select);
@@ -114,14 +117,15 @@ public class BDQLParser {
         if (tableNames.size() != 1) {
             logger.warn("多表查询功能还未推出！！！！");
             result.setStatus(ParserResult.ERROR);
-            result.setData("多表查询功能还未推出！！！！");
+            result.setMessage("多表查询功能还未推出！！！！");
+            result.setData(null);
             return result;
         } else {
             table.setTableName(tableNames.get(0));
             //获得列名
             ArrayList<String> columnNames = (ArrayList<String>) getColumnNames(selectBody);
-            if (expression.getLeftExpression().toString().equals("ID")) {//存在交易ID
-                String TXID = expression.getRightExpression().toString();
+            if (expression instanceof EqualsTo&&((EqualsTo)expression).getLeftExpression().toString().equals("ID")) {//存在交易ID
+                String TXID = ((EqualsTo)expression).getRightExpression().toString();
                 Transaction transaction= BigchainDBUtil.getTransactionByTXID(TXID);
                 if(transaction.getOperation().equals("CREATE")){
                     table.setType("CREATE");
@@ -143,22 +147,22 @@ public class BDQLParser {
                     if(BigchainDBUtil.getAssetByKey(table.getTableName()).size()==0){
                         List<MetaData> metaDatas=BigchainDBUtil.getMetaDatasByKey(table.getTableName());
                         table.setType("TRANSFER");
-                        table.setTableData(metaDatas);
+                        table.setTableData(metaDatas,expression);
                     }else{
                         Assets assets=BigchainDBUtil.getAssetByKey(table.getTableName());
                         table.setType("CREATE");
-                        table.setTableData(assets);
+                        table.setTableData(assets,expression);
                     }
                 } else {
                     if(BigchainDBUtil.getAssetByKey(table.getTableName()).size()==0){
                         List<MetaData> metaDatas=BigchainDBUtil.getMetaDatasByKey(table.getTableName());
                         table.setType("TRANSFER");
-                        table.setTableData(metaDatas);
+                        table.setTableData(metaDatas,expression);
                         table.setColumnName(columnNames);
                     }else{
                         Assets assets=BigchainDBUtil.getAssetByKey(table.getTableName());
                         table.setType("CREATE");
-                        table.setTableData(assets);
+                        table.setTableData(assets,expression);
                         table.setColumnName(columnNames);
                     }
                 }
@@ -217,7 +221,9 @@ public class BDQLParser {
             id = BigchainDBUtil.createAsset(data);
             logger.info("插入操作成功！！！！！");
         } catch (Exception e) {
-            logger.info("插入操作失败！！！！！");
+            logger.error("插入操作失败！！！！！");
+            result.setData(null);
+            result.setMessage("插入操作失败！！！！！");
             e.printStackTrace();
         }
         result.setStatus(ParserResult.SUCCESS);
@@ -241,8 +247,9 @@ public class BDQLParser {
 
         if (!ID.equals("ID")) {
             logger.error("BDQL语法错误：where 只能使用ID=————，请检查书写和大小写");
-            result.setData("BDQL语法错误：where 只能使用ID=————，请检查书写和大小写");
+            result.setMessage("BDQL语法错误：where 只能使用ID=————，请检查书写和大小写");
             result.setStatus(ParserResult.ERROR);
+            result.setData(null);
             return result;
         }
 
@@ -263,6 +270,7 @@ public class BDQLParser {
             logger.error("更新数据失败！！！！！！！");
             result.setStatus(ParserResult.ERROR);
             result.setData(null);
+            result.setMessage("更新数据失败！！！！！！！");
             return result;
         }
 
@@ -275,7 +283,7 @@ public class BDQLParser {
             //TODO id不为null的时候，检查
         }
         result.setStatus(ParserResult.SUCCESS);
-        result.setMessage("insert");
+        result.setMessage("更新数据成功！！！");
         result.setData(id);
 
         logger.info("更新数据成功！！！！");

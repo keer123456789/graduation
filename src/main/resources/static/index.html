@@ -12,6 +12,7 @@
     <link href="css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
     <link href="css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
     <link href="css/style.css?v=2.2.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
     <style>
         /* Additional style to fix warning dialog position */
         #alertmod_table_list_2 {
@@ -42,7 +43,7 @@
                     </div>
                 </li>
                 <li>
-                    <i class="fa fa-refresh"></i>
+                    <i class="fa fa-refresh" id="refresh"></i>
                 </li>
                 <li>
                     <div id="using_json"></div>
@@ -629,6 +630,9 @@
         }
     });
 
+    /**
+     * 点击运行按钮
+     */
     $("#btn_run").click(function () {
         var bdql={"bdql":$("#txt_run").val()}
         var BDQL=JSON.stringify(bdql);
@@ -638,8 +642,61 @@
                 "Content-Type": "application/json; charset=utf-8"
             }
         },BDQL,function (data) {
-            $("#txt_run").val(data.data.message);
+            if(data.status==1) {
+                $("#txt_run").val(data.message);
+            }else{
+                if(data.message=="insert"||data.message=="update"){
+                    $("#txt_run").val(data.data);
+                }else{
+                    $("#txt_run").val("查询成功");
+                    $("#table_list_2").GridUnload();
+                    $("#table_list_2").jqGrid({
+                        data: data.data.data,
+                        datatype: "local",
+                        height: 450,
+                        autowidth: true,
+                        shrinkToFit: true,
+                        rowNum: 10,
+                        rowList: [10, 20, 30],
+                        colNames: data.data.cloumNames,
+                        colModel: data.data.cloumAttr,
+                        pager: "#pager_list_2",
+                        viewrecords: true,
+                        caption: "查询结果",
+                        add: true,
+                        edit: true,
+                        addtext: 'Add',
+                        edittext: 'Edit',
+                        hidegrid: false
+                    }).trigger("reloadGrid");
+                }
+            }
         })
+    })
+
+    /**
+     * 点击刷新按钮
+     */
+    $("#refresh").click(function () {
+        var key={key:$("#text_key").val()};
+        var KEY=JSON.stringify(key);
+        $.post({
+            url:"/getCloumns",
+            headers:{
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        },KEY,function(data){
+            //刷新树
+            var mydata = data.data;
+
+            $('#using_json').data('jstree', false).empty();
+            $('#using_json').jstree({
+                'core': {
+                    'data': mydata
+                }
+            });
+        });
+
     })
 </script>
 </body>

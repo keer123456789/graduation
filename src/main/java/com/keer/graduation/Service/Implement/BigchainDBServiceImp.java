@@ -121,7 +121,13 @@ public class BigchainDBServiceImp implements IService {
 
     @Override
     public ParserResult runBDQL(String BDQL) {
-        return BDQLUtil.work(BDQL);
+        ParserResult parserResult =BDQLUtil.work(BDQL);
+        if(parserResult.getMessage().equals("select")){
+            parserResult.setData(buildjqGridData((Table) parserResult.getData()));
+        }
+        return parserResult;
+
+
     }
 
     private List<Map> buildJstreeData(Map<String, Table> map) {
