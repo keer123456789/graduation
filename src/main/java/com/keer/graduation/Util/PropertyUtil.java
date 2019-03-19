@@ -32,8 +32,8 @@ public class PropertyUtil {
         return prop.getProperty(name);
     }
 
-//    public static void main(String[] args) throws IOException {
-//        System.out.println(getProperties("blockchaindb.base-url"));
-//    }
+    public static void main(String[] args) throws IOException {
+        System.out.println(getProperties("url"));
+    }
 
 }

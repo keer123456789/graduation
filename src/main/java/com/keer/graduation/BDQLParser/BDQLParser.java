@@ -157,13 +157,14 @@ public class BDQLParser {
                     if(BigchainDBUtil.getAssetByKey(table.getTableName()).size()==0){
                         List<MetaData> metaDatas=BigchainDBUtil.getMetaDatasByKey(table.getTableName());
                         table.setType("TRANSFER");
-                        table.setTableData(metaDatas,expression);
                         table.setColumnName(columnNames);
+                        table.setTableData(metaDatas,expression);
+
                     }else{
                         Assets assets=BigchainDBUtil.getAssetByKey(table.getTableName());
                         table.setType("CREATE");
-                        table.setTableData(assets,expression);
                         table.setColumnName(columnNames);
+                        table.setTableData(assets,expression);
                     }
                 }
             }

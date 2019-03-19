@@ -12,6 +12,7 @@ import com.keer.graduation.Service.IService;
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.util.Map;
 @Service
 public class BigchainDBServiceImp implements IService {
     private static Logger logger = LoggerFactory.getLogger(BigchainDBServiceImp.class);
+
 
     /**
      * 获取秘钥
@@ -91,7 +93,7 @@ public class BigchainDBServiceImp implements IService {
             Assets assets = BigchainDBUtil.getAssetByKey(key);
 
             if (assets != null) {
-                table.setTableData(assets);
+                table.setTableDataWithColumnName(assets);
                 table.setType("CREATE");
             } else {
                 parserResult.setData(null);
@@ -102,7 +104,7 @@ public class BigchainDBServiceImp implements IService {
         } else {
             List<MetaData> metaDataList = BigchainDBUtil.getMetaDatasByKey(key);
             if (metaDataList != null) {
-                table.setTableData(metaDataList);
+                table.setTableDataWithCloumnName(metaDataList);
                 table.setType("TRANSFER");
             } else {
                 parserResult.setData(null);
@@ -121,8 +123,8 @@ public class BigchainDBServiceImp implements IService {
 
     @Override
     public ParserResult runBDQL(String BDQL) {
-        ParserResult parserResult =BDQLUtil.work(BDQL);
-        if(parserResult.getMessage().equals("select")){
+        ParserResult parserResult = BDQLUtil.work(BDQL);
+        if (parserResult.getMessage().equals("select")) {
             parserResult.setData(buildjqGridData((Table) parserResult.getData()));
         }
         return parserResult;
