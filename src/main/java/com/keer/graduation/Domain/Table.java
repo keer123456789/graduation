@@ -193,15 +193,7 @@ public class Table {
 
     }
 
-    public void setTableData(Assets assets, Expression expression) {
-        setTableData(assets);
-        setTablesWhere(expression);
-    }
 
-    public void setTableData(List<MetaData> metaDatas, Expression expression) {
-        setTableData(metaDatas);
-        setTablesWhere(expression);
-    }
 
     private void setTablesWhere(Expression expression) {
         List<Map> newList = new ArrayList<>();
