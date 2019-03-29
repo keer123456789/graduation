@@ -20,15 +20,21 @@ import com.keer.graduation.Domain.Table;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
+@Component
 public class BigchainDBUtil {
     private static Logger logger = LoggerFactory.getLogger(BigchainDBUtil.class);
+
+
+    @Autowired
+    KeyPairHolder keyPairHolder;
 
 
     /**
@@ -38,7 +44,7 @@ public class BigchainDBUtil {
      * @return
      * @throws Exception
      */
-    public static String createAsset(BigchainDBData assetDate) throws Exception {
+    public  String createAsset(BigchainDBData assetDate) throws Exception {
         return createAsset(assetDate, null);
     }
 
@@ -50,7 +56,7 @@ public class BigchainDBUtil {
      * @return
      * @throws Exception
      */
-    public static String createAsset(BigchainDBData assetWrapper, BigchainDBData metadataWrapper) throws Exception {
+    public  String createAsset(BigchainDBData assetWrapper, BigchainDBData metadataWrapper) throws Exception {
 
         Transaction createTransaction = BigchainDbTransactionBuilder
                 .init()
@@ -58,8 +64,8 @@ public class BigchainDBUtil {
                 .addAssets(assetWrapper, assetWrapper.getClass())
                 .addMetaData(metadataWrapper)
                 .buildAndSign(
-                        KeyPairHolder.getPublic(),
-                        KeyPairHolder.getPrivate())
+                        keyPairHolder.getPublic(),
+                        keyPairHolder.getPrivate())
                 .sendTransaction();
         return createTransaction.getId();
     }
@@ -216,7 +222,7 @@ public class BigchainDBUtil {
      * @return
      * @throws Exception
      */
-    public static String transferToSelf(BigchainDBData metaData, String assetId) {
+    public  String transferToSelf(BigchainDBData metaData, String assetId) {
 
         Transaction transferTransaction = null;
         try {
@@ -225,11 +231,11 @@ public class BigchainDBUtil {
                     .operation(Operations.TRANSFER)
                     .addAssets(assetId, String.class)
                     .addMetaData(metaData)
-                    .addInput(null, transferToSelfFulFill(assetId), KeyPairHolder.getPublic())
-                    .addOutput("1", KeyPairHolder.getPublic())
+                    .addInput(null, transferToSelfFulFill(assetId), keyPairHolder.getPublic())
+                    .addOutput("1", keyPairHolder.getPublic())
                     .buildAndSign(
-                            KeyPairHolder.getPublic(),
-                            KeyPairHolder.getPrivate())
+                            keyPairHolder.getPublic(),
+                            keyPairHolder.getPrivate())
                     .sendTransaction();
         } catch (Exception e) {
             logger.error("资产ID：" + assetId + ",不存在!!!!!!!");
@@ -410,7 +416,7 @@ public class BigchainDBUtil {
      * @return
      * @throws IOException
      */
-    private static FulFill transferToSelfFulFill(String assetId) throws IOException {
+    private  FulFill transferToSelfFulFill(String assetId) throws IOException {
         final FulFill spendFrom = new FulFill();
         String transactionId = getLastTransactionId(assetId);
         spendFrom.setTransactionId(transactionId);
@@ -425,7 +431,7 @@ public class BigchainDBUtil {
      * @return last transaction id
      * @throws IOException
      */
-    public static String getLastTransactionId(String assetId) throws IOException {
+    public  String getLastTransactionId(String assetId) throws IOException {
         return getTransactionId(getLastTransaction(assetId));
     }
 
@@ -436,7 +442,7 @@ public class BigchainDBUtil {
      * @return last transaction
      * @throws IOException
      */
-    public static Transaction getLastTransaction(String assetId) throws IOException {
+    public  Transaction getLastTransaction(String assetId) throws IOException {
         List<Transaction> transfers = TransactionsApi.getTransactionsByAssetId(assetId, Operations.TRANSFER).getTransactions();
 
         if (transfers != null && transfers.size() > 0) {
@@ -453,7 +459,7 @@ public class BigchainDBUtil {
      * @return
      * @throws IOException
      */
-    public static Transaction getCreateTransaction(String assetId) throws IOException {
+    public  Transaction getCreateTransaction(String assetId) throws IOException {
         try {
             Transactions apiTransactions = TransactionsApi.getTransactionsByAssetId(assetId, Operations.CREATE);
 
@@ -475,7 +481,7 @@ public class BigchainDBUtil {
      * @param transaction
      * @return
      */
-    private static String getTransactionId(Transaction transaction) {
+    private  String getTransactionId(Transaction transaction) {
         String withQuotationId = transaction.getId();
         return withQuotationId.substring(1, withQuotationId.length() - 1);
     }
@@ -486,7 +492,7 @@ public class BigchainDBUtil {
      * @param txID
      * @return
      */
-    public static boolean checkTransactionExit(String txID) {
+    public  boolean checkTransactionExit(String txID) {
         try {
             Thread.sleep(2000);
             Transaction transaction = TransactionsApi.getTransactionById(txID);
@@ -514,7 +520,7 @@ public class BigchainDBUtil {
      * @return
      * @throws IOException
      */
-    public static Transactions getAllTransactionByPubKey(String publicKey) throws IOException {
+    public  Transactions getAllTransactionByPubKey(String publicKey) throws IOException {
         Transactions transactions = new Transactions();
         Outputs outputs = OutputsApi.getOutputs(publicKey);
         for (Output output : outputs.getOutput()) {
@@ -531,7 +537,7 @@ public class BigchainDBUtil {
      * @param key
      * @return
      */
-    public static Assets getAssetByKey(String key) {
+    public  Assets getAssetByKey(String key) {
         try {
             return AssetsApi.getAssets(key);
         } catch (IOException e) {
@@ -554,7 +560,7 @@ public class BigchainDBUtil {
 //            return null;
 //        }
 //    }
-    public static List<MetaData> getMetaDatasByKey(String key) {
+    public  List<MetaData> getMetaDatasByKey(String key) {
         logger.debug("getMetaData Call :" + key);
         Response response;
         String body = null;
@@ -570,7 +576,7 @@ public class BigchainDBUtil {
         return  JSON.parseArray(body, MetaData.class);
     }
 
-    public static Transaction getTransactionByTXID(String ID){
+    public  Transaction getTransactionByTXID(String ID){
         logger.info("开始查询交易信息：TXID："+ID);
         try {
             logger.info("查询成功！！！！！！");
@@ -608,26 +614,26 @@ public class BigchainDBUtil {
 
     public static void main(String[] args) throws IOException {
 
-        BigchainDBRunner.StartConn();
-
-        Map<String, Table> result = null;
-        try {
-            result = BDQLUtil.getAlltablesByPubKey(KeyPairHolder.pubKeyToString(KeyPairHolder.getPublic()));
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        Object[] columnNames = result.get("Person").getColumnName().toArray();
-        logger.info(String.valueOf(columnNames.length));
-        List<Map> data = result.get("Person").getData();
-        List<Object[]> objects = new ArrayList<Object[]>();
-        for (Map map : data) {
-            Collection va = map.values();
-
-            Object[] a = va.toArray();
-            objects.add(a);
-        }
-
-        Object[][] b = (Object[][]) objects.toArray(new Object[data.size()][columnNames.length]);
-        logger.info("hhhh");
+//        BigchainDBRunner.StartConn();
+//
+//        Map<String, Table> result = null;
+//        try {
+//            result = BDQLUtil.getAlltablesByPubKey(KeyPairHolder.pubKeyToString(KeyPairHolder.getPublic()));
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//        Object[] columnNames = result.get("Person").getColumnName().toArray();
+//        logger.info(String.valueOf(columnNames.length));
+//        List<Map> data = result.get("Person").getData();
+//        List<Object[]> objects = new ArrayList<Object[]>();
+//        for (Map map : data) {
+//            Collection va = map.values();
+//
+//            Object[] a = va.toArray();
+//            objects.add(a);
+//        }
+//
+//        Object[][] b = (Object[][]) objects.toArray(new Object[data.size()][columnNames.length]);
+//        logger.info("hhhh");
     }
 }

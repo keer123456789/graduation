@@ -11,12 +11,14 @@ import com.keer.graduation.Domain.ParserResult;
 import com.keer.graduation.Domain.Table;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@Component
 public class BDQLUtil {
     public static final int ONE = 1;
     public static final int TWO = 2;
@@ -24,13 +26,18 @@ public class BDQLUtil {
 
     private static Logger logger = LoggerFactory.getLogger(BDQLUtil.class);
 
+    @Autowired
+    BDQLParser bdqlParser;
+
+    @Autowired
+    BigchainDBUtil bigchainDBUtil;
     /**
      * 字符串小写转大写
      *
      * @param bdql
      * @return
      */
-    public static String lowercaseToUpperCase(String bdql) {
+    public  String lowercaseToUpperCase(String bdql) {
         StringBuffer s = new StringBuffer();
         char c[] = bdql.toCharArray();
         for (int i = 0; i < bdql.length(); i++) {
@@ -50,7 +57,7 @@ public class BDQLUtil {
      * @param s
      * @return
      */
-    public static String fixString(String s){
+    public  String fixString(String s){
         if(s.substring(0,1).equals("'")&&s.substring(s.length()-1,s.length()).equals("'")){
             return s.substring(1,s.length()-1);
         }
@@ -63,7 +70,7 @@ public class BDQLUtil {
      * @param BDQL
      * @return 0, 1, 2
      */
-    public static int getSort(String BDQL) {
+    public  int getSort(String BDQL) {
         int sum = BDQL.split(";").length;
         if (sum == 1) {
             return 1;
@@ -90,10 +97,10 @@ public class BDQLUtil {
      * @param sql
      * @return
      */
-    public static ParserResult work(String sql) {
+    public  ParserResult work(String sql) {
         ParserResult result = new ParserResult();
         int sort = getSort(lowercaseToUpperCase(sql));
-        return BDQLParser.BDQLParser(sql, sort);
+        return bdqlParser.BDQLParser(sql, sort);
     }
 
 
@@ -103,12 +110,12 @@ public class BDQLUtil {
      * @return
      * @throws IOException
      */
-    public static Map<String, Table> getAlltablesByPubKey(String pubkey) throws IOException {
+    public  Map<String, Table> getAlltablesByPubKey(String pubkey) throws IOException {
 
         Map<String,Table> result=new HashMap<String, Table>();
 
 
-        Transactions transactions= BigchainDBUtil.getAllTransactionByPubKey(pubkey);
+        Transactions transactions= bigchainDBUtil.getAllTransactionByPubKey(pubkey);
         LinkedTreeMap map=new LinkedTreeMap();
         for(Transaction transaction:transactions.getTransactions()){
             if(transaction.getOperation().equals("\"CREATE\"")){

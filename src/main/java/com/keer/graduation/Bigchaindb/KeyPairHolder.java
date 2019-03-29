@@ -9,12 +9,13 @@ import net.i2p.crypto.eddsa.EdDSAPublicKey;
 import net.i2p.crypto.eddsa.KeyPairGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.security.KeyPair;
-
+@Component
 public class KeyPairHolder {
     private static Logger logger = LoggerFactory.getLogger(KeyPairHolder.class);
 
@@ -25,7 +26,7 @@ public class KeyPairHolder {
      *
      * @return
      */
-    public static KeyPair getKeyPairFromTXT() {
+    public  KeyPair getKeyPairFromTXT() {
         try {
             return KeyPairUtils.decodeKeyPair(getKeyPairFormTXT());
         } catch (Exception e) {
@@ -34,7 +35,7 @@ public class KeyPairHolder {
         }
     }
 
-    public static KeyPair getKeyPairFromString(String key) {
+    public  KeyPair getKeyPairFromString(String key) {
         try {
             return KeyPairUtils.decodeKeyPair(key);
         } catch (Exception e) {
@@ -44,7 +45,7 @@ public class KeyPairHolder {
     }
 
 
-    public static String getKeyPairFormTXT(){
+    public  String getKeyPairFormTXT(){
         try {
             FileInputStream in = new FileInputStream(keyPath);
             byte[] buffer = new byte[in.available()];
@@ -63,7 +64,7 @@ public class KeyPairHolder {
      *
      * @param keyPair
      */
-    public static void SaveKeyPairToTXT(KeyPair keyPair) {
+    public  void SaveKeyPairToTXT(KeyPair keyPair) {
         try {
             logger.info("开始写密钥到"+keyPath);
             FileOutputStream fos = new FileOutputStream(keyPath);
@@ -83,7 +84,7 @@ public class KeyPairHolder {
      *
      * @return
      */
-    public static KeyPair getKeyPair() {
+    public  KeyPair getKeyPair() {
         KeyPairGenerator edDsaKpg = new KeyPairGenerator();
         logger.info("成功获取新的密钥对");
         return edDsaKpg.generateKeyPair();
@@ -96,7 +97,7 @@ public class KeyPairHolder {
      *
      * @return
      */
-    public static EdDSAPublicKey getPublic() {
+    public  EdDSAPublicKey getPublic() {
         logger.info("获得"+keyPath+"中的公钥");
         return (EdDSAPublicKey) getKeyPairFromTXT().getPublic();
     }
@@ -106,7 +107,7 @@ public class KeyPairHolder {
      * @param key
      * @return
      */
-    public static String pubKeyToString(EdDSAPublicKey key){
+    public  String pubKeyToString(EdDSAPublicKey key){
         return KeyPairUtils.encodePublicKeyInBase58(key);
     }
 
@@ -115,14 +116,14 @@ public class KeyPairHolder {
      *
      * @return
      */
-    public static EdDSAPrivateKey getPrivate() {
+    public  EdDSAPrivateKey getPrivate() {
         logger.info("获得"+keyPath+"中的私钥");
         return (EdDSAPrivateKey) getKeyPairFromTXT().getPrivate();
     }
 
     public static void main(String[] args) {
         logger.info(keyPath);
-        KeyPairHolder.SaveKeyPairToTXT(KeyPairHolder.getKeyPair());
+//        KeyPairHolder.SaveKeyPairToTXT(KeyPairHolder.getKeyPair());
     }
 
 }

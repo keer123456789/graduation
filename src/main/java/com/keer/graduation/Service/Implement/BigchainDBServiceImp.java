@@ -1,6 +1,9 @@
 package com.keer.graduation.Service.Implement;
 
+import com.bigchaindb.api.OutputsApi;
 import com.bigchaindb.model.Assets;
+import com.bigchaindb.model.Output;
+import com.bigchaindb.model.Outputs;
 import com.keer.graduation.BDQLParser.BDQLUtil;
 import com.keer.graduation.Bigchaindb.BigchainDBRunner;
 import com.keer.graduation.Bigchaindb.BigchainDBUtil;
@@ -25,6 +28,18 @@ import java.util.Map;
 public class BigchainDBServiceImp implements IService {
     private static Logger logger = LoggerFactory.getLogger(BigchainDBServiceImp.class);
 
+    @Autowired
+    KeyPairHolder keyPairHolder;
+
+    @Autowired
+    BigchainDBRunner bigchainDBRunner;
+
+    @Autowired
+    BDQLUtil bdqlUtil;
+
+    @Autowired
+    BigchainDBUtil bigchainDBUtil;
+
 
     /**
      * 获取秘钥
@@ -34,8 +49,8 @@ public class BigchainDBServiceImp implements IService {
     @Override
     public ParserResult getKey() {
         ParserResult parserResult = new ParserResult();
-        if (KeyPairHolder.getKeyPairFormTXT() != null) {
-            parserResult.setData(KeyPairHolder.getKeyPairFormTXT());
+        if (keyPairHolder.getKeyPairFormTXT() != null) {
+            parserResult.setData(keyPairHolder.getKeyPairFormTXT());
             parserResult.setStatus(ParserResult.SUCCESS);
             parserResult.setMessage("获取秘钥成功！！！！！");
             logger.info("获取秘钥成功！！");
@@ -52,7 +67,7 @@ public class BigchainDBServiceImp implements IService {
     @Override
     public ParserResult startConn(String url) {
         ParserResult parserResult = new ParserResult();
-        if (BigchainDBRunner.StartConn(url)) {
+        if (bigchainDBRunner.StartConn(url)) {
             parserResult.setMessage("连接BigchainDB节点成功！！！");
             parserResult.setStatus(ParserResult.SUCCESS);
             parserResult.setData(true);
@@ -69,7 +84,7 @@ public class BigchainDBServiceImp implements IService {
         ParserResult parserResult = new ParserResult();
         Map<String, Table> map = null;
         try {
-            map = BDQLUtil.getAlltablesByPubKey(KeyPairHolder.pubKeyToString((EdDSAPublicKey) KeyPairHolder.getKeyPairFromString(key).getPublic()));
+            map = bdqlUtil.getAlltablesByPubKey(keyPairHolder.pubKeyToString((EdDSAPublicKey) keyPairHolder.getKeyPairFromString(key).getPublic()));
         } catch (IOException e) {
             e.printStackTrace();
             parserResult.setData(null);
@@ -90,7 +105,7 @@ public class BigchainDBServiceImp implements IService {
         Table table = new Table();
         table.setTableName(key);
         if (operation.equals("asset")) {
-            Assets assets = BigchainDBUtil.getAssetByKey(key);
+            Assets assets = bigchainDBUtil.getAssetByKey(key);
 
             if (assets != null) {
                 table.setTableDataWithColumnName(assets);
@@ -102,7 +117,7 @@ public class BigchainDBServiceImp implements IService {
                 return parserResult;//TODO 错误
             }
         } else {
-            List<MetaData> metaDataList = BigchainDBUtil.getMetaDatasByKey(key);
+            List<MetaData> metaDataList = bigchainDBUtil.getMetaDatasByKey(key);
             if (metaDataList != null) {
                 table.setTableDataWithCloumnName(metaDataList);
                 table.setType("TRANSFER");
@@ -123,7 +138,7 @@ public class BigchainDBServiceImp implements IService {
 
     @Override
     public ParserResult runBDQL(String BDQL) {
-        ParserResult parserResult = BDQLUtil.work(BDQL);
+        ParserResult parserResult = bdqlUtil.work(BDQL);
         if (parserResult.getMessage().equals("select")) {
             parserResult.setData(buildjqGridData((Table) parserResult.getData()));
         }
@@ -185,5 +200,47 @@ public class BigchainDBServiceImp implements IService {
         map.put("data", data);
         map.put("cloumAttr", cloumAttr);
         return map;
+    }
+
+    /**
+     * 以毫秒为单位
+     * @param i asset个数
+     * @param j 每个asset的metadata个数
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    @Override
+    public void Experiment(int i, int j) throws IOException, InterruptedException {
+//        Long startTime=System.currentTimeMillis();//开始时间
+//        ParserResult result = new ParserResult();
+//        List<Long> insertTime=new ArrayList<>();
+//        List<Long> updateTime=new ArrayList<>();
+//        bigchainDBRunner.StartConn();
+//        for (int m = 0; m < j; m++) {
+//            Long insertStartTime =System.currentTimeMillis();
+//            result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('" + (m + 1) + "','" + (m + 2) + "','Champs-Elysees','" + (m+ 3) + "','i7','" + (m + 4) + "','" + (m + 5) + "')");
+//            insertTime.add(System.currentTimeMillis()-insertStartTime);
+//            String id = (String) result.getData();
+//            logger.info("资产ID：" + id);
+//
+//            logger.info(bigchainDBUtil.checkTransactionExit(id) + "");
+//            ParserResult result1 = new ParserResult();
+//            for (int n = 0; n < i; n++) {
+//                Long updateStartTime =System.currentTimeMillis();
+//                result1 = bdqlUtil.work("UPDATE Person SET FirstName = '" + n + "' , SecondName='" + m + "',age= '" + (m + n) + "',time='" + (m + n + 10) + "' WHERE ID='" + id + "'");
+//                updateTime.add(System.currentTimeMillis()-updateStartTime);
+//                logger.info("交易ID：" + result1.getData());
+//                Thread.sleep(500);
+//
+//            }
+//        }
+//        Long endTime=System.currentTimeMillis();
+//        logger.info("本次insert语句个数");
+//        Outputs outputs = OutputsApi.getOutputs(keyPairHolder.pubKeyToString(keyPairHolder.getPublic()));
+//        logger.info("交易总数1：" + outputs.getOutput().size());
+//        for (Output output : outputs.getOutput()) {
+//            logger.info("交易ID：" + output.getTransactionId() + ",密钥：" + output.getPublicKeys());
+//        }
+
     }
 }

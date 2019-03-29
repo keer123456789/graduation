@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Map;
 
 @RestController
@@ -65,4 +66,7 @@ public class Controller {
         String BDQL=map.get("bdql").toString();
         return bigchainDBServiceImp.runBDQL(BDQL);
     }
+
+
+
 }
