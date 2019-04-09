@@ -26,12 +26,8 @@ public class BigchainDBRunner {
     /**
      * 连接BigchainDB
      */
-    public  void StartConn() {
-
-        BigchainDbConfigBuilder
-                .baseUrl(url)
-                .setup();
-        logger.info("与节点：" + url + ",连接成功");
+    public  boolean StartConn() {
+        return StartConn(url);
     }
 
     public  boolean StartConn(String urls) {

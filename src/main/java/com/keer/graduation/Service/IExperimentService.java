@@ -10,5 +10,9 @@ public interface IExperimentService {
 
     ParserResult updateExperiment(int metadataTotal) throws InterruptedException, IOException;
 
+    ParserResult updateByDriverExperiment(int metadataTotal) throws InterruptedException, IOException;
+
+    ParserResult insertByDriverExperiment(int asstTotal) throws Exception;
+
     ParserResult selectExperiment();
 }

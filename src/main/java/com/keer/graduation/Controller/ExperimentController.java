@@ -5,12 +5,10 @@ import com.keer.graduation.Service.IExperimentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Map;
 
 
 @RestController
@@ -25,8 +23,20 @@ public class ExperimentController {
         return experimentService.insertExperiment(asset);
     }
 
+    @RequestMapping(value = "/insertByDriverExperiment/{asset}",method = RequestMethod.GET)
+    public ParserResult insertByDriverExperiment(@PathVariable int asset) throws Exception {
+        return experimentService.insertByDriverExperiment(asset);
+    }
+
+
     @RequestMapping(value = "/updateExperiment/{metadata}",method = RequestMethod.GET)
     public ParserResult updateExperiment(@PathVariable int metadata) throws IOException, InterruptedException {
         return experimentService.updateExperiment(metadata);
     }
+
+    @RequestMapping(value = "/updateByDriverExperiment/{metadata}",method = RequestMethod.GET)
+    public ParserResult updateByDriverExperiment(@PathVariable int metadata) throws IOException, InterruptedException {
+        return experimentService.updateByDriverExperiment(metadata);
+    }
+
 }

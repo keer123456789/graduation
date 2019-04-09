@@ -449,11 +449,11 @@ public class BDQLParser {
 
         //TODO 插入完成后检查工作没有做
 
-        if (id == null) {
-            //TODO id为NULL
-        } else {
-            //TODO id不为null的时候，检查
-        }
+//        if (id == null) {
+//            //TODO id为NULL
+//        } else {
+//            //TODO id不为null的时候，检查
+//        }
         result.setStatus(ParserResult.SUCCESS);
         result.setMessage("更新数据成功！！！");
         result.setData(id);
