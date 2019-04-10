@@ -1,13 +1,17 @@
 package com.keer.graduation.Service.Implement;
 
 import com.bigchaindb.api.OutputsApi;
+import com.bigchaindb.model.Asset;
+import com.bigchaindb.model.Assets;
 import com.bigchaindb.model.Outputs;
 import com.keer.graduation.BDQLParser.BDQLUtil;
 import com.keer.graduation.Bigchaindb.BigchainDBRunner;
 import com.keer.graduation.Bigchaindb.BigchainDBUtil;
 import com.keer.graduation.Bigchaindb.KeyPairHolder;
 import com.keer.graduation.Domain.BigchainDBData;
+import com.keer.graduation.Domain.MetaData;
 import com.keer.graduation.Domain.ParserResult;
+import com.keer.graduation.Domain.Table;
 import com.keer.graduation.Service.IExperimentService;
 import jxl.Workbook;
 import jxl.write.Label;
@@ -29,6 +33,10 @@ import java.util.Map;
 @Service
 public class ExperimentServiceImp implements IExperimentService {
     private static Logger logger = LoggerFactory.getLogger(BigchainDBServiceImp.class);
+
+    private final static String Asset="asset";
+    private final static String Metadata="metadata";
+
 
     @Autowired
     KeyPairHolder keyPairHolder;
@@ -277,13 +285,483 @@ public class ExperimentServiceImp implements IExperimentService {
         return result;
     }
 
+    /**
+     *
+     * @param total 库中的个数
+     * @return
+     */
     @Override
-    public ParserResult selectExperiment() {
-        return null;
+    public ParserResult selectAssetExperiment(int total) throws InterruptedException {
+        ParserResult result = new ParserResult();
+        Map map=new HashMap();
+        double random=Math.random();
+        int sum= (int) (random*total);
+        bigchainDBRunner.StartConn();
 
+
+        /**
+         * BDQL查询全部表中数据
+         */
+        long startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer");
+        long endTime = System.currentTimeMillis();//结束时间
+        map.put("QL * 查询表中全部信息",(endTime-startTime));
+        logger.info("QL * 查询表中全部信息的时间："+(endTime-startTime));
+        Table table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer where id="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询id="+sum,(endTime-startTime));
+        logger.info("QL 查询id="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer where id<"+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询id<"+sum,(endTime-startTime));
+        logger.info("QL 查询id<"+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer where id<="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询id<="+sum,(endTime-startTime));
+        logger.info("QL 查询id<="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer where id>"+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询id>"+sum,(endTime-startTime));
+        logger.info("QL 查询id>"+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Computer where id>="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询id>="+sum,(endTime-startTime));
+        logger.info("QL 查询id>="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        List list=new ArrayList();
+        list.add("id");
+        list.add("ip");
+        list.add("mac");
+        list.add("size");
+        list.add("cpu");
+        list.add("ROM");
+        list.add("RAM");
+        endTime = System.currentTimeMillis();//结束时间
+        long listtime=endTime-startTime;
+
+
+        /**
+         * Driver查询全部的数据
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        Assets assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table1=new Table();
+        table1.setType("CREATE");
+        table1.setTableName("Computer");
+        table1.setColumnName(list);
+        table1.setTableData(assets);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询全部数据",(endTime-startTime+listtime));
+        logger.info("Driver 查询全部数据的时间："+(endTime-startTime+listtime));
+        logger.info(table1.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table2=new Table();
+        table2.setTableName("Computer");
+        table2.setType("CREATE");
+        table2.setColumnName(list);
+
+        Assets newAssets=new Assets();
+        for(com.bigchaindb.model.Asset asset:assets.getAssets()){
+            Map map1= (Map) asset.getData();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("id").toString());
+            if(a==sum){
+                newAssets.addAsset(asset);
+            }
+        }
+        table2.setTableData(newAssets);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询id="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询id="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table2.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “<=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table3=new Table();
+        table3.setTableName("Computer");
+        table3.setType("CREATE");
+        table3.setColumnName(list);
+
+        Assets newAssets1=new Assets();
+        for(com.bigchaindb.model.Asset asset:assets.getAssets()){
+            Map map1= (Map) asset.getData();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("id").toString());
+            if(a<=sum){
+                newAssets1.addAsset(asset);
+            }
+        }
+        table3.setTableData(newAssets1);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询id<="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询id<="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table3.getData().toString());
+
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “>=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table4=new Table();
+        table4.setTableName("Computer");
+        table4.setType("CREATE");
+        table4.setColumnName(list);
+
+        Assets newAssets2=new Assets();
+        for(com.bigchaindb.model.Asset asset:assets.getAssets()){
+            Map map1= (Map) asset.getData();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("id").toString());
+            if(a>=sum){
+                newAssets2.addAsset(asset);
+            }
+        }
+        table4.setTableData(newAssets1);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询id>="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询id>="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table4.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “<”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table5=new Table();
+        table5.setTableName("Computer");
+        table5.setType("CREATE");
+        table5.setColumnName(list);
+
+        Assets newAssets3=new Assets();
+        for(com.bigchaindb.model.Asset asset:assets.getAssets()){
+            Map map1= (Map) asset.getData();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("id").toString());
+            if(a<sum){
+                newAssets3.addAsset(asset);
+            }
+        }
+        table5.setTableData(newAssets1);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询id<"+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询id<"+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table5.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “>”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        assets=bigchainDBUtil.getAssetByKey("Computer");
+        Table table6=new Table();
+        table6.setType("CREATE");
+        table6.setTableName("Computer");
+        table6.setColumnName(list);
+
+        Assets newAssets4=new Assets();
+        for(com.bigchaindb.model.Asset asset:assets.getAssets()){
+            Map map1= (Map) asset.getData();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("id").toString());
+            if(a>sum){
+                newAssets4.addAsset(asset);
+            }
+        }
+        table6.setTableData(newAssets1);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询id>"+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询id>"+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table6.getData().toString());
+
+        result.setData(map);
+        return result;
     }
 
-    private void buildExecl(String title,List list){
+    @Override
+    public ParserResult selectMetadataExperiment(int total) throws InterruptedException {
+        ParserResult result = new ParserResult();
+        Map map=new HashMap();
+        double random=Math.random();
+        int sum= (int) (random*total);
+        bigchainDBRunner.StartConn();
+
+
+        /**
+         * BDQL查询全部表中数据
+         */
+        long startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person");
+        long endTime = System.currentTimeMillis();//结束时间
+        map.put("QL * 查询表中全部信息",(endTime-startTime));
+        logger.info("QL * 查询表中全部信息的时间："+(endTime-startTime));
+        Table table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person where FirstName="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询FirstName="+sum,(endTime-startTime));
+        logger.info("QL 查询FirstName="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person where FirstName<"+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询FirstName<"+sum,(endTime-startTime));
+        logger.info("QL 查询FirstName<"+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person where FirstName<="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询FirstName<="+sum,(endTime-startTime));
+        logger.info("QL 查询FirstName<="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person where FirstName>"+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询FirstName>"+sum,(endTime-startTime));
+        logger.info("QL 查询FirstName>"+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        result=bdqlUtil.work("select * from Person where FirstName>="+sum);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("QL 查询FirstName>="+sum,(endTime-startTime));
+        logger.info("QL 查询FirstName>="+sum+"的时间："+(endTime-startTime));
+        table= (Table) result.getData();
+        logger.info(table.getData().toString());
+
+        Thread.sleep(1000);
+
+        startTime = System.currentTimeMillis();//开始时间
+        List list=new ArrayList();
+        list.add("FirstName");
+        list.add("SecondName");
+        list.add("age");
+        list.add("time");
+
+        endTime = System.currentTimeMillis();//结束时间
+        long listtime=endTime-startTime;
+
+
+        /**
+         * Driver查询全部的数据
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        List<MetaData> metaDataList=bigchainDBUtil.getMetaDatasByKey("Person");
+        Table table1=new Table();
+        table1.setType("TRANSFER");
+        table1.setTableName("Person");
+        table1.setColumnName(list);
+        table1.setTableData(metaDataList);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询全部数据",(endTime-startTime+listtime));
+        logger.info("Driver 查询全部数据的时间："+(endTime-startTime+listtime));
+        logger.info(table1.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        metaDataList=bigchainDBUtil.getMetaDatasByKey("People");
+        Table table2=new Table();
+        table2.setTableName("People");
+        table2.setType("TRANSFER");
+        table2.setColumnName(list);
+
+        List<MetaData> newMetaData=new ArrayList<>();
+        for(MetaData metaData:metaDataList){
+            Map map1= metaData.getMetadata();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("FirstName").toString());
+            if(a==sum){
+                newMetaData.add(metaData);
+            }
+        }
+        table2.setTableData(newMetaData);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询FirstName="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询FirstName="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table2.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “<=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        metaDataList=bigchainDBUtil.getMetaDatasByKey("People");
+        Table table3=new Table();
+        table3.setTableName("People");
+        table3.setType("TRANSFER");
+        table3.setColumnName(list);
+
+        List<MetaData> newMetaData1=new ArrayList<>();
+        for(MetaData metaData:metaDataList){
+            Map map1= metaData.getMetadata();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("FirstName").toString());
+            if(a<=sum){
+                newMetaData1.add(metaData);
+            }
+        }
+        table3.setTableData(newMetaData1);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询FirstName<="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询FirstName<="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table3.getData().toString());
+
+        Thread.sleep(1000);
+
+
+        /**
+         * Driver 条件查询 “>=”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        metaDataList=bigchainDBUtil.getMetaDatasByKey("People");
+        Table table4=new Table();
+        table4.setTableName("People");
+        table4.setType("TRANSFER");
+        table4.setColumnName(list);
+
+        List<MetaData> newMetaData2=new ArrayList<>();
+        for(MetaData metaData:metaDataList){
+            Map map1= metaData.getMetadata();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("FirstName").toString());
+            if(a>=sum){
+                newMetaData2.add(metaData);
+            }
+        }
+        table4.setTableData(newMetaData2);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询FirstName>="+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询FirstName>="+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table4.getData().toString());
+
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “<”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        metaDataList=bigchainDBUtil.getMetaDatasByKey("People");
+        Table table5=new Table();
+        table5.setTableName("People");
+        table5.setType("TRANSFER");
+        table5.setColumnName(list);
+
+        List<MetaData> newMetaData3=new ArrayList<>();
+        for(MetaData metaData:metaDataList){
+            Map map1= metaData.getMetadata();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("FirstName").toString());
+            if(a<sum){
+                newMetaData3.add(metaData);
+            }
+        }
+        table5.setTableData(newMetaData3);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询FirstName<"+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询FirstName<"+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table5.getData().toString());
+
+        Thread.sleep(1000);
+        /**
+         * Driver 条件查询 “>”
+         */
+        startTime = System.currentTimeMillis();//开始时间
+        metaDataList=bigchainDBUtil.getMetaDatasByKey("People");
+        Table table6=new Table();
+        table6.setTableName("People");
+        table6.setType("TRANSFER");
+        table6.setColumnName(list);
+
+        List<MetaData> newMetaData4=new ArrayList<>();
+        for(MetaData metaData:metaDataList){
+            Map map1= metaData.getMetadata();
+            map1= (Map) map1.get("tableData");
+            int a=Integer.parseInt(map1.get("FirstName").toString());
+            if(a>sum){
+                newMetaData4.add(metaData);
+            }
+        }
+        table6.setTableData(newMetaData4);
+        endTime = System.currentTimeMillis();//结束时间
+        map.put("Driver 查询FirstName>"+sum,(endTime-startTime+listtime));
+        logger.info("Driver 查询FirstName>"+sum+"的时间："+(endTime-startTime+listtime));
+        logger.info(table6.getData().toString());
+
+        Thread.sleep(1000);
+        result.setData(map);
+        return result;
+    }
+
+    private void buildExecl(String title, List list){
         File file=new File("./data.xls");
         if(file.exists()){
             file.delete();

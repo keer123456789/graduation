@@ -39,4 +39,15 @@ public class ExperimentController {
         return experimentService.updateByDriverExperiment(metadata);
     }
 
+    @RequestMapping(value = "/selectAssetExperiment/{total}",method = RequestMethod.GET)
+    public ParserResult selectAssetExperiment( @PathVariable int total) throws IOException, InterruptedException {
+        return experimentService.selectAssetExperiment(total);
+    }
+
+    @RequestMapping(value = "/selectMetadataExperiment/{total}",method = RequestMethod.GET)
+    public ParserResult selectMetadataExperiment( @PathVariable int total) throws IOException, InterruptedException {
+        return experimentService.selectAssetExperiment(total);
+    }
+
+
 }
