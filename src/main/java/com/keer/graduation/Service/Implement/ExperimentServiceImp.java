@@ -466,7 +466,7 @@ public class ExperimentServiceImp implements IExperimentService {
                 newAssets2.addAsset(asset);
             }
         }
-        table4.setTableData(newAssets1);
+        table4.setTableData(newAssets2);
         endTime = System.currentTimeMillis();//结束时间
         map.put("Driver 查询id>="+sum+"的时间",(endTime-startTime+listtime));
         map.put("Driver 查询id>="+sum+"的数据",table4.getData());
@@ -493,7 +493,7 @@ public class ExperimentServiceImp implements IExperimentService {
                 newAssets3.addAsset(asset);
             }
         }
-        table5.setTableData(newAssets1);
+        table5.setTableData(newAssets3);
         endTime = System.currentTimeMillis();//结束时间
         map.put("Driver 查询id<"+sum+"的时间",(endTime-startTime+listtime));
         map.put("Driver 查询id<"+sum+"的数据",table5.getData());
@@ -520,7 +520,7 @@ public class ExperimentServiceImp implements IExperimentService {
                 newAssets4.addAsset(asset);
             }
         }
-        table6.setTableData(newAssets1);
+        table6.setTableData(newAssets4);
         endTime = System.currentTimeMillis();//结束时间
         map.put("Driver 查询id>"+sum+"的时间",(endTime-startTime+listtime));
         map.put("Driver 查询id>"+sum+"的数据",table6.getData());
