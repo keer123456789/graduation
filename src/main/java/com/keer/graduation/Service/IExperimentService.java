@@ -14,7 +14,7 @@ public interface IExperimentService {
 
     ParserResult insertByDriverExperiment(int asstTotal) throws Exception;
 
-    ParserResult selectAssetExperiment(int total) throws InterruptedException;
+    ParserResult selectAssetExperiment(int total,int count) throws InterruptedException;
 
-    ParserResult selectMetadataExperiment(int total) throws InterruptedException;
+    ParserResult selectMetadataExperiment(int total,int count) throws InterruptedException;
 }

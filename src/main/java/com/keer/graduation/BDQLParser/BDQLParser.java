@@ -41,6 +41,9 @@ public class BDQLParser {
 
     @Autowired
     BDQLUtil bdqlUtil;
+
+    long startTime=0;
+    long endTime=0;
     /**
      * 根据不同的类型的BDQL进行不同的解析,根据分号区分语句个数
      *
@@ -48,6 +51,7 @@ public class BDQLParser {
      * @param sort
      */
     public ParserResult BDQLParser(String BDQL, int sort) {
+        startTime=System.currentTimeMillis();
         ParserResult result = new ParserResult();
         logger.info("开始解析BDQL：" + BDQL + "，##########################");
         switch (sort) {
@@ -111,6 +115,9 @@ public class BDQLParser {
      * @param select Select
      */
     private   ParserResult selectParser(Select select) {
+        long timeStart=0;
+        long timeEnd=0;
+
         ParserResult result = new ParserResult();
         Table table = new Table();
 
@@ -121,6 +128,8 @@ public class BDQLParser {
         //获得表名
         TablesNamesFinder tablesNamesFinder = new TablesNamesFinder();
         List<String> tableNames = tablesNamesFinder.getTableList(select);
+
+        endTime=System.currentTimeMillis();
 
         if (tableNames.size() != 1) {
             logger.warn("多表查询功能还未推出！！！！");
@@ -152,6 +161,7 @@ public class BDQLParser {
 
             } else {
                 if (columnNames.size() == 1 && columnNames.get(0).equals("*")) {
+                    timeStart=System.currentTimeMillis();
                     if (bigchainDBUtil.getAssetByKey(table.getTableName()).size() == 0) {
                         List<MetaData> metaDatas = bigchainDBUtil.getMetaDatasByKey(table.getTableName());
                         table.setType("TRANSFER");
@@ -163,6 +173,7 @@ public class BDQLParser {
                         Assets newAssets=selectAssets(assets,expression);
                         table.setTableDataWithColumnName(newAssets);
                     }
+                    timeEnd=System.currentTimeMillis();
                 } else {
                     if (bigchainDBUtil.getAssetByKey(table.getTableName()).size() == 0) {
                         List<MetaData> metaDatas = bigchainDBUtil.getMetaDatasByKey(table.getTableName());
@@ -184,7 +195,8 @@ public class BDQLParser {
 
             result.setStatus(ParserResult.SUCCESS);
             result.setData(table);
-            result.setMessage("select");
+//            result.setMessage("select");
+            result.setMessage(""+((endTime-startTime)+(timeEnd-timeStart)));
             return result;
         }
 
