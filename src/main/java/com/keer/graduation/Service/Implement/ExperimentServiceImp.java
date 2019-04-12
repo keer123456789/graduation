@@ -131,6 +131,7 @@ public class ExperimentServiceImp implements IExperimentService {
             BigchainDBData data = new BigchainDBData("Computer", map);
             String id = bigchainDBUtil.createAsset(data);
             insertTime.add(System.currentTimeMillis() - insertStartTime);
+            logger.info("第"+i+"次插入,交易ID："+id);
             Thread.sleep(500);
         }
         long endTime = System.currentTimeMillis();
