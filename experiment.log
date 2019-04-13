@@ -1,0 +1,2 @@
+2019-04-13 09:25:56.877  INFO 6828 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id=44553,转换后：SELECT * FROM COMPUTER WHERE ID=44553
+2019-04-13 09:25:56.878  INFO 6828 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id=44553，##########################

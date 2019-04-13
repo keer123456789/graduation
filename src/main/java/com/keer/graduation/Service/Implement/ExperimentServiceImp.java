@@ -329,7 +329,7 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询=", result.getMessage());
             logger.info("QL 查询id=" + sum + "的时间：" + result.getMessage());
             table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
@@ -337,7 +337,7 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询<", result.getMessage());
             logger.info("QL 查询id<" + sum + "的时间：" + result.getMessage());
             table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
@@ -345,7 +345,7 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询<=", result.getMessage());
             logger.info("QL 查询id<=" + sum + "的时间：" + result.getMessage());
             table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
@@ -353,7 +353,7 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询>", result.getMessage());
             logger.info("QL 查询id>" + sum + "的时间：" + result.getMessage());
             table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
@@ -361,7 +361,7 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询>=", result.getMessage());
             logger.info("QL 查询id>=" + sum + "的时间：" + result.getMessage());
             table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
@@ -391,7 +391,7 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询全部数据", (endTime - startTime + listtime));
             logger.info("Driver 查询全部数据的时间：" + (endTime - startTime + listtime));
-            logger.info(table1.getData().toString());
+
 
             Thread.sleep(1000);
             /**
@@ -417,7 +417,7 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询=", (endTime - startTime + listtime));
             logger.info("Driver 查询id=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table2.getData().toString());
+
 
             Thread.sleep(1000);
             /**
@@ -443,7 +443,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<=", (endTime - startTime + listtime));
             logger.info("Driver 查询id<=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table3.getData().toString());
 
 
             Thread.sleep(1000);
@@ -470,7 +469,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>=", (endTime - startTime + listtime));
             logger.info("Driver 查询id>=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table4.getData().toString());
 
             Thread.sleep(1000);
             /**
@@ -496,7 +494,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<", (endTime - startTime + listtime));
             logger.info("Driver 查询id<" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table5.getData().toString());
 
             Thread.sleep(1000);
             /**
@@ -522,7 +519,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>", (endTime - startTime + listtime));
             logger.info("Driver 查询id>" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table6.getData().toString());
 
             listMaps.add(map);
         }
@@ -551,7 +547,6 @@ public class ExperimentServiceImp implements IExperimentService {
             Table table = (Table) result.getData();
             map.put("QL查询全部数据", (endTime - startTime));
             logger.info("QL * 查询表中全部信息的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -561,7 +556,6 @@ public class ExperimentServiceImp implements IExperimentService {
             table = (Table) result.getData();
             map.put("QL查询=", (endTime - startTime));
             logger.info("QL 查询FirstName=" + sum + "的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -571,7 +565,6 @@ public class ExperimentServiceImp implements IExperimentService {
             table = (Table) result.getData();
             map.put("QL查询<", (endTime - startTime));
             logger.info("QL 查询FirstName<" + sum + "的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -581,7 +574,6 @@ public class ExperimentServiceImp implements IExperimentService {
             table = (Table) result.getData();
             map.put("QL查询<=", (endTime - startTime));
             logger.info("QL 查询FirstName<=" + sum + "的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -591,7 +583,6 @@ public class ExperimentServiceImp implements IExperimentService {
             table = (Table) result.getData();
             map.put("QL查询>", (endTime - startTime));
             logger.info("QL 查询FirstName>" + sum + "的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -601,7 +592,6 @@ public class ExperimentServiceImp implements IExperimentService {
             table = (Table) result.getData();
             map.put("QL查询>=", (endTime - startTime));
             logger.info("QL 查询FirstName>=" + sum + "的时间：" + (endTime - startTime));
-            logger.info(table.getData().toString());
 
             Thread.sleep(1000);
 
@@ -629,7 +619,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询全部数据", (endTime - startTime + listtime));
             logger.info("Driver 查询全部数据的时间：" + (endTime - startTime + listtime));
-            logger.info(table1.getData().toString());
 
             Thread.sleep(1000);
             /**
@@ -655,7 +644,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询=", (endTime - startTime + listtime));
             logger.info("Driver 查询FirstName=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table2.getData().toString());
 
             Thread.sleep(1000);
             /**
@@ -681,7 +669,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<=", (endTime - startTime + listtime));
             logger.info("Driver 查询FirstName<=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table3.getData().toString());
 
             Thread.sleep(1000);
 
@@ -709,7 +696,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>=", (endTime - startTime + listtime));
             logger.info("Driver 查询FirstName>=" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table4.getData().toString());
 
 
             Thread.sleep(1000);
@@ -736,7 +722,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<", (endTime - startTime + listtime));
             logger.info("Driver 查询FirstName<" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table5.getData().toString());
 
             Thread.sleep(1000);
             /**
@@ -762,7 +747,6 @@ public class ExperimentServiceImp implements IExperimentService {
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>", (endTime - startTime + listtime));
             logger.info("Driver 查询FirstName>" + sum + "的时间：" + (endTime - startTime + listtime));
-            logger.info(table6.getData().toString());
 
             Thread.sleep(1000);
             mapList.add(map);
