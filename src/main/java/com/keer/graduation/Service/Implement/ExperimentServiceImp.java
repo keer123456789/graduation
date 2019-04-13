@@ -540,7 +540,7 @@ public class ExperimentServiceImp implements IExperimentService {
             listMaps.add(map);
         }
         result.setData(listMaps);
-        buildSelectExecl(listMaps);
+        buildSelectByDriverExecl(listMaps);
         return result;
     }
 
@@ -811,31 +811,19 @@ public class ExperimentServiceImp implements IExperimentService {
             Label label = new Label(1, 0, "随机数");
             Label label2 = new Label(0, 0, "id");
             Label label3 = new Label(2, 0, "QL查询全部数据");
-            Label label4 = new Label(3, 0, "Driver查询全部数据");
-            Label label5 = new Label(4, 0, "QL查询=");
-            Label label6 = new Label(5, 0, "Driver查询=");
-            Label label7 = new Label(6, 0, "QL查询>");
-            Label label8 = new Label(7, 0, "Driver查询>");
-            Label label9 = new Label(8, 0, "QL查询>=");
-            Label label10 = new Label(9, 0, "Driver查询>=");
-            Label label11 = new Label(10, 0, "QL查询<");
-            Label label12 = new Label(11, 0, "Driver查询<");
-            Label label13 = new Label(12, 0, "QL查询<=");
-            Label label14 = new Label(13, 0, "Driver查询<=");
+            Label label5 = new Label(3, 0, "QL查询=");
+            Label label7 = new Label(4, 0, "QL查询>");
+            Label label9 = new Label(5, 0, "QL查询>=");
+            Label label11 = new Label(6, 0, "QL查询<");
+            Label label13 = new Label(7, 0, "QL查询<=");
             sheet.addCell(label);
             sheet.addCell(label2);
             sheet.addCell(label3);
-            sheet.addCell(label4);
             sheet.addCell(label5);
-            sheet.addCell(label6);
             sheet.addCell(label7);
-            sheet.addCell(label8);
             sheet.addCell(label9);
-            sheet.addCell(label10);
             sheet.addCell(label11);
-            sheet.addCell(label12);
             sheet.addCell(label13);
-            sheet.addCell(label14);
 
             for (int j = 0; j < list.size(); j++) {
                 Map map = list.get(j);
@@ -845,27 +833,69 @@ public class ExperimentServiceImp implements IExperimentService {
                 sheet.addCell(data);
                 data = new Label(2, j + 1, map.get("QL查询全部数据").toString());
                 sheet.addCell(data);
-                data = new Label(3, j + 1, map.get("Driver查询全部数据").toString());
+                data = new Label(3, j + 1, map.get("QL查询=").toString());
                 sheet.addCell(data);
-                data = new Label(4, j + 1, map.get("QL查询=").toString());
+                data = new Label(4, j + 1, map.get("QL查询>").toString());
                 sheet.addCell(data);
-                data = new Label(5, j + 1, map.get("Driver查询=").toString());
+                data = new Label(5, j + 1, map.get("QL查询>=").toString());
                 sheet.addCell(data);
-                data = new Label(6, j + 1, map.get("QL查询>").toString());
+                data = new Label(6, j + 1, map.get("QL查询<").toString());
                 sheet.addCell(data);
-                data = new Label(7, j + 1, map.get("Driver查询>").toString());
+                data = new Label(7, j + 1, map.get("QL查询<=").toString());
                 sheet.addCell(data);
-                data = new Label(8, j + 1, map.get("QL查询>=").toString());
+            }
+            writableWorkbook.write();    //写入数据
+            writableWorkbook.close();  //关闭连接
+            logger.info("成功写入文件，请前往查看文件！");
+        } catch (Exception e) {
+            logger.info("文件写入失败，报异常...");
+        }
+    }
+
+    private void buildSelectByDriverExecl(List<Map> list) {
+        File file = new File("./selectByDriver.xls");
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            file.createNewFile();
+            WritableWorkbook writableWorkbook = Workbook.createWorkbook(file);
+            WritableSheet sheet = writableWorkbook.createSheet("sheet1", 0);
+            Label label = new Label(1, 0, "随机数");
+            Label label2 = new Label(0, 0, "id");
+            Label label4 = new Label(2, 0, "Driver查询全部数据");
+            Label label6 = new Label(3, 0, "Driver查询=");
+            Label label8 = new Label(4, 0, "Driver查询>");
+            Label label10 = new Label(5, 0, "Driver查询>=");
+            Label label12 = new Label(6, 0, "Driver查询<");
+            Label label14 = new Label(7, 0, "Driver查询<=");
+            sheet.addCell(label);
+            sheet.addCell(label2);
+            sheet.addCell(label4);
+            sheet.addCell(label6);
+            sheet.addCell(label8);
+            sheet.addCell(label10);
+            sheet.addCell(label12);
+            sheet.addCell(label14);
+
+            for (int j = 0; j < list.size(); j++) {
+                Map map = list.get(j);
+                Label data = new Label(0, j + 1, "" + (j + 1));
                 sheet.addCell(data);
-                data = new Label(9, j + 1, map.get("Driver查询>=").toString());
+                data = new Label(1, j + 1, map.get("随机数").toString());
                 sheet.addCell(data);
-                data = new Label(10, j + 1, map.get("QL查询<").toString());
+
+                data = new Label(2, j + 1, map.get("Driver查询全部数据").toString());
                 sheet.addCell(data);
-                data = new Label(11, j + 1, map.get("Driver查询<").toString());
+                data = new Label(3, j + 1, map.get("Driver查询=").toString());
                 sheet.addCell(data);
-                data = new Label(12, j + 1, map.get("QL查询<=").toString());
+                data = new Label(4, j + 1, map.get("Driver查询>").toString());
                 sheet.addCell(data);
-                data = new Label(13, j + 1, map.get("Driver查询<=").toString());
+                data = new Label(5, j + 1, map.get("Driver查询>=").toString());
+                sheet.addCell(data);
+                data = new Label(6, j + 1, map.get("Driver查询<").toString());
+                sheet.addCell(data);
+                data = new Label(7, j + 1, map.get("Driver查询<=").toString());
                 sheet.addCell(data);
             }
             writableWorkbook.write();    //写入数据
