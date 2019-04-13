@@ -358,9 +358,29 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("QL查询>=", result.getMessage());
             logger.info("QL 查询id>=" + sum + "的时间：" + result.getMessage());
 
+            listMaps.add(map);
+        }
+        result.setData(listMaps);
+        buildSelectExecl(listMaps);
+        return result;
+    }
 
+    /**
+     *
+     * @param total 库中数据量
+     * @param count 查询次数
+     * @param a sql查询的随机数
+     * @return
+     * @throws InterruptedException
+     */
+    public ParserResult selectAssetByDriverExperiment(int total,int count,int a) throws InterruptedException {
+        ParserResult result = new ParserResult();
+        bigchainDBRunner.StartConn();
+        List<Map> listMaps = new ArrayList<>();
+        for (int i = 1; i <= count; i++) {
+            Map map = new HashMap();
+            map.put("随机数", a);
 
-            Thread.sleep(1000);
 
             long startTime = System.currentTimeMillis();//开始时间
             List list = new ArrayList();
@@ -405,15 +425,15 @@ public class ExperimentServiceImp implements IExperimentService {
             for (com.bigchaindb.model.Asset asset : assets.getAssets()) {
                 Map map1 = (Map) asset.getData();
                 map1 = (Map) map1.get("tableData");
-                int a = Integer.parseInt(map1.get("id").toString());
-                if (a == sum) {
+                int b = Integer.parseInt(map1.get("id").toString());
+                if (b == a) {
                     newAssets.addAsset(asset);
                 }
             }
             table2.setTableData(newAssets);
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询=", (endTime - startTime + listtime));
-            logger.info("Driver 查询id=" + sum + "的时间：" + (endTime - startTime + listtime));
+            logger.info("Driver 查询id=" + a + "的时间：" + (endTime - startTime + listtime));
 
 
             Thread.sleep(1000);
@@ -431,15 +451,15 @@ public class ExperimentServiceImp implements IExperimentService {
             for (com.bigchaindb.model.Asset asset : assets.getAssets()) {
                 Map map1 = (Map) asset.getData();
                 map1 = (Map) map1.get("tableData");
-                int a = Integer.parseInt(map1.get("id").toString());
-                if (a <= sum) {
+                int b = Integer.parseInt(map1.get("id").toString());
+                if (b <= a) {
                     newAssets1.addAsset(asset);
                 }
             }
             table3.setTableData(newAssets1);
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<=", (endTime - startTime + listtime));
-            logger.info("Driver 查询id<=" + sum + "的时间：" + (endTime - startTime + listtime));
+            logger.info("Driver 查询id<=" + a + "的时间：" + (endTime - startTime + listtime));
 
 
             Thread.sleep(1000);
@@ -457,15 +477,15 @@ public class ExperimentServiceImp implements IExperimentService {
             for (com.bigchaindb.model.Asset asset : assets.getAssets()) {
                 Map map1 = (Map) asset.getData();
                 map1 = (Map) map1.get("tableData");
-                int a = Integer.parseInt(map1.get("id").toString());
-                if (a >= sum) {
+                int b = Integer.parseInt(map1.get("id").toString());
+                if (b >= a) {
                     newAssets2.addAsset(asset);
                 }
             }
             table4.setTableData(newAssets2);
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>=", (endTime - startTime + listtime));
-            logger.info("Driver 查询id>=" + sum + "的时间：" + (endTime - startTime + listtime));
+            logger.info("Driver 查询id>=" + a + "的时间：" + (endTime - startTime + listtime));
 
             Thread.sleep(1000);
             /**
@@ -482,15 +502,15 @@ public class ExperimentServiceImp implements IExperimentService {
             for (com.bigchaindb.model.Asset asset : assets.getAssets()) {
                 Map map1 = (Map) asset.getData();
                 map1 = (Map) map1.get("tableData");
-                int a = Integer.parseInt(map1.get("id").toString());
-                if (a < sum) {
+                int b = Integer.parseInt(map1.get("id").toString());
+                if (b < a) {
                     newAssets3.addAsset(asset);
                 }
             }
             table5.setTableData(newAssets3);
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询<", (endTime - startTime + listtime));
-            logger.info("Driver 查询id<" + sum + "的时间：" + (endTime - startTime + listtime));
+            logger.info("Driver 查询id<" + a + "的时间：" + (endTime - startTime + listtime));
 
             Thread.sleep(1000);
             /**
@@ -507,15 +527,15 @@ public class ExperimentServiceImp implements IExperimentService {
             for (com.bigchaindb.model.Asset asset : assets.getAssets()) {
                 Map map1 = (Map) asset.getData();
                 map1 = (Map) map1.get("tableData");
-                int a = Integer.parseInt(map1.get("id").toString());
-                if (a > sum) {
+                int b = Integer.parseInt(map1.get("id").toString());
+                if (b > a) {
                     newAssets4.addAsset(asset);
                 }
             }
             table6.setTableData(newAssets4);
             endTime = System.currentTimeMillis();//结束时间
             map.put("Driver查询>", (endTime - startTime + listtime));
-            logger.info("Driver 查询id>" + sum + "的时间：" + (endTime - startTime + listtime));
+            logger.info("Driver 查询id>" + a + "的时间：" + (endTime - startTime + listtime));
 
             listMaps.add(map);
         }
