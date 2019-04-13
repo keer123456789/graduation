@@ -1,7 +1,6 @@
 package com.keer.graduation.Service.Implement;
 
 import com.bigchaindb.api.OutputsApi;
-import com.bigchaindb.model.Asset;
 import com.bigchaindb.model.Assets;
 import com.bigchaindb.model.Outputs;
 import com.keer.graduation.BDQLParser.BDQLUtil;
@@ -20,7 +19,6 @@ import jxl.write.WritableWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -320,15 +318,14 @@ public class ExperimentServiceImp implements IExperimentService {
 
             map.put("QL查询全部数据", result.getMessage());
             logger.info("QL * 查询表中全部信息的时间：" + result.getMessage());
-            Table table = (Table) result.getData();
-            logger.info(table.getData().toString());
+
 
             Thread.sleep(1000);
 
             result = bdqlUtil.work("select * from Computer where id=" + sum);
             map.put("QL查询=", result.getMessage());
             logger.info("QL 查询id=" + sum + "的时间：" + result.getMessage());
-            table = (Table) result.getData();
+
 
 
             Thread.sleep(1000);
@@ -336,7 +333,7 @@ public class ExperimentServiceImp implements IExperimentService {
             result = bdqlUtil.work("select * from Computer where id<" + sum);
             map.put("QL查询<", result.getMessage());
             logger.info("QL 查询id<" + sum + "的时间：" + result.getMessage());
-            table = (Table) result.getData();
+
 
 
             Thread.sleep(1000);
@@ -344,7 +341,7 @@ public class ExperimentServiceImp implements IExperimentService {
             result = bdqlUtil.work("select * from Computer where id<=" + sum);
             map.put("QL查询<=", result.getMessage());
             logger.info("QL 查询id<=" + sum + "的时间：" + result.getMessage());
-            table = (Table) result.getData();
+
 
 
             Thread.sleep(1000);
@@ -352,7 +349,7 @@ public class ExperimentServiceImp implements IExperimentService {
             result = bdqlUtil.work("select * from Computer where id>" + sum);
             map.put("QL查询>", result.getMessage());
             logger.info("QL 查询id>" + sum + "的时间：" + result.getMessage());
-            table = (Table) result.getData();
+
 
 
             Thread.sleep(1000);
@@ -360,7 +357,7 @@ public class ExperimentServiceImp implements IExperimentService {
             result = bdqlUtil.work("select * from Computer where id>=" + sum);
             map.put("QL查询>=", result.getMessage());
             logger.info("QL 查询id>=" + sum + "的时间：" + result.getMessage());
-            table = (Table) result.getData();
+
 
 
             Thread.sleep(1000);
@@ -553,7 +550,6 @@ public class ExperimentServiceImp implements IExperimentService {
             startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName=" + sum);
             endTime = System.currentTimeMillis();//结束时间
-            table = (Table) result.getData();
             map.put("QL查询=", (endTime - startTime));
             logger.info("QL 查询FirstName=" + sum + "的时间：" + (endTime - startTime));
 
@@ -562,7 +558,6 @@ public class ExperimentServiceImp implements IExperimentService {
             startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName<" + sum);
             endTime = System.currentTimeMillis();//结束时间
-            table = (Table) result.getData();
             map.put("QL查询<", (endTime - startTime));
             logger.info("QL 查询FirstName<" + sum + "的时间：" + (endTime - startTime));
 
@@ -571,7 +566,6 @@ public class ExperimentServiceImp implements IExperimentService {
             startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName<=" + sum);
             endTime = System.currentTimeMillis();//结束时间
-            table = (Table) result.getData();
             map.put("QL查询<=", (endTime - startTime));
             logger.info("QL 查询FirstName<=" + sum + "的时间：" + (endTime - startTime));
 
@@ -580,7 +574,6 @@ public class ExperimentServiceImp implements IExperimentService {
             startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName>" + sum);
             endTime = System.currentTimeMillis();//结束时间
-            table = (Table) result.getData();
             map.put("QL查询>", (endTime - startTime));
             logger.info("QL 查询FirstName>" + sum + "的时间：" + (endTime - startTime));
 
@@ -589,7 +582,6 @@ public class ExperimentServiceImp implements IExperimentService {
             startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName>=" + sum);
             endTime = System.currentTimeMillis();//结束时间
-            table = (Table) result.getData();
             map.put("QL查询>=", (endTime - startTime));
             logger.info("QL 查询FirstName>=" + sum + "的时间：" + (endTime - startTime));
 
