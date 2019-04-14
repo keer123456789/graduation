@@ -168,12 +168,14 @@ public class BDQLParser {
                         List<MetaData> newMetadatas=selectMetadata(metaDatas,expression);
                         table.setTableDataWithCloumnName(newMetadatas);
                     } else {
+                        timeStart=System.currentTimeMillis();
                         Assets assets = bigchainDBUtil.getAssetByKey(table.getTableName());
                         table.setType("CREATE");
                         Assets newAssets=selectAssets(assets,expression);
                         table.setTableDataWithColumnName(newAssets);
+                        timeEnd=System.currentTimeMillis();
                     }
-                    timeEnd=System.currentTimeMillis();
+
                 } else {
                     if (bigchainDBUtil.getAssetByKey(table.getTableName()).size() == 0) {
                         List<MetaData> metaDatas = bigchainDBUtil.getMetaDatasByKey(table.getTableName());

@@ -547,74 +547,82 @@ public class ExperimentServiceImp implements IExperimentService {
     @Override
     public ParserResult selectMetadataExperiment(int total,int count) throws InterruptedException {
         ParserResult result = new ParserResult();
-        Map map = new HashMap();
+
         double random = Math.random();
         int sum = (int) (random * total);
         bigchainDBRunner.StartConn();
 
         List<Map> mapList=new ArrayList<>();
         for(int i=0;i<count;i++) {
+            Map map = new HashMap();
+            map.put("随机数", sum);
 
             /**
              * BDQL查询全部表中数据
              */
-            long startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person");
-            long endTime = System.currentTimeMillis();//结束时间
-            Table table = (Table) result.getData();
-            map.put("QL查询全部数据", (endTime - startTime));
-            logger.info("QL * 查询表中全部信息的时间：" + (endTime - startTime));
+            map.put("QL查询全部数据", result.getMessage());
+            logger.info("QL * 查询表中全部信息的时间：" +result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName=" + sum);
-            endTime = System.currentTimeMillis();//结束时间
-            map.put("QL查询=", (endTime - startTime));
-            logger.info("QL 查询FirstName=" + sum + "的时间：" + (endTime - startTime));
+            map.put("QL查询=", result.getMessage());
+            logger.info("QL 查询FirstName=" + sum + "的时间：" + result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName<" + sum);
-            endTime = System.currentTimeMillis();//结束时间
-            map.put("QL查询<", (endTime - startTime));
-            logger.info("QL 查询FirstName<" + sum + "的时间：" + (endTime - startTime));
+            map.put("QL查询<", result.getMessage());
+            logger.info("QL 查询FirstName<" + sum + "的时间：" + result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName<=" + sum);
-            endTime = System.currentTimeMillis();//结束时间
-            map.put("QL查询<=", (endTime - startTime));
-            logger.info("QL 查询FirstName<=" + sum + "的时间：" + (endTime - startTime));
+            map.put("QL查询<=",result.getMessage());
+            logger.info("QL 查询FirstName<=" + sum + "的时间：" +result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
+
             result = bdqlUtil.work("select * from Person where FirstName>" + sum);
-            endTime = System.currentTimeMillis();//结束时间
-            map.put("QL查询>", (endTime - startTime));
-            logger.info("QL 查询FirstName>" + sum + "的时间：" + (endTime - startTime));
+            map.put("QL查询>", result.getMessage());
+            logger.info("QL 查询FirstName>" + sum + "的时间：" + result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
             result = bdqlUtil.work("select * from Person where FirstName>=" + sum);
-            endTime = System.currentTimeMillis();//结束时间
-            map.put("QL查询>=", (endTime - startTime));
-            logger.info("QL 查询FirstName>=" + sum + "的时间：" + (endTime - startTime));
+            map.put("QL查询>=", result.getMessage());
+            logger.info("QL 查询FirstName>=" + sum + "的时间：" + result.getMessage());
 
             Thread.sleep(1000);
 
-            startTime = System.currentTimeMillis();//开始时间
+
+            mapList.add(map);
+        }
+        result.setData(mapList);
+        buildSelectExecl(mapList);
+        return result;
+    }
+
+    public ParserResult selectMetadataByDriverExperiment(int total,int count,int sum) throws InterruptedException {
+        ParserResult result = new ParserResult();
+
+        bigchainDBRunner.StartConn();
+
+        List<Map> mapList=new ArrayList<>();
+        for(int i=0;i<count;i++) {
+            Map map = new HashMap();
+            map.put("随机数", sum);
+
+            long startTime = System.currentTimeMillis();//开始时间
             List list = new ArrayList();
             list.add("FirstName");
             list.add("SecondName");
             list.add("age");
             list.add("time");
 
-            endTime = System.currentTimeMillis();//结束时间
+            long endTime = System.currentTimeMillis();//结束时间
             long listtime = endTime - startTime;
 
 
@@ -763,10 +771,14 @@ public class ExperimentServiceImp implements IExperimentService {
             Thread.sleep(1000);
             mapList.add(map);
         }
+
         result.setData(mapList);
-        buildSelectExecl(mapList);
+        buildSelectByDriverExecl(mapList);
         return result;
     }
+
+
+
 
     private void buildExecl(String title, List list) {
         File file = new File("./data.xls");
@@ -797,7 +809,6 @@ public class ExperimentServiceImp implements IExperimentService {
 
 
     }
-
 
     private void buildSelectExecl(List<Map> list) {
         File file = new File("./select.xls");
@@ -904,5 +915,13 @@ public class ExperimentServiceImp implements IExperimentService {
         } catch (Exception e) {
             logger.info("文件写入失败，报异常...");
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        BigchainDBRunner bigchainDBRunner=new BigchainDBRunner();
+        bigchainDBRunner.StartConn("http://192.168.1.104:9984");
+        KeyPairHolder keyPairHolder=new KeyPairHolder();
+        Outputs outputs = OutputsApi.getOutputs(keyPairHolder.pubKeyToString(keyPairHolder.getPublic()));
+        logger.info(outputs.getOutput().size()+"hrlll");
     }
 }

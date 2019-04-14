@@ -50,7 +50,12 @@ public class ExperimentController {
 
     @RequestMapping(value = "/selectMetadataExperiment/{total}/{count}",method = RequestMethod.GET)
     public ParserResult selectMetadataExperiment( @PathVariable int total,@PathVariable int count) throws IOException, InterruptedException {
-        return experimentService.selectAssetExperiment(total,count);
+        return experimentService.selectMetadataExperiment(total,count);
+    }
+
+    @RequestMapping(value = "/selectMetadataByDriverExperiment/{total}/{count}/{a}",method = RequestMethod.GET)
+    public ParserResult selectMetadataExperiment(@PathVariable int total, @PathVariable int count, @PathVariable int a) throws IOException, InterruptedException {
+        return experimentService.selectMetadataByDriverExperiment(total,count,a);
     }
 
 
