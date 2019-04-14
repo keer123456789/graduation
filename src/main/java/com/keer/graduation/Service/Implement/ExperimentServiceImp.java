@@ -285,7 +285,7 @@ public class ExperimentServiceImp implements IExperimentService {
         result.setStatus(ParserResult.SUCCESS);
         result.setData(map);
         result.setMessage(null);
-        if(metadataTotal!=metadataTotal){
+        if(metadataTotal!=100000){
             buildExecl("updateByDriver", updateTime);
         }
         return result;
