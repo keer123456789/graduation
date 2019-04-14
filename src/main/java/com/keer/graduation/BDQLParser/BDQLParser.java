@@ -161,19 +161,20 @@ public class BDQLParser {
 
             } else {
                 if (columnNames.size() == 1 && columnNames.get(0).equals("*")) {
-                    timeStart=System.currentTimeMillis();
                     if (bigchainDBUtil.getAssetByKey(table.getTableName()).size() == 0) {
+                        timeStart=System.currentTimeMillis();
                         List<MetaData> metaDatas = bigchainDBUtil.getMetaDatasByKey(table.getTableName());
                         table.setType("TRANSFER");
                         List<MetaData> newMetadatas=selectMetadata(metaDatas,expression);
                         table.setTableDataWithCloumnName(newMetadatas);
+                        timeEnd=System.currentTimeMillis();
                     } else {
-                        timeStart=System.currentTimeMillis();
+
                         Assets assets = bigchainDBUtil.getAssetByKey(table.getTableName());
                         table.setType("CREATE");
                         Assets newAssets=selectAssets(assets,expression);
                         table.setTableDataWithColumnName(newAssets);
-                        timeEnd=System.currentTimeMillis();
+
                     }
 
                 } else {

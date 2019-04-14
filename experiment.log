@@ -1,153 +1,207 @@
-2019-04-13 09:25:56.877  INFO 6828 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id=44553,转换后：SELECT * FROM COMPUTER WHERE ID=44553
-2019-04-13 09:25:56.878  INFO 6828 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id=44553，##########################
-2019-04-13 13:52:38.497  INFO 22364 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 22364 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-13 13:52:38.497  INFO 22364 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-13 13:52:39.317  INFO 22364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-04-13 13:52:39.333  INFO 22364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-13 13:52:39.334  INFO 22364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-13 13:52:39.339  INFO 22364 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-13 13:52:39.435  INFO 22364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-13 13:52:39.435  INFO 22364 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 892 ms
-2019-04-13 13:52:39.606  INFO 22364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-13 13:52:39.659  INFO 22364 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-13 13:52:39.747 ERROR 22364 --- [main] org.apache.catalina.util.LifecycleBase   : Failed to start component [Connector[HTTP/1.1-8080]]
+2019-04-14 13:37:26.762  INFO 22920 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 22920 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-14 13:37:26.767  INFO 22920 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-14 13:37:27.598  INFO 22920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-14 13:37:27.612  INFO 22920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-14 13:37:27.612  INFO 22920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-14 13:37:27.615  INFO 22920 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-14 13:37:27.697  INFO 22920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-14 13:37:27.697  INFO 22920 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 896 ms
+2019-04-14 13:37:27.839  INFO 22920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-14 13:37:27.928  INFO 22920 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-14 13:37:27.995  INFO 22920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-14 13:37:27.995  INFO 22920 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.551 seconds (JVM running for 2.301)
+2019-04-14 13:37:58.516  INFO 22920 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-14 13:37:58.516  INFO 22920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-14 13:37:58.521  INFO 22920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-04-14 13:37:58.888  INFO 22920 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-14 13:37:58.894  INFO 22920 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
 
-org.apache.catalina.LifecycleException: Protocol handler start failed
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226) [tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552) [spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
-	at com.keer.graduation.GraduationApplication.main(GraduationApplication.java:10) [classes/:na]
-Caused by: java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_161]
-	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_161]
-	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_161]
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_161]
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_161]
-	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
-	... 14 common frames omitted
+2019-04-14 13:37:58.926  INFO 22920 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-14 13:37:58.926  INFO 22920 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-14 13:37:58.926  INFO 22920 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer,转换后：SELECT * FROM COMPUTER
+2019-04-14 13:37:58.927  INFO 22920 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer，##########################
+2019-04-14 13:38:24.463  INFO 22920 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：15131
+2019-04-14 13:38:25.464  INFO 22920 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id=88563,转换后：SELECT * FROM COMPUTER WHERE ID=88563
+2019-04-14 13:38:25.464  INFO 22920 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id=88563，##########################
+2019-04-14 13:38:45.468 ERROR 22920 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！！！！！
+2019-04-14 13:38:45.478 ERROR 22920 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
-2019-04-13 13:52:39.749  INFO 22364 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-04-13 13:52:39.749  INFO 22364 --- [main] ConditionEvaluationReportLoggingListener : 
+java.lang.NullPointerException: null
+	at com.keer.graduation.BDQLParser.BDQLParser.selectParser(BDQLParser.java:165) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLParser.BDQLParserONE(BDQLParser.java:87) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLParser.BDQLParser(BDQLParser.java:59) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLUtil.work(BDQLUtil.java:103) ~[classes/:na]
+	at com.keer.graduation.Service.Implement.ExperimentServiceImp.selectAssetExperiment(ExperimentServiceImp.java:325) ~[classes/:na]
+	at com.keer.graduation.Controller.ExperimentController.selectAssetExperiment(ExperimentController.java:44) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-04-13 13:52:39.749 ERROR 22364 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2019-04-14 13:40:22.865  INFO 63728 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 63728 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-14 13:40:22.868  INFO 63728 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-14 13:40:23.593  INFO 63728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-14 13:40:23.609  INFO 63728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-14 13:40:23.610  INFO 63728 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-14 13:40:23.614  INFO 63728 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-14 13:40:23.713  INFO 63728 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-14 13:40:23.713  INFO 63728 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 814 ms
+2019-04-14 13:40:23.866  INFO 63728 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-14 13:40:23.916  INFO 63728 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-14 13:40:23.988  INFO 63728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-14 13:40:23.990  INFO 63728 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.349 seconds (JVM running for 2.066)
+2019-04-14 13:40:28.503  INFO 63728 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-14 13:40:28.503  INFO 63728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-14 13:40:28.506  INFO 63728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-04-14 13:40:28.913  INFO 63728 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-14 13:40:28.920  INFO 63728 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
 
-***************************
-APPLICATION FAILED TO START
-***************************
+2019-04-14 13:40:28.955  INFO 63728 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-14 13:40:28.955  INFO 63728 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-14 13:40:28.955  INFO 63728 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer,转换后：SELECT * FROM COMPUTER
+2019-04-14 13:40:28.955  INFO 63728 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer，##########################
+2019-04-14 13:40:48.971 ERROR 63728 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！！！！！
+2019-04-14 13:40:48.978 ERROR 63728 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 
-Description:
+java.lang.NullPointerException: null
+	at com.keer.graduation.BDQLParser.BDQLParser.selectParser(BDQLParser.java:164) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLParser.BDQLParserONE(BDQLParser.java:87) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLParser.BDQLParser(BDQLParser.java:59) ~[classes/:na]
+	at com.keer.graduation.BDQLParser.BDQLUtil.work(BDQLUtil.java:103) ~[classes/:na]
+	at com.keer.graduation.Service.Implement.ExperimentServiceImp.selectAssetExperiment(ExperimentServiceImp.java:317) ~[classes/:na]
+	at com.keer.graduation.Controller.ExperimentController.selectAssetExperiment(ExperimentController.java:44) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_161]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_161]
 
-The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+2019-04-14 13:41:04.402  INFO 65072 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 65072 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-14 13:41:04.404  INFO 65072 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-14 13:41:05.088  INFO 65072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-14 13:41:05.104  INFO 65072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-14 13:41:05.104  INFO 65072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-14 13:41:05.108  INFO 65072 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-14 13:41:05.200  INFO 65072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-14 13:41:05.200  INFO 65072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 777 ms
+2019-04-14 13:41:05.470  INFO 65072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-14 13:41:05.537  INFO 65072 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-14 13:41:05.622  INFO 65072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-14 13:41:05.624  INFO 65072 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.474 seconds (JVM running for 2.486)
+2019-04-14 13:41:09.853  INFO 65072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-14 13:41:09.853  INFO 65072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-14 13:41:09.856  INFO 65072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-04-14 13:41:10.270  INFO 65072 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-14 13:41:10.276  INFO 65072 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
 
-Action:
-
-Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
-
-2019-04-13 13:52:39.767  INFO 22364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-04-13 13:52:51.001  INFO 29084 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 29084 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-13 13:52:51.004  INFO 29084 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-13 13:52:51.783  INFO 29084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-04-13 13:52:51.816  INFO 29084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-13 13:52:51.816  INFO 29084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-13 13:52:51.817  INFO 29084 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-13 13:52:51.922  INFO 29084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-13 13:52:51.922  INFO 29084 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 889 ms
-2019-04-13 13:52:52.079  INFO 29084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-13 13:52:52.138  INFO 29084 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-13 13:52:52.218  INFO 29084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-04-13 13:52:52.226  INFO 29084 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.48 seconds (JVM running for 2.203)
-2019-04-13 13:53:25.454  INFO 30704 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 30704 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-13 13:53:25.454  INFO 30704 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-13 13:53:26.194  INFO 30704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-04-13 13:53:26.212  INFO 30704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-13 13:53:26.212  INFO 30704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-13 13:53:26.212  INFO 30704 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-13 13:53:26.314  INFO 30704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-13 13:53:26.314  INFO 30704 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 825 ms
-2019-04-13 13:53:26.514  INFO 30704 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-13 13:53:26.561  INFO 30704 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-13 13:53:26.668  INFO 30704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-04-13 13:53:26.668  INFO 30704 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.472 seconds (JVM running for 2.457)
-2019-04-13 13:53:45.595  INFO 30704 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-04-13 13:53:45.595  INFO 30704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-04-13 13:53:45.599  INFO 30704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2019-04-13 13:53:46.592  INFO 30704 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.103:9984 after 0 retry(s)...
-2019-04-13 13:53:46.592  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
-
-2019-04-13 13:53:46.666  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-13 13:53:46.666  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.103:9984,连接成功
-2019-04-13 13:53:46.666  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer,转换后：SELECT * FROM COMPUTER
-2019-04-13 13:53:46.666  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer，##########################
-2019-04-13 13:54:19.835  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：33169
-2019-04-13 13:54:20.843  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id=94581,转换后：SELECT * FROM COMPUTER WHERE ID=94581
-2019-04-13 13:54:20.843  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id=94581，##########################
-2019-04-13 13:54:39.233  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id=94581的时间：18390
-2019-04-13 13:54:40.237  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id<94581,转换后：SELECT * FROM COMPUTER WHERE ID<94581
-2019-04-13 13:54:40.237  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id<94581，##########################
-2019-04-13 13:55:04.081  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id<94581的时间：23844
-2019-04-13 13:55:05.094  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id<=94581,转换后：SELECT * FROM COMPUTER WHERE ID<=94581
-2019-04-13 13:55:05.094  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id<=94581，##########################
-2019-04-13 13:55:27.379  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id<=94581的时间：22285
-2019-04-13 13:55:28.394  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id>94581,转换后：SELECT * FROM COMPUTER WHERE ID>94581
-2019-04-13 13:55:28.396  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id>94581，##########################
-2019-04-13 13:55:45.903  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id>94581的时间：17507
-2019-04-13 13:55:46.920  INFO 30704 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id>=94581,转换后：SELECT * FROM COMPUTER WHERE ID>=94581
-2019-04-13 13:55:46.920  INFO 30704 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id>=94581，##########################
-2019-04-13 13:56:04.657  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id>=94581的时间：17737
-2019-04-13 14:00:01.934  INFO 30704 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : 文件写入失败，报异常...
-2019-04-13 14:09:42.640  INFO 22056 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 22056 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-13 14:09:42.656  INFO 22056 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-13 14:09:43.752  INFO 22056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-04-13 14:09:43.776  INFO 22056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-13 14:09:43.776  INFO 22056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-13 14:09:43.776  INFO 22056 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-13 14:09:43.891  INFO 22056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-13 14:09:43.891  INFO 22056 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1197 ms
-2019-04-13 14:09:44.100  INFO 22056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-13 14:09:44.153  INFO 22056 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-13 14:09:44.239  INFO 22056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-04-13 14:09:44.239  INFO 22056 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 2.035 seconds (JVM running for 3.801)
-2019-04-13 14:09:51.645  INFO 22056 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-04-13 14:09:51.645  INFO 22056 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-04-13 14:09:51.649  INFO 22056 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2019-04-13 14:09:52.357  INFO 22056 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.103:9984 after 0 retry(s)...
-2019-04-13 14:09:52.357  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
-
-2019-04-13 14:09:52.429  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-13 14:09:52.429  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.103:9984,连接成功
-2019-04-13 14:09:52.429  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer,转换后：SELECT * FROM COMPUTER
-2019-04-13 14:09:52.429  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer，##########################
-2019-04-13 14:10:16.763  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：24334
-2019-04-13 14:10:17.784  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id=79763,转换后：SELECT * FROM COMPUTER WHERE ID=79763
-2019-04-13 14:10:17.784  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id=79763，##########################
-2019-04-13 14:10:36.011  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id=79763的时间：18227
-2019-04-13 14:10:37.014  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id<79763,转换后：SELECT * FROM COMPUTER WHERE ID<79763
-2019-04-13 14:10:37.014  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id<79763，##########################
-2019-04-13 14:10:58.171  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id<79763的时间：21157
-2019-04-13 14:10:59.185  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id<=79763,转换后：SELECT * FROM COMPUTER WHERE ID<=79763
-2019-04-13 14:10:59.185  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id<=79763，##########################
-2019-04-13 14:11:20.189  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id<=79763的时间：21004
-2019-04-13 14:11:21.191  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id>79763,转换后：SELECT * FROM COMPUTER WHERE ID>79763
-2019-04-13 14:11:21.191  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id>79763，##########################
-2019-04-13 14:11:39.039  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id>79763的时间：17848
-2019-04-13 14:11:40.041  INFO 22056 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer where id>=79763,转换后：SELECT * FROM COMPUTER WHERE ID>=79763
-2019-04-13 14:11:40.041  INFO 22056 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer where id>=79763，##########################
-2019-04-13 14:11:58.289  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id>=79763的时间：18248
-2019-04-13 14:12:18.331  INFO 22056 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : 成功写入文件，请前往查看文件！
+2019-04-14 13:41:10.314  INFO 65072 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-14 13:41:10.314  INFO 65072 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-14 13:41:10.314  INFO 65072 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Computer,转换后：SELECT * FROM COMPUTER
+2019-04-14 13:41:10.314  INFO 65072 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Computer，##########################
