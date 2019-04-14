@@ -191,8 +191,13 @@ public class ExperimentServiceImp implements IExperimentService {
             result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='" + id + "'");
             updatetTime.add(System.currentTimeMillis() - insertStartTime);
             String TXid = (String) result.getData();
+            for(;true;){
+                if(bigchainDBUtil.checkTransactionExit(TXid)){
+                    break;
+                }
+            }
             logger.info("交易ID：" + TXid);
-            Thread.sleep(1000);//停止0.5s
+
 
         }
         long endTime = System.currentTimeMillis();
@@ -250,9 +255,12 @@ public class ExperimentServiceImp implements IExperimentService {
             map.put("time", "" + (m + 12));
             BigchainDBData data = new BigchainDBData("Person", map);
             String txid = bigchainDBUtil.transferToSelf(data, id);
-
             updateTime.add(System.currentTimeMillis() - insertStartTime);
-
+            for(;true;){
+                if(bigchainDBUtil.checkTransactionExit(txid)){
+                    break;
+                }
+            }
             logger.info("第" + (m + 1) + "次交易，交易ID：" + txid);
             Thread.sleep(1000);//停止1s
 
