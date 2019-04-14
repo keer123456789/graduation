@@ -147,8 +147,8 @@ public class Table {
         List<Map> data = new LinkedList<>();
         if (!(this.tableName.equals(null) && this.type.equals(null) && this.columnName.equals(null))) {
             for (MetaData metaData : metaDatas) {
-                LinkedTreeMap<String, Object> map = (LinkedTreeMap) metaData.getMetadata();
-                map = (LinkedTreeMap) map.get("tableData");
+                Map<String, Object> map = metaData.getMetadata();
+                map = (Map) map.get("tableData");
                 Map map1 = new HashMap();
                 for (String name : this.columnName) {
                     map1.put(name, map.get(name));
