@@ -502,7 +502,7 @@ public class BigchainDBUtil {
                 return true;
             } else {
                 logger.info("交易不存在！！ID：" + txID);
-                return true;
+                return false;
             }
         } catch (Exception e) {
             logger.info("未知错误！！！");
