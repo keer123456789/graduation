@@ -497,7 +497,7 @@ public class BigchainDBUtil {
             Thread.sleep(2000);
             Transaction transaction = TransactionsApi.getTransactionById(txID);
             Thread.sleep(2000);
-            if (transaction.getId() == txID) {
+            if (!transaction.getId().equals(null)) {
                 logger.info("交易存在！！ID：" + txID);
                 return true;
             } else {
