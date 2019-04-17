@@ -1,81 +1,138 @@
-2019-04-15 15:48:17.996  INFO 2440 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 2440 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-15 15:48:17.999  INFO 2440 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-15 15:48:29.302  INFO 2440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2019-04-15 15:48:29.315  INFO 2440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-15 15:48:29.315  INFO 2440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-15 15:48:29.320  INFO 2440 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-15 15:48:29.405  INFO 2440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-15 15:48:29.405  INFO 2440 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11383 ms
-2019-04-15 15:48:29.547  INFO 2440 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-15 15:48:29.693  INFO 2440 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-15 15:48:29.768  INFO 2440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2019-04-15 15:48:29.770  INFO 2440 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 14.9 seconds (JVM running for 15.714)
-2019-04-15 15:48:57.482  INFO 2440 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-04-15 15:48:57.497  INFO 2440 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-04-15 15:48:58.328  INFO 2440 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 831 ms
-2019-04-15 15:49:16.573  INFO 2440 --- [http-nio-9090-exec-6] c.keer.graduation.Controller.Controller  : 获取秘钥
-2019-04-15 15:49:16.578  INFO 2440 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:49:16.578  INFO 2440 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:49:16.578  INFO 2440 --- [http-nio-9090-exec-6] c.k.g.S.Implement.BigchainDBServiceImp   : 获取秘钥成功！！
-2019-04-15 15:49:35.568  INFO 2440 --- [http-nio-9090-exec-8] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.85.143:9984 after 0 retry(s)...
-2019-04-15 15:49:35.573  INFO 2440 --- [http-nio-9090-exec-8] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+2019-04-17 21:09:31.915  INFO 18384 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 18384 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:09:31.920  INFO 18384 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:09:33.322  INFO 18384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:09:33.341  INFO 18384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:09:33.342  INFO 18384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:09:33.347  INFO 18384 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:09:33.444  INFO 18384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:09:33.444  INFO 18384 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1380 ms
+2019-04-17 21:09:34.406  INFO 18384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:09:34.502  INFO 18384 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:09:34.623  INFO 18384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:09:34.625  INFO 18384 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 3.22 seconds (JVM running for 8.202)
+2019-04-17 21:10:49.699  INFO 1872 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 1872 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:10:49.701  INFO 1872 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:10:50.458  INFO 1872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:10:50.472  INFO 1872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:10:50.472  INFO 1872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:10:50.478  INFO 1872 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:10:50.569  INFO 1872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:10:50.569  INFO 1872 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 832 ms
+2019-04-17 21:10:50.752  INFO 1872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:10:50.812  INFO 1872 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:10:50.896  INFO 1872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:10:50.898  INFO 1872 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.522 seconds (JVM running for 2.429)
+2019-04-17 21:23:32.650  INFO 10968 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 10968 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:23:32.652  INFO 10968 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:23:33.326  INFO 10968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:23:33.339  INFO 10968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:23:33.339  INFO 10968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:23:33.345  INFO 10968 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:23:33.433  INFO 10968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:23:33.433  INFO 10968 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 745 ms
+2019-04-17 21:23:33.580  INFO 10968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:23:33.633  INFO 10968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:23:33.708  INFO 10968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:23:33.709  INFO 10968 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.299 seconds (JVM running for 1.979)
+2019-04-17 21:24:22.969  INFO 12164 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 12164 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:24:22.972  INFO 12164 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:24:23.725  INFO 12164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:24:23.740  INFO 12164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:24:23.741  INFO 12164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:24:23.745  INFO 12164 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:24:23.838  INFO 12164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:24:23.838  INFO 12164 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 831 ms
+2019-04-17 21:24:24.030  INFO 12164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:24:24.095  INFO 12164 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:24:24.183  INFO 12164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:24:24.186  INFO 12164 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.536 seconds (JVM running for 2.471)
+2019-04-17 21:25:18.719  INFO 17904 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 17904 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:25:18.721  INFO 17904 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:25:19.472  INFO 17904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:25:19.488  INFO 17904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:25:19.488  INFO 17904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:25:19.492  INFO 17904 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:25:19.590  INFO 17904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:25:19.590  INFO 17904 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 831 ms
+2019-04-17 21:25:19.780  INFO 17904 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:25:19.843  INFO 17904 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:25:19.931  INFO 17904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:25:19.934  INFO 17904 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.512 seconds (JVM running for 2.428)
+2019-04-17 21:29:23.068  INFO 17904 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-17 21:29:23.068  INFO 17904 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-17 21:29:23.072  INFO 17904 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-17 21:29:30.915  INFO 17904 --- [http-nio-9090-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-17 21:29:30.940  INFO 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
 
-2019-04-15 15:49:35.602  INFO 2440 --- [http-nio-9090-exec-8] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-15 15:49:35.602  INFO 2440 --- [http-nio-9090-exec-8] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.85.143:9984,连接成功
-2019-04-15 15:49:57.773  INFO 2440 --- [http-nio-9090-exec-9] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.85.143:9984 after 0 retry(s)...
-2019-04-15 15:49:57.777  INFO 2440 --- [http-nio-9090-exec-9] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+2019-04-17 21:29:31.073  INFO 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-17 21:29:31.074  INFO 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-17 21:29:31.075  INFO 17904 --- [http-nio-9090-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：UPDATE Person SET FirstName = '8000' , SecondName='8001',age= '8001',time='8001' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2',转换后：UPDATE PERSON SET FIRSTNAME = '8000' , SECONDNAME='8001',AGE= '8001',TIME='8001' WHERE ID='F3D9F405AB35266DA01605BF205EAAE2575F4249E5DC4B2C406BD0E8F5C79DC2'
+2019-04-17 21:29:31.076  INFO 17904 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：UPDATE Person SET FirstName = '8000' , SecondName='8001',age= '8001',time='8001' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'，##########################
+2019-04-17 21:29:51.138 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 资产ID：f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2,不存在!!!!!!!
+2019-04-17 21:29:51.139  INFO 17904 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-04-17 21:29:51.140  INFO 17904 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：null
+2019-04-17 21:29:53.177 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:29:55.193 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:29:57.207 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:29:59.226 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:01.240 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:03.256 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:05.270 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:07.286 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:09.305 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:11.320 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:13.334 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:15.350 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:17.366 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:19.381 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:21.397 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:23.413 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:25.429 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:27.443 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:29.456 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:31.473 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:33.490 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:35.506 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:37.525 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:39.543 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:41.561 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:43.576 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:45.591 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:47.609 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:49.625 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:51.641 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:53.657 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:30:55.674 ERROR 17904 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:31:01.315  INFO 15976 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 15976 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-17 21:31:01.317  INFO 15976 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-17 21:31:02.109  INFO 15976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2019-04-17 21:31:02.127  INFO 15976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-17 21:31:02.127  INFO 15976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-17 21:31:02.133  INFO 15976 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-17 21:31:02.273  INFO 15976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-17 21:31:02.273  INFO 15976 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 913 ms
+2019-04-17 21:31:02.508  INFO 15976 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-17 21:31:02.570  INFO 15976 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-17 21:31:02.659  INFO 15976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2019-04-17 21:31:02.661  INFO 15976 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.706 seconds (JVM running for 2.634)
+2019-04-17 21:31:09.117  INFO 15976 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-17 21:31:09.117  INFO 15976 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-17 21:31:09.121  INFO 15976 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-17 21:31:12.497  INFO 15976 --- [http-nio-9090-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-17 21:31:12.504  INFO 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
 
-2019-04-15 15:49:57.777  INFO 2440 --- [http-nio-9090-exec-9] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-15 15:49:57.777  INFO 2440 --- [http-nio-9090-exec-9] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.85.143:9984,连接成功
-2019-04-15 15:51:02.972  INFO 2440 --- [http-nio-9090-exec-8] c.keer.graduation.Controller.Controller  : 获取秘钥
-2019-04-15 15:51:02.972  INFO 2440 --- [http-nio-9090-exec-8] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:51:02.972  INFO 2440 --- [http-nio-9090-exec-8] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:51:02.972  INFO 2440 --- [http-nio-9090-exec-8] c.k.g.S.Implement.BigchainDBServiceImp   : 获取秘钥成功！！
-2019-04-15 15:51:25.741  INFO 2440 --- [http-nio-9090-exec-3] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.85.143:9984 after 0 retry(s)...
-2019-04-15 15:51:25.745  INFO 2440 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
-
-2019-04-15 15:51:25.746  INFO 2440 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-15 15:51:25.746  INFO 2440 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.85.143:9984,连接成功
-2019-04-15 15:54:06.530  INFO 10812 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 10812 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-15 15:54:06.534  INFO 10812 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-15 15:54:07.345  INFO 10812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2019-04-15 15:54:07.360  INFO 10812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-15 15:54:07.360  INFO 10812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-15 15:54:07.365  INFO 10812 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-15 15:54:07.457  INFO 10812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-15 15:54:07.457  INFO 10812 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 881 ms
-2019-04-15 15:54:07.761  INFO 10812 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-15 15:54:07.820  INFO 10812 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-15 15:54:07.903  INFO 10812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2019-04-15 15:54:07.906  INFO 10812 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.73 seconds (JVM running for 2.729)
-2019-04-15 15:54:44.050  INFO 10812 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-04-15 15:54:44.050  INFO 10812 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-04-15 15:54:44.054  INFO 10812 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2019-04-15 15:54:45.253  INFO 10812 --- [http-nio-9090-exec-4] c.keer.graduation.Controller.Controller  : 获取秘钥
-2019-04-15 15:54:45.254  INFO 10812 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:54:45.254  INFO 10812 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:54:45.254  INFO 10812 --- [http-nio-9090-exec-4] c.k.g.S.Implement.BigchainDBServiceImp   : 获取秘钥成功！！
-2019-04-15 15:55:38.687  INFO 4324 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 4324 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
-2019-04-15 15:55:38.689  INFO 4324 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
-2019-04-15 15:55:39.445  INFO 4324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2019-04-15 15:55:39.466  INFO 4324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-04-15 15:55:39.466  INFO 4324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-04-15 15:55:39.471  INFO 4324 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
-2019-04-15 15:55:39.569  INFO 4324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-04-15 15:55:39.569  INFO 4324 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 846 ms
-2019-04-15 15:55:39.712  INFO 4324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-04-15 15:55:39.762  INFO 4324 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2019-04-15 15:55:39.833  INFO 4324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2019-04-15 15:55:39.836  INFO 4324 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.41 seconds (JVM running for 2.133)
-2019-04-15 15:55:45.530  INFO 4324 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-04-15 15:55:45.530  INFO 4324 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-04-15 15:55:45.533  INFO 4324 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2019-04-15 15:55:46.544  INFO 4324 --- [http-nio-9090-exec-9] c.keer.graduation.Controller.Controller  : 获取秘钥
-2019-04-15 15:55:46.544  INFO 4324 --- [http-nio-9090-exec-9] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:55:46.544  INFO 4324 --- [http-nio-9090-exec-9] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
-2019-04-15 15:55:46.544  INFO 4324 --- [http-nio-9090-exec-9] c.k.g.S.Implement.BigchainDBServiceImp   : 获取秘钥成功！！
-2019-04-15 15:55:58.223  INFO 4324 --- [http-nio-9090-exec-6] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.85.143:9984 after 0 retry(s)...
-2019-04-15 15:55:58.228  INFO 4324 --- [http-nio-9090-exec-6] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
-
-2019-04-15 15:55:58.260  INFO 4324 --- [http-nio-9090-exec-6] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
-2019-04-15 15:55:58.260  INFO 4324 --- [http-nio-9090-exec-6] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.85.143:9984,连接成功
+2019-04-17 21:31:12.543  INFO 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-17 21:31:12.543  INFO 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-17 21:31:32.621  INFO 15976 --- [http-nio-9090-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：UPDATE Person SET FirstName = '8000' , SecondName='8001',age= '8001',time='8001' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2',转换后：UPDATE PERSON SET FIRSTNAME = '8000' , SECONDNAME='8001',AGE= '8001',TIME='8001' WHERE ID='F3D9F405AB35266DA01605BF205EAAE2575F4249E5DC4B2C406BD0E8F5C79DC2'
+2019-04-17 21:31:42.135  INFO 15976 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：UPDATE Person SET FirstName = '8000' , SecondName='8001',age= '8001',time='8001' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'，##########################
+2019-04-17 21:33:51.424 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 资产ID：f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2,不存在!!!!!!!
+2019-04-17 21:33:51.424  INFO 15976 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-04-17 21:33:51.424  INFO 15976 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：null
+2019-04-17 21:33:56.011 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:33:58.022 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:00.032 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:02.047 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:04.060 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:06.073 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:08.086 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！
+2019-04-17 21:34:10.097 ERROR 15976 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 未知错误！！！

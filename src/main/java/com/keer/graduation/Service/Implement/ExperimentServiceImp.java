@@ -785,6 +785,21 @@ public class ExperimentServiceImp implements IExperimentService {
         return result;
     }
 
+    public ParserResult test(){
+        ParserResult result = new ParserResult();
+
+        bigchainDBRunner.StartConn("http://192.168.1.102:9984");
+        result = bdqlUtil.work("UPDATE Person SET FirstName = '" + 8000 + "' , SecondName='" + (8001) + "',age= '" + (8001) + "',time='" + (8001) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
+        String TXid = (String) result.getData();
+        for(;true;){
+            if(bigchainDBUtil.checkTransactionExit(TXid)){
+                break;
+            }
+        }
+        logger.info("hello");
+        return null;
+
+    }
 
 
 
@@ -926,10 +941,17 @@ public class ExperimentServiceImp implements IExperimentService {
     }
 
     public static void main(String[] args) throws IOException {
+        BDQLUtil bdqlUtil=new BDQLUtil();
+        BigchainDBUtil bigchainDBUtil=new BigchainDBUtil();
         BigchainDBRunner bigchainDBRunner=new BigchainDBRunner();
-        bigchainDBRunner.StartConn("http://192.168.1.104:9984");
-        KeyPairHolder keyPairHolder=new KeyPairHolder();
-        Outputs outputs = OutputsApi.getOutputs(keyPairHolder.pubKeyToString(keyPairHolder.getPublic()));
-        logger.info(outputs.getOutput().size()+"hrlll");
+        bigchainDBRunner.StartConn("http://192.168.1.102:9984");
+        ParserResult result = bdqlUtil.work("UPDATE Person SET FirstName = '" + 8000 + "' , SecondName='" + (8001) + "',age= '" + (8001) + "',time='" + (8001) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
+        String TXid = (String) result.getData();
+        for(;true;){
+            if(bigchainDBUtil.checkTransactionExit(TXid)){
+                break;
+            }
+        }
+        logger.info("hello");
     }
 }

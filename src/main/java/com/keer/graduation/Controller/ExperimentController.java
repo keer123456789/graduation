@@ -58,5 +58,10 @@ public class ExperimentController {
         return experimentService.selectMetadataByDriverExperiment(total,count,a);
     }
 
+    @GetMapping("/test")
+    public ParserResult test(){
+        return experimentService.test();
+    }
+
 
 }

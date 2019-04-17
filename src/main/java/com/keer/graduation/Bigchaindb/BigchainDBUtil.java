@@ -505,7 +505,7 @@ public class BigchainDBUtil {
                 return false;
             }
         } catch (Exception e) {
-            logger.info("未知错误！！！");
+            logger.error("未知错误！！！");
             e.printStackTrace();
             return false;
 
