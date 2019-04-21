@@ -434,7 +434,7 @@ public class BigchainDBUtil {
      * @throws IOException
      */
     public  String getLastTransactionId(String assetId) throws IOException, InterruptedException {
-        return getTransactionId(getLastTransaction(assetId));
+        return getLastTransaction(assetId);
     }
 
     /**
@@ -444,16 +444,16 @@ public class BigchainDBUtil {
      * @return last transaction
      * @throws IOException
      */
-    public  Transaction getLastTransaction(String assetId) throws IOException, InterruptedException {
+    public  String  getLastTransaction(String assetId) throws IOException, InterruptedException {
 //        Transactions transactions = TransactionsApi.getTransactionsByAssetId(assetId, Operations.TRANSFER);
 //        List<Transaction> transfers=transactions.getTransactions();
         String json= HttpUtil.httpGet(BigChainDBGlobals.getBaseUrl() + BigchainDbApi.TRANSACTIONS + "/?asset_id=" + assetId + "&operation=TRANSFER",50);
         List<Transaction> transfers=JSON.parseArray(json,Transaction.class);
 
         if (transfers != null && transfers.size() > 0) {
-            return transfers.get(transfers.size() - 1);
+            return transfers.get(transfers.size() - 1).getId();
         } else {
-            return getCreateTransaction(assetId);
+            return assetId;
         }
     }
 
@@ -487,9 +487,9 @@ public class BigchainDBUtil {
      * @return
      */
     private  String getTransactionId(Transaction transaction) {
-//        String withQuotationId = transaction.getId();
-//        return withQuotationId.substring(1, withQuotationId.length() - 1);
-        return transaction.getId();
+        String withQuotationId = transaction.getId();
+        return withQuotationId.substring(1, withQuotationId.length() - 1);
+//        return transaction.getId();
     }
 
     /**
