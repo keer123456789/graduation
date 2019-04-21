@@ -181,15 +181,15 @@ public class ExperimentServiceImp implements IExperimentService {
         long startTime = System.currentTimeMillis();//开始时间
         List<Long> updatetTime = new ArrayList<>();
         bigchainDBRunner.StartConn();
-//        result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('nihao','nihao','Champs-Elysees','nihao','i7','nihao','nihao')");
-//        Thread.sleep(5000);
-//        String id = (String) result.getData();
+        result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('nihao','nihao','Champs-Elysees','nihao','i7','nihao','nihao')");
+        Thread.sleep(5000);
+        String id = (String) result.getData();
 
 
         for (int m = 0; m < metadataTotal; m++) {
             long insertStartTime = System.currentTimeMillis();
-//            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
-            result = bdqlUtil.work("UPDATE Person SET FirstName = '8000' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
+            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='"+id+"'");
+//            result = bdqlUtil.work("UPDATE Person SET FirstName = '8000' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
             updatetTime.add(System.currentTimeMillis() - insertStartTime);
             String TXid = (String) result.getData();
             for(;true;){
