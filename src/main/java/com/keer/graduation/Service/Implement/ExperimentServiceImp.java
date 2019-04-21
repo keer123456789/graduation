@@ -181,14 +181,15 @@ public class ExperimentServiceImp implements IExperimentService {
         long startTime = System.currentTimeMillis();//开始时间
         List<Long> updatetTime = new ArrayList<>();
         bigchainDBRunner.StartConn();
-        result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('nihao','nihao','Champs-Elysees','nihao','i7','nihao','nihao')");
-        Thread.sleep(5000);
-        String id = (String) result.getData();
+//        result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('nihao','nihao','Champs-Elysees','nihao','i7','nihao','nihao')");
+//        Thread.sleep(5000);
+//        String id = (String) result.getData();
 
 
         for (int m = 0; m < metadataTotal; m++) {
             long insertStartTime = System.currentTimeMillis();
-            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='" + id + "'");
+//            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
+            result = bdqlUtil.work("UPDATE Person SET FirstName = '8000' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
             updatetTime.add(System.currentTimeMillis() - insertStartTime);
             String TXid = (String) result.getData();
             for(;true;){
@@ -309,67 +310,67 @@ public class ExperimentServiceImp implements IExperimentService {
     @Override
     public ParserResult selectAssetExperiment(int total, int count) throws InterruptedException {
         ParserResult result = new ParserResult();
-
-        double random = Math.random();
-        int sum = (int) (random * total);
         bigchainDBRunner.StartConn();
-        List<Map> listMaps = new ArrayList<>();
-        for (int i = 1; i <= count; i++) {
-            Map map = new HashMap();
-            map.put("随机数", sum);
 
-            /**
-             * BDQL查询全部表中数据
-             */
+        for(int j=0;j<20;j++) {
+            double random = Math.random();
+            int sum = (int) (random * total);
 
-            result = bdqlUtil.work("select * from Computer");
+            List<Map> listMaps = new ArrayList<>();
+            for (int i = 1; i <= count; i++) {
+                Map map = new HashMap();
+                map.put("随机数", sum);
 
-            map.put("QL查询全部数据", result.getMessage());
-            logger.info("QL * 查询表中全部信息的时间：" + result.getMessage());
+                /**
+                 * BDQL查询全部表中数据
+                 */
 
+                result = bdqlUtil.work("select * from Computer");
 
-            Thread.sleep(1000);
-
-            result = bdqlUtil.work("select * from Computer where id=" + sum);
-            map.put("QL查询=", result.getMessage());
-            logger.info("QL 查询id=" + sum + "的时间：" + result.getMessage());
+                map.put("QL查询全部数据", result.getMessage());
+                logger.info("QL * 查询表中全部信息的时间：" + result.getMessage());
 
 
+                Thread.sleep(1000);
 
-            Thread.sleep(1000);
-
-            result = bdqlUtil.work("select * from Computer where id<" + sum);
-            map.put("QL查询<", result.getMessage());
-            logger.info("QL 查询id<" + sum + "的时间：" + result.getMessage());
-
+                result = bdqlUtil.work("select * from Computer where id=" + sum);
+                map.put("QL查询=", result.getMessage());
+                logger.info("QL 查询id=" + sum + "的时间：" + result.getMessage());
 
 
-            Thread.sleep(1000);
+                Thread.sleep(1000);
 
-            result = bdqlUtil.work("select * from Computer where id<=" + sum);
-            map.put("QL查询<=", result.getMessage());
-            logger.info("QL 查询id<=" + sum + "的时间：" + result.getMessage());
-
-
-
-            Thread.sleep(1000);
-
-            result = bdqlUtil.work("select * from Computer where id>" + sum);
-            map.put("QL查询>", result.getMessage());
-            logger.info("QL 查询id>" + sum + "的时间：" + result.getMessage());
+                result = bdqlUtil.work("select * from Computer where id<" + sum);
+                map.put("QL查询<", result.getMessage());
+                logger.info("QL 查询id<" + sum + "的时间：" + result.getMessage());
 
 
+                Thread.sleep(1000);
 
-            Thread.sleep(1000);
+                result = bdqlUtil.work("select * from Computer where id<=" + sum);
+                map.put("QL查询<=", result.getMessage());
+                logger.info("QL 查询id<=" + sum + "的时间：" + result.getMessage());
 
-            result = bdqlUtil.work("select * from Computer where id>=" + sum);
-            map.put("QL查询>=", result.getMessage());
-            logger.info("QL 查询id>=" + sum + "的时间：" + result.getMessage());
 
-            listMaps.add(map);
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id>" + sum);
+                map.put("QL查询>", result.getMessage());
+                logger.info("QL 查询id>" + sum + "的时间：" + result.getMessage());
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id>=" + sum);
+                map.put("QL查询>=", result.getMessage());
+                logger.info("QL 查询id>=" + sum + "的时间：" + result.getMessage());
+
+                listMaps.add(map);
+            }
+
+            buildSelectExecl(listMaps,"./selectAsset"+j+".xls");
         }
-        result.setData(listMaps);
-        buildSelectExecl(listMaps);
+        result.setMessage("查询成功");
         return result;
     }
 
@@ -548,7 +549,7 @@ public class ExperimentServiceImp implements IExperimentService {
             listMaps.add(map);
         }
         result.setData(listMaps);
-        buildSelectByDriverExecl(listMaps);
+        buildSelectByDriverExecl(listMaps,"./selectAssetByDriver_"+a+".xls");
         return result;
     }
 
@@ -556,60 +557,62 @@ public class ExperimentServiceImp implements IExperimentService {
     public ParserResult selectMetadataExperiment(int total,int count) throws InterruptedException {
         ParserResult result = new ParserResult();
 
-        double random = Math.random();
-        int sum = (int) (random * total);
         bigchainDBRunner.StartConn();
+        for(int j=0;j<50;j++) {
+            double random = Math.random();
+            int sum = (int) (random * total);
+            List<Map> mapList = new ArrayList<>();
+            for (int i = 0; i < count; i++) {
+                Map map = new HashMap();
+                map.put("随机数", sum);
 
-        List<Map> mapList=new ArrayList<>();
-        for(int i=0;i<count;i++) {
-            Map map = new HashMap();
-            map.put("随机数", sum);
+                /**
+                 * BDQL查询全部表中数据
+                 */
+                result = bdqlUtil.work("select * from Person");
+                map.put("QL查询全部数据", result.getMessage());
+                logger.info("QL * 查询表中全部信息的时间：" + result.getMessage());
 
-            /**
-             * BDQL查询全部表中数据
-             */
-            result = bdqlUtil.work("select * from Person");
-            map.put("QL查询全部数据", result.getMessage());
-            logger.info("QL * 查询表中全部信息的时间：" +result.getMessage());
+                Thread.sleep(1000);
 
-            Thread.sleep(1000);
+                result = bdqlUtil.work("select * from Person where FirstName=" + sum);
+                map.put("QL查询=", result.getMessage());
+                logger.info("QL 查询FirstName=" + sum + "的时间：" + result.getMessage());
 
-            result = bdqlUtil.work("select * from Person where FirstName=" + sum);
-            map.put("QL查询=", result.getMessage());
-            logger.info("QL 查询FirstName=" + sum + "的时间：" + result.getMessage());
+                Thread.sleep(1000);
 
-            Thread.sleep(1000);
+                result = bdqlUtil.work("select * from Person where FirstName<" + sum);
+                map.put("QL查询<", result.getMessage());
+                logger.info("QL 查询FirstName<" + sum + "的时间：" + result.getMessage());
 
-            result = bdqlUtil.work("select * from Person where FirstName<" + sum);
-            map.put("QL查询<", result.getMessage());
-            logger.info("QL 查询FirstName<" + sum + "的时间：" + result.getMessage());
+                Thread.sleep(1000);
 
-            Thread.sleep(1000);
+                result = bdqlUtil.work("select * from Person where FirstName<=" + sum);
+                map.put("QL查询<=", result.getMessage());
+                logger.info("QL 查询FirstName<=" + sum + "的时间：" + result.getMessage());
 
-            result = bdqlUtil.work("select * from Person where FirstName<=" + sum);
-            map.put("QL查询<=",result.getMessage());
-            logger.info("QL 查询FirstName<=" + sum + "的时间：" +result.getMessage());
-
-            Thread.sleep(1000);
-
-
-            result = bdqlUtil.work("select * from Person where FirstName>" + sum);
-            map.put("QL查询>", result.getMessage());
-            logger.info("QL 查询FirstName>" + sum + "的时间：" + result.getMessage());
-
-            Thread.sleep(1000);
-
-            result = bdqlUtil.work("select * from Person where FirstName>=" + sum);
-            map.put("QL查询>=", result.getMessage());
-            logger.info("QL 查询FirstName>=" + sum + "的时间：" + result.getMessage());
-
-            Thread.sleep(1000);
+                Thread.sleep(1000);
 
 
-            mapList.add(map);
+                result = bdqlUtil.work("select * from Person where FirstName>" + sum);
+                map.put("QL查询>", result.getMessage());
+                logger.info("QL 查询FirstName>" + sum + "的时间：" + result.getMessage());
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Person where FirstName>=" + sum);
+                map.put("QL查询>=", result.getMessage());
+                logger.info("QL 查询FirstName>=" + sum + "的时间：" + result.getMessage());
+
+                Thread.sleep(1000);
+
+
+                mapList.add(map);
+            }
+
+            buildSelectExecl(mapList,"./selectMetadata_"+j+".xls");
         }
-        result.setData(mapList);
-        buildSelectExecl(mapList);
+        result.setMessage("已经完成");
         return result;
     }
 
@@ -781,7 +784,7 @@ public class ExperimentServiceImp implements IExperimentService {
         }
 
         result.setData(mapList);
-        buildSelectByDriverExecl(mapList);
+        buildSelectByDriverExecl(mapList,"./selectMetadataByDriver_"+sum+".xls");
         return result;
     }
 
@@ -833,8 +836,8 @@ public class ExperimentServiceImp implements IExperimentService {
 
     }
 
-    private void buildSelectExecl(List<Map> list) {
-        File file = new File("./select.xls");
+    private void buildSelectExecl(List<Map> list,String name) {
+        File file = new File(name);
         if (file.exists()) {
             file.delete();
         }
@@ -886,8 +889,8 @@ public class ExperimentServiceImp implements IExperimentService {
         }
     }
 
-    private void buildSelectByDriverExecl(List<Map> list) {
-        File file = new File("./selectByDriver.xls");
+    private void buildSelectByDriverExecl(List<Map> list,String name) {
+        File file = new File(name);
         if (file.exists()) {
             file.delete();
         }

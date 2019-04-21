@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class HttpUtil {
     private static Logger logger = LoggerFactory.getLogger(HttpUtil.class);
@@ -59,9 +60,15 @@ public class HttpUtil {
      * @param url
      * @return
      */
-    public static String httpGet(String url) {
+    public static String httpGet(String url,int a) {
         String result = null;
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+//                .retryOnConnectionFailure(true)
+                .connectTimeout(a, TimeUnit.SECONDS)//设置连接超时时间
+                .readTimeout(a, TimeUnit.SECONDS)//设置读取超时时间
+                .writeTimeout(a,TimeUnit.SECONDS)
+                .build();
+
         Request request = new Request.Builder().url(url).build();
         try {
             Response response = client.newCall(request).execute();
@@ -69,7 +76,18 @@ public class HttpUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return result;
+    }
+
+    /**
+     * 发起get请求
+     *
+     * @param url
+     * @return
+     */
+    public static String httpGet(String url) {
+        return httpGet(url,20);
     }
 
     /**

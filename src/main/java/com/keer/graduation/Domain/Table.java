@@ -5,7 +5,7 @@ import com.bigchaindb.model.Asset;
 import com.bigchaindb.model.Assets;
 import com.bigchaindb.model.Transaction;
 import com.google.gson.internal.LinkedTreeMap;
-import com.keer.graduation.Bigchaindb.BigchainDBRunner;
+import com.keer.graduation.Domain.MetaData;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.operators.relational.*;
 
@@ -57,7 +57,7 @@ public class Table {
         List<String> result = new ArrayList<String>();
         if (!(this.tableName.equals(null) && this.type.equals(null))) {
             if (this.type.equals("CREATE")) {
-                LinkedTreeMap<String, Object> map = (LinkedTreeMap) transaction.getAsset().getData();
+                Map map = (Map) transaction.getAsset().getData();
                 if (map.get("tableName").toString().equals(this.tableName)) {
                     map = (LinkedTreeMap) map.get("tableData");
                     Set<String> keys = map.keySet();
@@ -67,7 +67,7 @@ public class Table {
                 }
 
             } else {
-                LinkedTreeMap map = (LinkedTreeMap) transaction.getMetaData();
+                Map map = (Map) transaction.getMetaData();
                 if (map.get("tableName").toString().equals(this.tableName)) {
                     map = (LinkedTreeMap) map.get("tableData");
                     Set<String> keys = map.keySet();
@@ -76,6 +76,7 @@ public class Table {
                     }
                 }
             }
+            result.add("TXID");
             HashSet h = new HashSet(result);
             result.clear();
             result.addAll(h);
@@ -95,12 +96,14 @@ public class Table {
         List<String> result = new ArrayList<String>();
         if (!(this.tableName.equals(null) && this.type.equals(null))) {
             for (Asset asset : assets.getAssets()) {
-                LinkedTreeMap<String, Object> map = (LinkedTreeMap) asset.getData();
+                Map map = (Map) asset.getData();
                 map = (LinkedTreeMap) map.get("tableData");
                 Set<String> keys = map.keySet();
                 for (String key : keys) {
                     result.add(key);
                 }
+                result.add("TXID");
+                map.put("TXID", asset.getId());
                 List<Map> list = new ArrayList<Map>();
                 list.add(map);
                 if (this.data == null) {
@@ -121,59 +124,73 @@ public class Table {
 
     /**
      * 根据assets设置表数据
+     *
      * @param assets
      */
     public void setTableData(Assets assets) {
         List<Map> data = new LinkedList<>();
         if (!(this.tableName.equals(null) && this.type.equals(null) && this.columnName.equals(null))) {
             for (Asset asset : assets.getAssets()) {
-                LinkedTreeMap<String, Object> map = (LinkedTreeMap) asset.getData();
+                Map map = (Map) asset.getData();
                 map = (LinkedTreeMap) map.get("tableData");
                 Map map1 = new HashMap();
                 for (String name : this.columnName) {
-                    map1.put(name, map.get(name));
+                    if (name.equals("TXID")) {
+                        map1.put(name, asset.getId());
+                    } else {
+                        map1.put(name, map.get(name));
+                    }
                 }
+
                 data.add(map1);
             }
         }
-        this.data=data;
+        this.data = data;
     }
 
     /**
      * 根据metadatas设置表数据
+     *
      * @param metaDatas
      */
     public void setTableData(List<MetaData> metaDatas) {
         List<Map> data = new LinkedList<>();
         if (!(this.tableName.equals(null) && this.type.equals(null) && this.columnName.equals(null))) {
             for (MetaData metaData : metaDatas) {
-                Map<String, Object> map = metaData.getMetadata();
-                map = (Map) map.get("tableData");
+                Map map =  metaData.getMetadata();
+                map = (LinkedTreeMap) map.get("tableData");
                 Map map1 = new HashMap();
                 for (String name : this.columnName) {
-                    map1.put(name, map.get(name));
+                    if (name.equals("TXID")) {
+                        map1.put(name, metaData.getId());
+                    } else {
+                        map1.put(name, map.get(name));
+                    }
                 }
                 data.add(map1);
             }
         }
-        this.data=data;
+        this.data = data;
     }
 
     /**
      * 根据metadatas设置表数据和表头（列名）
+     *
      * @param metaDatas
      */
     public void setTableDataWithCloumnName(List<MetaData> metaDatas) {
         List<String> result = new ArrayList<String>();
         if (!(this.tableName.equals(null) && this.type.equals(null))) {
             for (MetaData metadata : metaDatas) {
-                TreeMap<String, Object> map = (TreeMap<String, Object>) metadata.getMetadata();
-                JSONObject map1 = (JSONObject) map.get("tableData");
+                Map map =  metadata.getMetadata();
+                Map map1 = (JSONObject) map.get("tableData");
 
                 Set<String> keys = map1.keySet();
                 for (String key : keys) {
                     result.add(key);
                 }
+                result.add("TXID");
+                map1.put("TXID",metadata.getId());
                 List<Map> list = new ArrayList<Map>();
                 list.add(map1);
                 if (this.data == null) {
@@ -192,7 +209,6 @@ public class Table {
         }
 
     }
-
 
 
     private void setTablesWhere(Expression expression) {
@@ -299,6 +315,10 @@ public class Table {
     private static boolean isInteger(String str) {
         Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
         return pattern.matcher(str).matches();
+    }
+
+    public String toString() {
+        return "{tableName:" + tableName + ",type:" + type + ",columnName:" + columnName.toString() + ",data:" + data.toString() + "}";
     }
 
     public static void main(String[] args) throws IOException {
