@@ -558,7 +558,7 @@ public class ExperimentServiceImp implements IExperimentService {
         ParserResult result = new ParserResult();
 
         bigchainDBRunner.StartConn();
-        for(int j=0;j<50;j++) {
+        for(int j=0;j<20;j++) {
             double random = Math.random();
             int sum = (int) (random * total);
             List<Map> mapList = new ArrayList<>();
