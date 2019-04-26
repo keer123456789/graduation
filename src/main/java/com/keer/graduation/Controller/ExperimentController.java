@@ -1,13 +1,17 @@
 package com.keer.graduation.Controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.keer.graduation.Domain.ParserResult;
 import com.keer.graduation.Service.IExperimentService;
+import com.keer.graduation.Util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 
@@ -17,6 +21,9 @@ public class ExperimentController {
 
     @Autowired
     IExperimentService experimentService;
+
+    @Autowired
+    FileUtil fileUtil;
 
     @RequestMapping(value = "/insertExperiment/{asset}",method = RequestMethod.GET)
     public ParserResult insertExperiment(@PathVariable int asset) throws InterruptedException, IOException {
@@ -59,8 +66,13 @@ public class ExperimentController {
     }
 
     @GetMapping("/test")
-    public ParserResult test(){
-        return experimentService.test();
+    public String  test() throws InterruptedException {
+        String json=fileUtil.readFile("./data.json");
+        List<Integer> list= JSON.parseArray(json,Integer.class);
+        for(Integer a:list){
+            experimentService.selectMetadataByDriverExperiment(10000,50,a.intValue());
+        }
+        return "finish";
     }
 
 
