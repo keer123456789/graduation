@@ -59,7 +59,7 @@ public class Table {
             if (this.type.equals("CREATE")) {
                 Map map = (Map) transaction.getAsset().getData();
                 if (map.get("tableName").toString().equals(this.tableName)) {
-                    map = (LinkedTreeMap) map.get("tableData");
+                    map = (Map) map.get("tableData");
                     Set<String> keys = map.keySet();
                     for (String key : keys) {
                         result.add(key);
@@ -69,7 +69,7 @@ public class Table {
             } else {
                 Map map = (Map) transaction.getMetaData();
                 if (map.get("tableName").toString().equals(this.tableName)) {
-                    map = (LinkedTreeMap) map.get("tableData");
+                    map = (Map) map.get("tableData");
                     Set<String> keys = map.keySet();
                     for (String key : keys) {
                         result.add(key);
@@ -132,7 +132,7 @@ public class Table {
         if (!(this.tableName.equals(null) && this.type.equals(null) && this.columnName.equals(null))) {
             for (Asset asset : assets.getAssets()) {
                 Map map = (Map) asset.getData();
-                map = (LinkedTreeMap) map.get("tableData");
+                map = (Map) map.get("tableData");
                 Map map1 = new HashMap();
                 for (String name : this.columnName) {
                     if (name.equals("TXID")) {
@@ -158,7 +158,7 @@ public class Table {
         if (!(this.tableName.equals(null) && this.type.equals(null) && this.columnName.equals(null))) {
             for (MetaData metaData : metaDatas) {
                 Map map =  metaData.getMetadata();
-                map = (LinkedTreeMap) map.get("tableData");
+                map = (Map) map.get("tableData");
                 Map map1 = new HashMap();
                 for (String name : this.columnName) {
                     if (name.equals("TXID")) {
