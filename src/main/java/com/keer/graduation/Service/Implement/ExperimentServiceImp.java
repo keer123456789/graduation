@@ -806,11 +806,11 @@ public class ExperimentServiceImp implements IExperimentService {
     public void selectAsset(int total) throws InterruptedException {
         bigchainDBRunner.StartConn();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 20; i++) {
             double random = Math.random();
             int sum = (int) (random * total);
             List<Map> listMaps = new ArrayList<>();
-            for (int j = 0; j < 1; j++) {
+            for (int j = 0; j < 20; j++) {
                 Map map = new HashMap();
                 map.put("随机数", sum);
 
@@ -1034,7 +1034,7 @@ public class ExperimentServiceImp implements IExperimentService {
 
             buildSelectExecl(mapList, "./selectMetadata_" + j + ".xls");
         }
-       
+
     }
 
 
