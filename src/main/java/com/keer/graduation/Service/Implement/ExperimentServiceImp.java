@@ -1018,8 +1018,8 @@ public class ExperimentServiceImp implements IExperimentService {
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
 
-                map.put("Driver查询>", driver);
-                logger.info("Driver查询>的时间：" + driver);
+                map.put("Driver查询>=", driver);
+                logger.info("Driver查询>=的时间：" + driver);
                 map.put("QL查询>=", sql);
                 logger.info("QL 查询FirstName>=" + sum + "的时间：" + sql);
                 map.put("QL查询1>=", ""+(end-start));

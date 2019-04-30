@@ -3265,3 +3265,144 @@ java.lang.ArrayIndexOutOfBoundsException: 1
 2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：4
 2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：4
 2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：9
+2019-04-30 15:36:05.038  INFO 20112 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 20112 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 15:36:05.041  INFO 20112 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 15:36:05.714  INFO 20112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 15:36:05.729  INFO 20112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 15:36:05.729  INFO 20112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 15:36:05.734  INFO 20112 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 15:36:05.825  INFO 20112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 15:36:05.825  INFO 20112 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 754 ms
+2019-04-30 15:36:05.961  INFO 20112 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 15:36:06.015  INFO 20112 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 15:36:06.088  INFO 20112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 15:36:06.090  INFO 20112 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.274 seconds (JVM running for 1.995)
+2019-04-30 15:36:27.429  INFO 20112 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-30 15:36:27.429  INFO 20112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-30 15:36:27.433  INFO 20112 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-30 22:32:19.010  INFO 18556 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 18556 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 22:32:19.013  INFO 18556 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 22:32:19.946  INFO 18556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 22:32:19.960  INFO 18556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 22:32:19.960  INFO 18556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 22:32:19.965  INFO 18556 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 22:32:20.055  INFO 18556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 22:32:20.055  INFO 18556 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1007 ms
+2019-04-30 22:32:20.194  INFO 18556 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 22:32:20.248  INFO 18556 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 22:32:20.317  INFO 18556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 22:32:20.319  INFO 18556 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.672 seconds (JVM running for 2.969)
+2019-04-30 22:32:50.052  INFO 20828 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 20828 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 22:32:50.054  INFO 20828 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 22:32:50.765  INFO 20828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 22:32:50.782  INFO 20828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 22:32:50.782  INFO 20828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 22:32:50.788  INFO 20828 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 22:32:50.884  INFO 20828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 22:32:50.885  INFO 20828 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 801 ms
+2019-04-30 22:32:51.034  INFO 20828 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 22:32:51.087  INFO 20828 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 22:32:51.157  INFO 20828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 22:32:51.159  INFO 20828 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.337 seconds (JVM running for 2.02)
+2019-04-30 22:33:08.659  INFO 21188 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 21188 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 22:33:08.661  INFO 21188 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 22:33:09.399  INFO 21188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 22:33:09.415  INFO 21188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 22:33:09.415  INFO 21188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 22:33:09.420  INFO 21188 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 22:33:09.522  INFO 21188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 22:33:09.522  INFO 21188 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 831 ms
+2019-04-30 22:33:11.205  INFO 21188 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 22:33:11.337  INFO 21188 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 22:33:11.521  INFO 21188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 22:33:11.527  INFO 21188 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 3.222 seconds (JVM running for 5.371)
+2019-04-30 22:33:20.955  INFO 21188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-30 22:33:20.955  INFO 21188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-30 22:33:20.963  INFO 21188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-04-30 22:33:21.571  INFO 21188 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.101:9984 after 0 retry(s)...
+2019-04-30 22:33:21.580  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+
+2019-04-30 22:33:21.638  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-30 22:33:21.638  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.101:9984,连接成功
+2019-04-30 22:33:21.639  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 22:33:21.639  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 22:33:30.639  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：8957
+2019-04-30 22:33:30.639  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：8984
+2019-04-30 22:33:30.639  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间9000
+2019-04-30 22:33:31.640  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=81,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=81
+2019-04-30 22:33:31.640  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=81，##########################
+2019-04-30 22:33:31.671  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：15
+2019-04-30 22:33:31.671  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=81的时间：22
+2019-04-30 22:33:31.671  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=81的时间：31
+2019-04-30 22:33:32.672  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<81,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<81
+2019-04-30 22:33:32.672  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<81，##########################
+2019-04-30 22:33:32.698  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：16
+2019-04-30 22:33:32.698  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<81的时间：17
+2019-04-30 22:33:32.698  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<81的时间：26
+2019-04-30 22:33:33.698  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=81,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=81
+2019-04-30 22:33:33.698  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=81，##########################
+2019-04-30 22:33:33.720  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：11
+2019-04-30 22:33:33.720  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=81的时间：12
+2019-04-30 22:33:33.720  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=81的时间：22
+2019-04-30 22:33:34.720  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>81,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>81
+2019-04-30 22:33:34.720  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>81，##########################
+2019-04-30 22:33:34.741  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：11
+2019-04-30 22:33:34.741  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>81的时间：13
+2019-04-30 22:33:34.741  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>81的时间：21
+2019-04-30 22:33:35.742  INFO 21188 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=81,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=81
+2019-04-30 22:33:35.742  INFO 21188 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=81，##########################
+2019-04-30 22:33:35.764  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：12
+2019-04-30 22:33:35.764  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=81的时间：13
+2019-04-30 22:33:35.764  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=81的时间：22
+2019-04-30 22:35:58.642  INFO 21188 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : 文件写入失败，报异常...
+2019-04-30 22:36:02.888  INFO 11460 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 11460 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 22:36:02.891  INFO 11460 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 22:36:03.635  INFO 11460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 22:36:03.649  INFO 11460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 22:36:03.649  INFO 11460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 22:36:03.654  INFO 11460 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 22:36:03.745  INFO 11460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 22:36:03.745  INFO 11460 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 817 ms
+2019-04-30 22:36:04.735  INFO 11460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 22:36:04.852  INFO 11460 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 22:36:05.041  INFO 11460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 22:36:05.047  INFO 11460 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 2.487 seconds (JVM running for 3.324)
+2019-04-30 22:36:10.373  INFO 11460 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-30 22:36:10.373  INFO 11460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-30 22:36:10.380  INFO 11460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-04-30 22:36:10.977  INFO 11460 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.101:9984 after 0 retry(s)...
+2019-04-30 22:36:10.984  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+
+2019-04-30 22:36:11.043  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-30 22:36:11.043  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.101:9984,连接成功
+2019-04-30 22:36:11.044  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 22:36:11.044  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 22:36:11.111  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：24
+2019-04-30 22:36:11.111  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：51
+2019-04-30 22:36:11.111  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间68
+2019-04-30 22:36:12.111  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=3,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=3
+2019-04-30 22:36:12.111  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=3，##########################
+2019-04-30 22:36:12.140  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：13
+2019-04-30 22:36:12.140  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=3的时间：20
+2019-04-30 22:36:12.140  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=3的时间：29
+2019-04-30 22:36:13.140  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<3,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<3
+2019-04-30 22:36:13.140  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<3，##########################
+2019-04-30 22:36:13.162  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：12
+2019-04-30 22:36:13.162  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<3的时间：13
+2019-04-30 22:36:13.162  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<3的时间：22
+2019-04-30 22:36:14.164  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=3,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=3
+2019-04-30 22:36:14.164  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=3，##########################
+2019-04-30 22:36:14.187  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：11
+2019-04-30 22:36:14.187  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=3的时间：12
+2019-04-30 22:36:14.187  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=3的时间：22
+2019-04-30 22:36:15.188  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>3,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>3
+2019-04-30 22:36:15.188  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>3，##########################
+2019-04-30 22:36:15.212  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：14
+2019-04-30 22:36:15.212  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>3的时间：15
+2019-04-30 22:36:15.212  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>3的时间：24
+2019-04-30 22:36:16.212  INFO 11460 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=3,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=3
+2019-04-30 22:36:16.212  INFO 11460 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=3，##########################
+2019-04-30 22:36:16.234  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>=的时间：12
+2019-04-30 22:36:16.234  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=3的时间：13
+2019-04-30 22:36:16.235  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=3的时间：22
+2019-04-30 22:36:40.359  INFO 11460 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : 成功写入文件，请前往查看文件！
