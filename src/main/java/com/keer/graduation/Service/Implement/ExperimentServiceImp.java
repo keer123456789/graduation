@@ -104,7 +104,7 @@ public class ExperimentServiceImp implements IExperimentService {
         result.setStatus(ParserResult.SUCCESS);
         result.setData(map);
         result.setMessage(null);
-        if(assetTotal!=100000){
+        if (assetTotal != 100000) {
             buildExecl("insertByDriver", insertTime);
         }
         return result;
@@ -129,7 +129,7 @@ public class ExperimentServiceImp implements IExperimentService {
             BigchainDBData data = new BigchainDBData("Computer", map);
             String id = bigchainDBUtil.createAsset(data);
             insertTime.add(System.currentTimeMillis() - insertStartTime);
-            logger.info("第"+i+"次插入,交易ID："+id);
+            logger.info("第" + i + "次插入,交易ID：" + id);
             Thread.sleep(500);
         }
         long endTime = System.currentTimeMillis();
@@ -161,7 +161,7 @@ public class ExperimentServiceImp implements IExperimentService {
         result.setStatus(ParserResult.SUCCESS);
         result.setData(map);
         result.setMessage(null);
-        if(asstTotal!=100000){
+        if (asstTotal != 100000) {
             buildExecl("insertByDriver", insertTime);
         }
         return result;
@@ -188,12 +188,12 @@ public class ExperimentServiceImp implements IExperimentService {
 
         for (int m = 0; m < metadataTotal; m++) {
             long insertStartTime = System.currentTimeMillis();
-            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='"+id+"'");
+            result = bdqlUtil.work("UPDATE Person SET FirstName = '" + m + "' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='" + id + "'");
 //            result = bdqlUtil.work("UPDATE Person SET FirstName = '8000' , SecondName='" + (m + 1) + "',age= '" + (m + 11) + "',time='" + (m + 12) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
             updatetTime.add(System.currentTimeMillis() - insertStartTime);
             String TXid = (String) result.getData();
-            for(;true;){
-                if(bigchainDBUtil.checkTransactionExit(TXid)){
+            for (; true; ) {
+                if (bigchainDBUtil.checkTransactionExit(TXid)) {
                     break;
                 }
             }
@@ -229,7 +229,7 @@ public class ExperimentServiceImp implements IExperimentService {
         result.setStatus(ParserResult.SUCCESS);
         result.setData(map);
         result.setMessage(null);
-        if(metadataTotal!=100000){
+        if (metadataTotal != 100000) {
             buildExecl("update", updatetTime);
         }
         return result;
@@ -257,8 +257,8 @@ public class ExperimentServiceImp implements IExperimentService {
             BigchainDBData data = new BigchainDBData("Person", map);
             String txid = bigchainDBUtil.transferToSelf(data, id);
             updateTime.add(System.currentTimeMillis() - insertStartTime);
-            for(;true;){
-                if(bigchainDBUtil.checkTransactionExit(txid)){
+            for (; true; ) {
+                if (bigchainDBUtil.checkTransactionExit(txid)) {
                     break;
                 }
             }
@@ -294,14 +294,13 @@ public class ExperimentServiceImp implements IExperimentService {
         result.setStatus(ParserResult.SUCCESS);
         result.setData(map);
         result.setMessage(null);
-        if(metadataTotal!=100000){
+        if (metadataTotal != 100000) {
             buildExecl("updateByDriver", updateTime);
         }
         return result;
     }
 
     /**
-     *
      * @param total DB中的数
      * @param count 循环次数
      * @return
@@ -312,7 +311,7 @@ public class ExperimentServiceImp implements IExperimentService {
         ParserResult result = new ParserResult();
         bigchainDBRunner.StartConn();
 
-        for(int j=0;j<20;j++) {
+        for (int j = 0; j < 20; j++) {
             double random = Math.random();
             int sum = (int) (random * total);
 
@@ -368,21 +367,20 @@ public class ExperimentServiceImp implements IExperimentService {
                 listMaps.add(map);
             }
 
-            buildSelectExecl(listMaps,"./selectAsset"+j+".xls");
+            buildSelectExecl(listMaps, "./selectAsset" + j + ".xls");
         }
         result.setMessage("查询成功");
         return result;
     }
 
     /**
-     *
      * @param total 库中数据量
      * @param count 查询次数
-     * @param a sql查询的随机数
+     * @param a     sql查询的随机数
      * @return
      * @throws InterruptedException
      */
-    public ParserResult selectAssetByDriverExperiment(int total,int count,int a) throws InterruptedException {
+    public ParserResult selectAssetByDriverExperiment(int total, int count, int a) throws InterruptedException {
         ParserResult result = new ParserResult();
         bigchainDBRunner.StartConn();
         List<Map> listMaps = new ArrayList<>();
@@ -549,16 +547,16 @@ public class ExperimentServiceImp implements IExperimentService {
             listMaps.add(map);
         }
         result.setData(listMaps);
-        buildSelectByDriverExecl(listMaps,"./selectAssetByDriver_"+a+".xls");
+        buildSelectByDriverExecl(listMaps, "./selectAssetByDriver_" + a + ".xls");
         return result;
     }
 
     @Override
-    public ParserResult selectMetadataExperiment(int total,int count) throws InterruptedException {
+    public ParserResult selectMetadataExperiment(int total, int count) throws InterruptedException {
         ParserResult result = new ParserResult();
 
         bigchainDBRunner.StartConn();
-        for(int j=0;j<20;j++) {
+        for (int j = 0; j < 20; j++) {
             double random = Math.random();
             int sum = (int) (random * total);
             List<Map> mapList = new ArrayList<>();
@@ -610,19 +608,19 @@ public class ExperimentServiceImp implements IExperimentService {
                 mapList.add(map);
             }
 
-            buildSelectExecl(mapList,"./selectMetadata_"+j+".xls");
+            buildSelectExecl(mapList, "./selectMetadata_" + j + ".xls");
         }
         result.setMessage("已经完成");
         return result;
     }
 
-    public ParserResult selectMetadataByDriverExperiment(int total,int count,int sum) throws InterruptedException {
+    public ParserResult selectMetadataByDriverExperiment(int total, int count, int sum) throws InterruptedException {
         ParserResult result = new ParserResult();
 
         bigchainDBRunner.StartConn();
 
-        List<Map> mapList=new ArrayList<>();
-        for(int i=0;i<count;i++) {
+        List<Map> mapList = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
             Map map = new HashMap();
             map.put("随机数", sum);
 
@@ -784,18 +782,18 @@ public class ExperimentServiceImp implements IExperimentService {
         }
 
         result.setData(mapList);
-        buildSelectByDriverExecl(mapList,"./selectMetadataByDriver_"+sum+".xls");
+        buildSelectByDriverExecl(mapList, "./selectMetadataByDriver_" + sum + ".xls");
         return result;
     }
 
-    public ParserResult test(){
+    public ParserResult test() {
         ParserResult result = new ParserResult();
 
         bigchainDBRunner.StartConn("http://192.168.1.102:9984");
         result = bdqlUtil.work("UPDATE Person SET FirstName = '" + 8000 + "' , SecondName='" + (8001) + "',age= '" + (8001) + "',time='" + (8001) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
         String TXid = (String) result.getData();
-        for(;true;){
-            if(bigchainDBUtil.checkTransactionExit(TXid)){
+        for (; true; ) {
+            if (bigchainDBUtil.checkTransactionExit(TXid)) {
                 break;
             }
         }
@@ -804,6 +802,104 @@ public class ExperimentServiceImp implements IExperimentService {
 
     }
 
+
+    public void selectAsset(int total) throws InterruptedException {
+        bigchainDBRunner.StartConn();
+
+        for (int i = 0; i < 5; i++) {
+            double random = Math.random();
+            int sum = (int) (random * total);
+            List<Map> listMaps = new ArrayList<>();
+            for (int j = 0; j < 1; j++) {
+                Map map = new HashMap();
+                map.put("随机数", sum);
+
+                /**
+                 * BDQL查询全部表中数据
+                 */
+
+                ParserResult result = bdqlUtil.work("select * from Computer");
+                String str = result.getMessage();
+                String sql = str.split(",")[0];
+                String driver = str.split(",")[1];
+
+                map.put("Driver查询全部数据", driver);
+                logger.info("Driver查询全部信息的时间：" + driver);
+                map.put("QL查询全部数据", sql);
+                logger.info("QL * 查询表中全部信息的时间：" + sql);
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id=" + sum);
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询=", driver);
+                logger.info("Driver查询=的时间：" + driver);
+                map.put("QL查询=", sql);
+                logger.info("QL 查询id=" + sum + "的时间：" + sql);
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id<" + sum);
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询<", driver);
+                logger.info("Driver查询<的时间：" + driver);
+                map.put("QL查询<", sql);
+                logger.info("QL 查询id<" + sum + "的时间：" + sql);
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id<=" + sum);
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询<=", driver);
+                logger.info("Driver查询<=的时间：" + driver);
+                map.put("QL查询<=", sql);
+                logger.info("QL 查询id<=" + sum + "的时间：" + sql);
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id>" + sum);
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询>", driver);
+                logger.info("Driver查询>的时间：" + driver);
+                map.put("QL查询>", sql);
+                logger.info("QL 查询id>" + sum + "的时间：" + sql);
+
+
+                Thread.sleep(1000);
+
+                result = bdqlUtil.work("select * from Computer where id>=" + sum);
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询>=", driver);
+                logger.info("Driver查询>=的时间：" + driver);
+                map.put("QL查询>=", sql);
+                logger.info("QL 查询id>=" + sum + "的时间：" + sql);
+
+                listMaps.add(map);
+            }
+
+            buildSelect(listMaps, "./Asset" + i + ".xls");
+        }
+
+    }
 
 
     private void buildExecl(String title, List list) {
@@ -836,7 +932,7 @@ public class ExperimentServiceImp implements IExperimentService {
 
     }
 
-    private void buildSelectExecl(List<Map> list,String name) {
+    private void buildSelectExecl(List<Map> list, String name) {
         File file = new File(name);
         if (file.exists()) {
             file.delete();
@@ -889,7 +985,85 @@ public class ExperimentServiceImp implements IExperimentService {
         }
     }
 
-    private void buildSelectByDriverExecl(List<Map> list,String name) {
+    private void buildSelect(List<Map> list, String name) {
+        File file = new File(name);
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            file.createNewFile();
+            WritableWorkbook writableWorkbook = Workbook.createWorkbook(file);
+            WritableSheet sheet = writableWorkbook.createSheet("sheet1", 0);
+            Label label = new Label(1, 0, "随机数");
+            sheet.addCell(label);
+            label = new Label(0, 0, "id");
+            sheet.addCell(label);
+            label = new Label(2, 0, "QL查询全部数据");
+            sheet.addCell(label);
+            label = new Label(3, 0, "Driver查询全部数据");
+            sheet.addCell(label);
+            label = new Label(4, 0, "QL查询=");
+            sheet.addCell(label);
+            label = new Label(5, 0, "Driver查询=");
+            sheet.addCell(label);
+            label = new Label(6, 0, "QL查询>");
+            sheet.addCell(label);
+            label = new Label(7, 0, "Driver查询>");
+            sheet.addCell(label);
+            label = new Label(8, 0, "QL查询>=");
+            sheet.addCell(label);
+            label = new Label(9, 0, "Driver查询>=");
+            sheet.addCell(label);
+            label = new Label(10, 0, "QL查询<");
+            sheet.addCell(label);
+            label = new Label(11, 0, "Driver查询<");
+            sheet.addCell(label);
+            label = new Label(12, 0, "QL查询<=");
+            sheet.addCell(label);
+            label = new Label(13, 0, "Driver查询<=");
+            sheet.addCell(label);
+
+
+            for (int j = 0; j < list.size(); j++) {
+                Map map = list.get(j);
+                Label data = new Label(0, j + 1, "" + (j + 1));
+                sheet.addCell(data);
+                data = new Label(1, j + 1, map.get("随机数").toString());
+                sheet.addCell(data);
+                data = new Label(2, j + 1, map.get("QL查询全部数据").toString());
+                sheet.addCell(data);
+                data = new Label(3, j + 1, map.get("Driver查询全部数据").toString());
+                sheet.addCell(data);
+                data = new Label(4, j + 1, map.get("QL查询=").toString());
+                sheet.addCell(data);
+                data = new Label(5, j + 1, map.get("Driver查询=").toString());
+                sheet.addCell(data);
+                data = new Label(6, j + 1, map.get("QL查询>").toString());
+                sheet.addCell(data);
+                data = new Label(7, j + 1, map.get("Driver查询>").toString());
+                sheet.addCell(data);
+                data = new Label(8, j + 1, map.get("QL查询>=").toString());
+                sheet.addCell(data);
+                data = new Label(9, j + 1, map.get("Driver查询>=").toString());
+                sheet.addCell(data);
+                data = new Label(10, j + 1, map.get("QL查询<").toString());
+                sheet.addCell(data);
+                data = new Label(11, j + 1, map.get("Driver查询<").toString());
+                sheet.addCell(data);
+                data = new Label(12, j + 1, map.get("QL查询<=").toString());
+                sheet.addCell(data);
+                data = new Label(13, j + 1, map.get("Driver查询<=").toString());
+                sheet.addCell(data);
+            }
+            writableWorkbook.write();    //写入数据
+            writableWorkbook.close();  //关闭连接
+            logger.info("成功写入文件，请前往查看文件！");
+        } catch (Exception e) {
+            logger.info("文件写入失败，报异常...");
+        }
+    }
+
+    private void buildSelectByDriverExecl(List<Map> list, String name) {
         File file = new File(name);
         if (file.exists()) {
             file.delete();
@@ -944,14 +1118,14 @@ public class ExperimentServiceImp implements IExperimentService {
     }
 
     public static void main(String[] args) throws IOException {
-        BDQLUtil bdqlUtil=new BDQLUtil();
-        BigchainDBUtil bigchainDBUtil=new BigchainDBUtil();
-        BigchainDBRunner bigchainDBRunner=new BigchainDBRunner();
+        BDQLUtil bdqlUtil = new BDQLUtil();
+        BigchainDBUtil bigchainDBUtil = new BigchainDBUtil();
+        BigchainDBRunner bigchainDBRunner = new BigchainDBRunner();
         bigchainDBRunner.StartConn("http://192.168.1.102:9984");
         ParserResult result = bdqlUtil.work("UPDATE Person SET FirstName = '" + 8000 + "' , SecondName='" + (8001) + "',age= '" + (8001) + "',time='" + (8001) + "' WHERE ID='f3d9f405ab35266da01605bf205eaae2575f4249e5dc4b2c406bd0e8f5c79dc2'");
         String TXid = (String) result.getData();
-        for(;true;){
-            if(bigchainDBUtil.checkTransactionExit(TXid)){
+        for (; true; ) {
+            if (bigchainDBUtil.checkTransactionExit(TXid)) {
                 break;
             }
         }

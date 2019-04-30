@@ -75,5 +75,10 @@ public class ExperimentController {
         return "finish";
     }
 
+    @GetMapping("/selectAsset/{total}")
+    public void selectAsset(@PathVariable int total) throws InterruptedException {
+        experimentService.selectAsset(total);
+    }
+
 
 }
