@@ -1032,7 +1032,7 @@ public class ExperimentServiceImp implements IExperimentService {
                 mapList.add(map);
             }
 
-            buildSelectExecl(mapList, "./selectMetadata_" + j + ".xls");
+            buildSelect(mapList, "./selectMetadata_" + j + ".xls");
         }
 
     }
