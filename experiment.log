@@ -3008,3 +3008,260 @@ java.lang.ArrayIndexOutOfBoundsException: 1
 2019-04-30 10:09:56.319  INFO 11516 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>=的时间：12544
 2019-04-30 10:09:56.319  INFO 11516 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询id>=1012的时间：12544
 2019-04-30 10:09:56.350  INFO 11516 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : 成功写入文件，请前往查看文件！
+2019-04-30 14:30:25.953  INFO 7228 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 7228 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 14:30:25.955  INFO 7228 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 14:30:26.632  INFO 7228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 14:30:26.647  INFO 7228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 14:30:26.647  INFO 7228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 14:30:26.652  INFO 7228 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 14:30:26.744  INFO 7228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 14:30:26.744  INFO 7228 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 763 ms
+2019-04-30 14:30:26.888  INFO 7228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 14:30:26.941  INFO 7228 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 14:30:27.011  INFO 7228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 14:30:27.013  INFO 7228 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.29 seconds (JVM running for 1.984)
+2019-04-30 14:30:37.553  INFO 3992 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 3992 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 14:30:37.555  INFO 3992 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 14:30:38.265  INFO 3992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 14:30:38.284  INFO 3992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 14:30:38.285  INFO 3992 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 14:30:38.290  INFO 3992 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 14:30:38.386  INFO 3992 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 14:30:38.387  INFO 3992 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 805 ms
+2019-04-30 14:30:38.538  INFO 3992 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 14:30:38.590  INFO 3992 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 14:30:38.661  INFO 3992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 14:30:38.663  INFO 3992 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.341 seconds (JVM running for 2.051)
+2019-04-30 14:30:57.025  INFO 3992 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-30 14:30:57.025  INFO 3992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-30 14:30:57.029  INFO 3992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-04-30 14:30:57.420  INFO 3992 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-30 14:30:57.426  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+
+2019-04-30 14:30:57.457  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-30 14:30:57.457  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-30 14:30:57.457  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:30:57.457  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:30:57.496  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：0
+2019-04-30 14:30:57.496  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：13
+2019-04-30 14:30:57.496  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间39
+2019-04-30 14:30:58.496  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=38
+2019-04-30 14:30:58.496  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=38，##########################
+2019-04-30 14:30:58.523  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：0
+2019-04-30 14:30:58.523  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=38的时间：2
+2019-04-30 14:30:58.523  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=38的时间：27
+2019-04-30 14:30:59.524  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<38
+2019-04-30 14:30:59.524  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<38，##########################
+2019-04-30 14:30:59.539  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：0
+2019-04-30 14:30:59.539  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<38的时间：0
+2019-04-30 14:30:59.539  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<38的时间：15
+2019-04-30 14:31:00.539  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=38
+2019-04-30 14:31:00.539  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=38，##########################
+2019-04-30 14:31:00.562  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：0
+2019-04-30 14:31:00.562  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=38的时间：0
+2019-04-30 14:31:00.562  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=38的时间：23
+2019-04-30 14:31:01.562  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>38
+2019-04-30 14:31:01.562  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>38，##########################
+2019-04-30 14:31:01.590  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：0
+2019-04-30 14:31:01.591  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>38的时间：0
+2019-04-30 14:31:01.591  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>38的时间：28
+2019-04-30 14:31:02.592  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=38
+2019-04-30 14:31:02.592  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=38，##########################
+2019-04-30 14:31:02.605  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：0
+2019-04-30 14:31:02.605  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=38的时间：0
+2019-04-30 14:31:02.605  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=38的时间：13
+2019-04-30 14:31:03.606  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:31:03.606  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:31:03.623  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：0
+2019-04-30 14:31:03.623  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：0
+2019-04-30 14:31:03.623  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间17
+2019-04-30 14:31:04.624  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=38
+2019-04-30 14:31:04.624  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=38，##########################
+2019-04-30 14:31:04.635  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：0
+2019-04-30 14:31:04.635  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=38的时间：0
+2019-04-30 14:31:04.636  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=38的时间：11
+2019-04-30 14:31:05.636  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<38
+2019-04-30 14:31:05.636  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<38，##########################
+2019-04-30 14:31:05.648  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：0
+2019-04-30 14:31:05.649  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<38的时间：0
+2019-04-30 14:31:05.649  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<38的时间：12
+2019-04-30 14:31:06.650  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=38
+2019-04-30 14:31:06.650  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=38，##########################
+2019-04-30 14:31:06.667  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：0
+2019-04-30 14:31:06.667  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=38的时间：0
+2019-04-30 14:31:06.667  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=38的时间：16
+2019-04-30 14:31:07.667  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>38
+2019-04-30 14:31:07.667  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>38，##########################
+2019-04-30 14:31:07.685  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：0
+2019-04-30 14:31:07.685  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>38的时间：0
+2019-04-30 14:31:07.685  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>38的时间：18
+2019-04-30 14:31:08.685  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=38
+2019-04-30 14:31:08.685  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=38，##########################
+2019-04-30 14:31:08.704  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：0
+2019-04-30 14:31:08.704  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=38的时间：0
+2019-04-30 14:31:08.704  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=38的时间：19
+2019-04-30 14:31:09.705  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:31:09.705  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:31:09.718  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：0
+2019-04-30 14:31:09.718  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：0
+2019-04-30 14:31:09.718  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间13
+2019-04-30 14:31:10.719  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=38
+2019-04-30 14:31:10.719  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=38，##########################
+2019-04-30 14:31:10.730  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：0
+2019-04-30 14:31:10.730  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=38的时间：0
+2019-04-30 14:31:10.730  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=38的时间：11
+2019-04-30 14:31:11.731  INFO 3992 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<38,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<38
+2019-04-30 14:31:11.731  INFO 3992 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<38，##########################
+2019-04-30 14:31:11.743  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：0
+2019-04-30 14:31:11.743  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<38的时间：0
+2019-04-30 14:31:11.743  INFO 3992 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<38的时间：12
+2019-04-30 14:31:40.891  INFO 18360 --- [main] c.keer.graduation.GraduationApplication  : Starting GraduationApplication on DESKTOP-MCBQJGQ with PID 18360 (E:\code\java\graduation\target\classes started by keer in E:\code\java\graduation)
+2019-04-30 14:31:40.894  INFO 18360 --- [main] c.keer.graduation.GraduationApplication  : No active profile set, falling back to default profiles: default
+2019-04-30 14:31:41.574  INFO 18360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-30 14:31:41.590  INFO 18360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-30 14:31:41.590  INFO 18360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-30 14:31:41.595  INFO 18360 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\Scripts\;D:\Users\keer\AppData\Local\Programs\Python\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\jre64;D:\Program Files\nodejs\;"D:\java\jdk1.8.0_161\bin;D:\java\jdk1.8.0_161\jre\bin;";D:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Program Files\JetBrains\WebStorm 2018.3.2\bin;;C:\Users\keer\AppData\Roaming\npm;D:\Users\keer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+2019-04-30 14:31:41.692  INFO 18360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-30 14:31:41.692  INFO 18360 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 772 ms
+2019-04-30 14:31:41.839  INFO 18360 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-30 14:31:41.890  INFO 18360 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-04-30 14:31:41.960  INFO 18360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-30 14:31:41.962  INFO 18360 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 1.311 seconds (JVM running for 1.982)
+2019-04-30 14:31:47.553  INFO 18360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-30 14:31:47.553  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-30 14:31:47.556  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-04-30 14:31:47.945  INFO 18360 --- [http-nio-8080-exec-1] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.1.102:9984 after 0 retry(s)...
+2019-04-30 14:31:47.951  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+
+2019-04-30 14:31:47.982  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-04-30 14:31:47.982  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.1.102:9984,连接成功
+2019-04-30 14:31:47.982  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:31:47.982  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:31:48.012  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：9
+2019-04-30 14:31:48.012  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：21
+2019-04-30 14:31:48.012  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间30
+2019-04-30 14:31:49.013  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=46
+2019-04-30 14:31:49.013  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=46，##########################
+2019-04-30 14:31:49.029  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：8
+2019-04-30 14:31:49.029  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：10
+2019-04-30 14:31:49.029  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：16
+2019-04-30 14:31:50.029  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<46
+2019-04-30 14:31:50.029  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<46，##########################
+2019-04-30 14:31:50.042  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：6
+2019-04-30 14:31:50.042  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<46的时间：6
+2019-04-30 14:31:50.042  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<46的时间：13
+2019-04-30 14:31:51.043  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=46
+2019-04-30 14:31:51.043  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=46，##########################
+2019-04-30 14:31:51.057  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：6
+2019-04-30 14:31:51.057  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=46的时间：6
+2019-04-30 14:31:51.057  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=46的时间：13
+2019-04-30 14:31:52.057  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>46
+2019-04-30 14:31:52.057  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>46，##########################
+2019-04-30 14:31:52.073  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：7
+2019-04-30 14:31:52.074  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>46的时间：7
+2019-04-30 14:31:52.074  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>46的时间：16
+2019-04-30 14:31:53.074  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=46
+2019-04-30 14:31:53.074  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=46，##########################
+2019-04-30 14:31:53.088  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：5
+2019-04-30 14:31:53.089  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=46的时间：5
+2019-04-30 14:31:53.089  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=46的时间：14
+2019-04-30 14:31:54.089  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:31:54.089  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:31:54.101  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：6
+2019-04-30 14:31:54.102  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：6
+2019-04-30 14:31:54.102  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间12
+2019-04-30 14:31:55.102  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=46
+2019-04-30 14:31:55.102  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=46，##########################
+2019-04-30 14:31:55.117  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：6
+2019-04-30 14:31:55.117  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：6
+2019-04-30 14:31:55.118  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：15
+2019-04-30 14:31:56.118  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<46
+2019-04-30 14:31:56.118  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<46，##########################
+2019-04-30 14:31:56.133  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：8
+2019-04-30 14:31:56.133  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<46的时间：8
+2019-04-30 14:31:56.133  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<46的时间：15
+2019-04-30 14:31:57.134  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=46
+2019-04-30 14:31:57.134  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=46，##########################
+2019-04-30 14:31:57.144  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：5
+2019-04-30 14:31:57.144  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=46的时间：5
+2019-04-30 14:31:57.144  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=46的时间：10
+2019-04-30 14:31:58.145  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>46
+2019-04-30 14:31:58.145  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>46，##########################
+2019-04-30 14:31:58.159  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：6
+2019-04-30 14:31:58.160  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>46的时间：6
+2019-04-30 14:31:58.160  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>46的时间：14
+2019-04-30 14:31:59.161  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=46
+2019-04-30 14:31:59.161  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=46，##########################
+2019-04-30 14:31:59.175  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：6
+2019-04-30 14:31:59.175  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=46的时间：6
+2019-04-30 14:31:59.175  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=46的时间：14
+2019-04-30 14:32:00.175  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:32:00.175  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:32:00.190  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：7
+2019-04-30 14:32:00.190  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：7
+2019-04-30 14:32:00.190  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间15
+2019-04-30 14:32:01.190  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=46
+2019-04-30 14:32:01.190  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=46，##########################
+2019-04-30 14:32:01.204  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：5
+2019-04-30 14:32:01.204  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：5
+2019-04-30 14:32:01.204  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：14
+2019-04-30 14:32:02.205  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<46
+2019-04-30 14:32:02.205  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<46，##########################
+2019-04-30 14:32:02.219  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：5
+2019-04-30 14:32:02.219  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<46的时间：5
+2019-04-30 14:32:02.219  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<46的时间：14
+2019-04-30 14:32:03.220  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=46
+2019-04-30 14:32:03.220  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=46，##########################
+2019-04-30 14:32:03.234  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：6
+2019-04-30 14:32:03.234  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=46的时间：6
+2019-04-30 14:32:03.234  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=46的时间：14
+2019-04-30 14:32:04.234  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>46
+2019-04-30 14:32:04.234  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>46，##########################
+2019-04-30 14:32:04.249  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：6
+2019-04-30 14:32:04.249  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>46的时间：6
+2019-04-30 14:32:04.249  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>46的时间：15
+2019-04-30 14:32:05.250  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=46
+2019-04-30 14:32:05.250  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=46，##########################
+2019-04-30 14:32:05.265  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：6
+2019-04-30 14:32:05.265  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=46的时间：6
+2019-04-30 14:32:05.265  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=46的时间：15
+2019-04-30 14:32:06.265  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:32:06.265  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:32:06.280  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：5
+2019-04-30 14:32:06.281  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：5
+2019-04-30 14:32:06.281  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间15
+2019-04-30 14:32:07.282  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=46
+2019-04-30 14:32:07.282  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=46，##########################
+2019-04-30 14:32:07.297  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：6
+2019-04-30 14:32:07.297  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：6
+2019-04-30 14:32:07.297  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：15
+2019-04-30 14:32:08.297  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<46
+2019-04-30 14:32:08.297  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<46，##########################
+2019-04-30 14:32:08.313  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<的时间：7
+2019-04-30 14:32:08.313  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<46的时间：7
+2019-04-30 14:32:08.313  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<46的时间：16
+2019-04-30 14:32:09.314  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName<=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME<=46
+2019-04-30 14:32:09.314  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName<=46，##########################
+2019-04-30 14:32:09.329  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询<=的时间：7
+2019-04-30 14:32:09.329  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName<=46的时间：7
+2019-04-30 14:32:09.329  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1<=46的时间：15
+2019-04-30 14:32:10.329  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>46
+2019-04-30 14:32:10.329  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>46，##########################
+2019-04-30 14:32:10.341  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：6
+2019-04-30 14:32:10.341  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>46的时间：6
+2019-04-30 14:32:10.341  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>46的时间：12
+2019-04-30 14:32:11.342  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName>=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME>=46
+2019-04-30 14:32:11.342  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName>=46，##########################
+2019-04-30 14:32:11.356  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询>的时间：5
+2019-04-30 14:32:11.356  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName>=46的时间：5
+2019-04-30 14:32:11.357  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1>=46的时间：14
+2019-04-30 14:32:12.357  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person,转换后：SELECT * FROM PERSON
+2019-04-30 14:32:12.357  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person，##########################
+2019-04-30 14:32:12.371  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询全部信息的时间：6
+2019-04-30 14:32:12.372  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL * 查询表中全部信息的时间：6
+2019-04-30 14:32:12.372  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1全部数据的时间14
+2019-04-30 14:32:13.372  INFO 18360 --- [http-nio-8080-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from Person where FirstName=46,转换后：SELECT * FROM PERSON WHERE FIRSTNAME=46
+2019-04-30 14:32:13.372  INFO 18360 --- [http-nio-8080-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from Person where FirstName=46，##########################
+2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : Driver查询=的时间：4
+2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL 查询FirstName=46的时间：4
+2019-04-30 14:32:13.381  INFO 18360 --- [http-nio-8080-exec-1] c.k.g.S.Implement.BigchainDBServiceImp   : QL查询1=46的时间：9

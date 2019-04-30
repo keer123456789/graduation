@@ -14,14 +14,17 @@ public interface IExperimentService {
 
     ParserResult insertByDriverExperiment(int asstTotal) throws Exception;
 
-    ParserResult selectAssetExperiment(int total,int count) throws InterruptedException;
+    ParserResult selectAssetExperiment(int total, int count) throws InterruptedException;
 
-    ParserResult selectAssetByDriverExperiment(int total,int count,int a) throws InterruptedException;
+    ParserResult selectAssetByDriverExperiment(int total, int count, int a) throws InterruptedException;
 
-    ParserResult selectMetadataExperiment(int total,int count) throws InterruptedException;
+    ParserResult selectMetadataExperiment(int total, int count) throws InterruptedException;
 
-    ParserResult selectMetadataByDriverExperiment(int total,int count,int sum) throws InterruptedException;
+    ParserResult selectMetadataByDriverExperiment(int total, int count, int sum) throws InterruptedException;
 
     ParserResult test();
+
     void selectAsset(int total) throws InterruptedException;
+
+    void selectMetadata(int total) throws InterruptedException;
 }

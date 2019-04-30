@@ -817,8 +817,9 @@ public class ExperimentServiceImp implements IExperimentService {
                 /**
                  * BDQL查询全部表中数据
                  */
-
+                long start=System.currentTimeMillis();
                 ParserResult result = bdqlUtil.work("select * from Computer");
+                long end=System.currentTimeMillis();
                 String str = result.getMessage();
                 String sql = str.split(",")[0];
                 String driver = str.split(",")[1];
@@ -827,11 +828,13 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询全部信息的时间：" + driver);
                 map.put("QL查询全部数据", sql);
                 logger.info("QL * 查询表中全部信息的时间：" + sql);
-
+                map.put("QL查询1全部数据",""+(end-start));
+                logger.info("QL查询1全部数据的时间"+(end-start));
 
                 Thread.sleep(1000);
-
+                start=System.currentTimeMillis();
                 result = bdqlUtil.work("select * from Computer where id=" + sum);
+                end=System.currentTimeMillis();
                 str = result.getMessage();
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
@@ -840,11 +843,14 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询=的时间：" + driver);
                 map.put("QL查询=", sql);
                 logger.info("QL 查询id=" + sum + "的时间：" + sql);
+                map.put("QL查询1=",""+(end-start));
+                logger.info("QL查询1=的时间"+(end-start));
 
 
                 Thread.sleep(1000);
-
+                start=System.currentTimeMillis();
                 result = bdqlUtil.work("select * from Computer where id<" + sum);
+                end=System.currentTimeMillis();
                 str = result.getMessage();
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
@@ -853,11 +859,15 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询<的时间：" + driver);
                 map.put("QL查询<", sql);
                 logger.info("QL 查询id<" + sum + "的时间：" + sql);
+                map.put("QL查询1<",""+(end-start));
+                logger.info("QL查询1<的时间"+(end-start));
 
 
                 Thread.sleep(1000);
 
+                start=System.currentTimeMillis();
                 result = bdqlUtil.work("select * from Computer where id<=" + sum);
+                end=System.currentTimeMillis();
                 str = result.getMessage();
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
@@ -866,11 +876,14 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询<=的时间：" + driver);
                 map.put("QL查询<=", sql);
                 logger.info("QL 查询id<=" + sum + "的时间：" + sql);
+                map.put("QL查询1<=",""+(end-start));
+                logger.info("QL查询1<=的时间"+(end-start));
 
 
                 Thread.sleep(1000);
-
+                start=System.currentTimeMillis();
                 result = bdqlUtil.work("select * from Computer where id>" + sum);
+                end=System.currentTimeMillis();
                 str = result.getMessage();
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
@@ -879,11 +892,13 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询>的时间：" + driver);
                 map.put("QL查询>", sql);
                 logger.info("QL 查询id>" + sum + "的时间：" + sql);
-
+                map.put("QL查询1>",""+(end-start));
+                logger.info("QL查询1>的时间"+(end-start));
 
                 Thread.sleep(1000);
-
+                start=System.currentTimeMillis();
                 result = bdqlUtil.work("select * from Computer where id>=" + sum);
+                end=System.currentTimeMillis();
                 str = result.getMessage();
                 sql = str.split(",")[0];
                 driver = str.split(",")[1];
@@ -892,6 +907,8 @@ public class ExperimentServiceImp implements IExperimentService {
                 logger.info("Driver查询>=的时间：" + driver);
                 map.put("QL查询>=", sql);
                 logger.info("QL 查询id>=" + sum + "的时间：" + sql);
+                map.put("QL查询1>=",""+(end-start));
+                logger.info("QL查询1>=的时间"+(end-start));
 
                 listMaps.add(map);
             }
@@ -899,6 +916,125 @@ public class ExperimentServiceImp implements IExperimentService {
             buildSelect(listMaps, "./Asset" + i + ".xls");
         }
 
+    }
+
+    public void selectMetadata(int total) throws InterruptedException {
+        bigchainDBRunner.StartConn();
+        for (int j = 0; j < 20; j++) {
+            double random = Math.random();
+            int sum = (int) (random * total);
+            List<Map> mapList = new ArrayList<>();
+            for (int i = 0; i < 20; i++) {
+                Map map = new HashMap();
+                map.put("随机数", sum);
+
+                /**
+                 * BDQL查询全部表中数据
+                 */
+                long start=System.currentTimeMillis();
+                ParserResult result = bdqlUtil.work("select * from Person");
+                long end=System.currentTimeMillis();
+                String str = result.getMessage();
+                String sql = str.split(",")[0];
+                String driver = str.split(",")[1];
+
+                map.put("Driver查询全部数据", driver);
+                logger.info("Driver查询全部信息的时间：" + driver);
+                map.put("QL查询全部数据", sql);
+                logger.info("QL * 查询表中全部信息的时间：" + sql);
+                map.put("QL查询1全部数据",""+(end-start));
+                logger.info("QL查询1全部数据的时间"+(end-start));
+
+
+                Thread.sleep(1000);
+                start=System.currentTimeMillis();
+                result = bdqlUtil.work("select * from Person where FirstName=" + sum);
+                end=System.currentTimeMillis();
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询=", driver);
+                logger.info("Driver查询=的时间：" + driver);
+                map.put("QL查询=", sql);
+                logger.info("QL 查询FirstName=" + sum + "的时间：" + sql);
+                map.put("QL查询1=", ""+(end-start));
+                logger.info("QL查询1=" + sum + "的时间：" + (end-start));
+
+                Thread.sleep(1000);
+
+                start=System.currentTimeMillis();
+                result = bdqlUtil.work("select * from Person where FirstName<" + sum);
+                end=System.currentTimeMillis();
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询<", driver);
+                logger.info("Driver查询<的时间：" + driver);
+                map.put("QL查询<", sql);
+                logger.info("QL 查询FirstName<" + sum + "的时间：" + sql);
+                map.put("QL查询1<", ""+(end-start));
+                logger.info("QL查询1<" + sum + "的时间：" + (end-start));
+
+                Thread.sleep(1000);
+
+                start=System.currentTimeMillis();
+                result = bdqlUtil.work("select * from Person where FirstName<=" + sum);
+                end=System.currentTimeMillis();
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询<=", driver);
+                logger.info("Driver查询<=的时间：" + driver);
+                map.put("QL查询<=", sql);
+                logger.info("QL 查询FirstName<=" + sum + "的时间：" + sql);
+                map.put("QL查询1<=", ""+(end-start));
+                logger.info("QL查询1<=" + sum + "的时间：" + (end-start));
+
+                Thread.sleep(1000);
+
+                start=System.currentTimeMillis();
+                result = bdqlUtil.work("select * from Person where FirstName>" + sum);
+                end=System.currentTimeMillis();
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询>", driver);
+                logger.info("Driver查询>的时间：" + driver);
+                map.put("QL查询>", sql);
+                logger.info("QL 查询FirstName>" + sum + "的时间：" + sql);
+                map.put("QL查询1>", ""+(end-start));
+                logger.info("QL查询1>" + sum + "的时间：" + (end-start));
+
+                Thread.sleep(1000);
+
+                start=System.currentTimeMillis();
+                result = bdqlUtil.work("select * from Person where FirstName>=" + sum);
+                end=System.currentTimeMillis();
+                str = result.getMessage();
+                sql = str.split(",")[0];
+                driver = str.split(",")[1];
+
+                map.put("Driver查询>", driver);
+                logger.info("Driver查询>的时间：" + driver);
+                map.put("QL查询>=", sql);
+                logger.info("QL 查询FirstName>=" + sum + "的时间：" + sql);
+                map.put("QL查询1>=", ""+(end-start));
+                logger.info("QL查询1>=" + sum + "的时间：" + (end-start));
+
+
+                Thread.sleep(1000);
+
+
+                mapList.add(map);
+            }
+
+            buildSelectExecl(mapList, "./selectMetadata_" + j + ".xls");
+        }
+       
     }
 
 
@@ -1000,27 +1136,39 @@ public class ExperimentServiceImp implements IExperimentService {
             sheet.addCell(label);
             label = new Label(2, 0, "QL查询全部数据");
             sheet.addCell(label);
-            label = new Label(3, 0, "Driver查询全部数据");
+            label = new Label(3, 0, "QL查询1全部数据");
             sheet.addCell(label);
-            label = new Label(4, 0, "QL查询=");
+            label = new Label(4, 0, "Driver查询全部数据");
             sheet.addCell(label);
-            label = new Label(5, 0, "Driver查询=");
+            label = new Label(5, 0, "QL查询=");
             sheet.addCell(label);
-            label = new Label(6, 0, "QL查询>");
+            label = new Label(6, 0, "QL查询1=");
             sheet.addCell(label);
-            label = new Label(7, 0, "Driver查询>");
+            label = new Label(7, 0, "Driver查询=");
             sheet.addCell(label);
-            label = new Label(8, 0, "QL查询>=");
+            label = new Label(8, 0, "QL查询>");
             sheet.addCell(label);
-            label = new Label(9, 0, "Driver查询>=");
+            label = new Label(9, 0, "QL查询1>");
             sheet.addCell(label);
-            label = new Label(10, 0, "QL查询<");
+            label = new Label(10, 0, "Driver查询>");
             sheet.addCell(label);
-            label = new Label(11, 0, "Driver查询<");
+            label = new Label(11, 0, "QL查询>=");
             sheet.addCell(label);
-            label = new Label(12, 0, "QL查询<=");
+            label = new Label(12, 0, "QL查询1>=");
             sheet.addCell(label);
-            label = new Label(13, 0, "Driver查询<=");
+            label = new Label(13, 0, "Driver查询>=");
+            sheet.addCell(label);
+            label = new Label(14, 0, "QL查询<");
+            sheet.addCell(label);
+            label = new Label(15, 0, "QL查询1<");
+            sheet.addCell(label);
+            label = new Label(16, 0, "Driver查询<");
+            sheet.addCell(label);
+            label = new Label(17, 0, "QL查询<=");
+            sheet.addCell(label);
+            label = new Label(18, 0, "QL查询1<=");
+            sheet.addCell(label);
+            label = new Label(19, 0, "Driver查询<=");
             sheet.addCell(label);
 
 
@@ -1032,27 +1180,39 @@ public class ExperimentServiceImp implements IExperimentService {
                 sheet.addCell(data);
                 data = new Label(2, j + 1, map.get("QL查询全部数据").toString());
                 sheet.addCell(data);
-                data = new Label(3, j + 1, map.get("Driver查询全部数据").toString());
+                data = new Label(3, j + 1, map.get("QL查询1全部数据").toString());
                 sheet.addCell(data);
-                data = new Label(4, j + 1, map.get("QL查询=").toString());
+                data = new Label(4, j + 1, map.get("Driver查询全部数据").toString());
                 sheet.addCell(data);
-                data = new Label(5, j + 1, map.get("Driver查询=").toString());
+                data = new Label(5, j + 1, map.get("QL查询=").toString());
                 sheet.addCell(data);
-                data = new Label(6, j + 1, map.get("QL查询>").toString());
+                data = new Label(6, j + 1, map.get("QL查询1=").toString());
                 sheet.addCell(data);
-                data = new Label(7, j + 1, map.get("Driver查询>").toString());
+                data = new Label(7, j + 1, map.get("Driver查询=").toString());
                 sheet.addCell(data);
-                data = new Label(8, j + 1, map.get("QL查询>=").toString());
+                data = new Label(8, j + 1, map.get("QL查询>").toString());
                 sheet.addCell(data);
-                data = new Label(9, j + 1, map.get("Driver查询>=").toString());
+                data = new Label(9, j + 1, map.get("QL查询1>").toString());
                 sheet.addCell(data);
-                data = new Label(10, j + 1, map.get("QL查询<").toString());
+                data = new Label(10, j + 1, map.get("Driver查询>").toString());
                 sheet.addCell(data);
-                data = new Label(11, j + 1, map.get("Driver查询<").toString());
+                data = new Label(11, j + 1, map.get("QL查询>=").toString());
                 sheet.addCell(data);
-                data = new Label(12, j + 1, map.get("QL查询<=").toString());
+                data = new Label(12, j + 1, map.get("QL查询1>=").toString());
                 sheet.addCell(data);
-                data = new Label(13, j + 1, map.get("Driver查询<=").toString());
+                data = new Label(13, j + 1, map.get("Driver查询>=").toString());
+                sheet.addCell(data);
+                data = new Label(14, j + 1, map.get("QL查询<").toString());
+                sheet.addCell(data);
+                data = new Label(15, j + 1, map.get("QL查询1<").toString());
+                sheet.addCell(data);
+                data = new Label(16, j + 1, map.get("Driver查询<").toString());
+                sheet.addCell(data);
+                data = new Label(17, j + 1, map.get("QL查询<=").toString());
+                sheet.addCell(data);
+                data = new Label(18, j + 1, map.get("QL查询1<=").toString());
+                sheet.addCell(data);
+                data = new Label(19, j + 1, map.get("Driver查询<=").toString());
                 sheet.addCell(data);
             }
             writableWorkbook.write();    //写入数据

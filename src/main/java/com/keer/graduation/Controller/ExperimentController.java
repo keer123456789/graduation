@@ -80,5 +80,8 @@ public class ExperimentController {
         experimentService.selectAsset(total);
     }
 
-
+    @GetMapping("/selectMetadata/{total}")
+    public void selectMetadata(@PathVariable int total) throws InterruptedException {
+        experimentService.selectMetadata(total);
+    }
 }
