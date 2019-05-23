@@ -10,3 +10,60 @@
 2019-05-23 15:27:20.768  INFO 11436 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
 2019-05-23 15:27:21.068  INFO 11436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
 2019-05-23 15:27:21.073  INFO 11436 --- [main] c.keer.graduation.GraduationApplication  : Started GraduationApplication in 5.164 seconds (JVM running for 11.42)
+2019-05-23 15:27:40.077  INFO 11436 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-23 15:27:40.077  INFO 11436 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-23 15:27:40.088  INFO 11436 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-05-23 15:28:21.733  INFO 11436 --- [http-nio-9090-exec-6] c.keer.graduation.Controller.Controller  : 获取秘钥
+2019-05-23 15:28:21.775  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 开始写密钥到./keypair.txt
+2019-05-23 15:28:21.785  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 写密钥成功
+2019-05-23 15:28:21.785  INFO 11436 --- [http-nio-9090-exec-6] c.k.g.S.Implement.BigchainDBServiceImp   : 设置数据密钥成功
+2019-05-23 15:28:24.230  INFO 11436 --- [http-nio-9090-exec-3] c.b.builders.BigchainDbConfigBuilder     : Connected to node - http://192.168.229.95:9984 after 0 retry(s)...
+2019-05-23 15:28:24.237  INFO 11436 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : {"api":{"v1":{"assets":"/api/v1/assets/","blocks":"/api/v1/blocks/","docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/http-client-server-api.html","metadata":"/api/v1/metadata/","outputs":"/api/v1/outputs/","streams":"ws://bigchaindb:9985/api/v1/streams/valid_transactions","transactions":"/api/v1/transactions/","validators":"/api/v1/validators"}},"docs":"https://docs.bigchaindb.com/projects/server/en/v2.0.0b9/","software":"BigchainDB","version":"2.0.0b9"}
+
+2019-05-23 15:28:24.320  INFO 11436 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : 2.0.0b9
+2019-05-23 15:28:24.320  INFO 11436 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBRunner        : 与节点：http://192.168.229.95:9984,连接成功
+2019-05-23 15:29:30.132  INFO 11436 --- [http-nio-9090-exec-6] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：insert into people(name,age,phone)values('张',12,'110110'),转换后：INSERT INTO PEOPLE(NAME,AGE,PHONE)VALUES('张',12,'110110')
+2019-05-23 15:29:30.132  INFO 11436 --- [http-nio-9090-exec-6] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：insert into people(name,age,phone)values('张',12,'110110')，##########################
+2019-05-23 15:29:30.177  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 15:29:30.177  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 15:29:30.180  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的私钥
+2019-05-23 15:29:30.183  INFO 11436 --- [http-nio-9090-exec-6] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 15:29:30.437  INFO 11436 --- [http-nio-9090-exec-6] c.keer.graduation.BDQLParser.BDQLParser  : 插入操作成功！！！！！
+2019-05-23 16:08:41.574  INFO 11436 --- [http-nio-9090-exec-7] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select * from people where name=张,转换后：SELECT * FROM PEOPLE WHERE NAME=张
+2019-05-23 16:08:41.577  INFO 11436 --- [http-nio-9090-exec-7] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select * from people where name=张，##########################
+2019-05-23 16:10:04.036  INFO 11436 --- [http-nio-9090-exec-9] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：select name from people where age=12,转换后：SELECT NAME FROM PEOPLE WHERE AGE=12
+2019-05-23 16:10:04.036  INFO 11436 --- [http-nio-9090-exec-9] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：select name from people where age=12，##########################
+2019-05-23 16:17:53.109  INFO 11436 --- [http-nio-9090-exec-1] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：update pig set name='zhang', weight=40 where ID=b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c,转换后：UPDATE PIG SET NAME='ZHANG', WEIGHT=40 WHERE ID=B1CF703E673FDE9B9C154848C645C7E7CAB05F17BFFB5B632D0B9719D1ADC96C
+2019-05-23 16:17:53.109  INFO 11436 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：update pig set name='zhang', weight=40 where ID=b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c，##########################
+2019-05-23 16:17:53.136 ERROR 11436 --- [http-nio-9090-exec-1] c.k.g.Bigchaindb.BigchainDBUtil          : 资产ID：1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96,不存在!!!!!!!
+2019-05-23 16:17:53.136  INFO 11436 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-05-23 16:17:53.136  INFO 11436 --- [http-nio-9090-exec-1] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：null
+2019-05-23 16:18:07.983  INFO 11436 --- [http-nio-9090-exec-3] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：update pig set name='zhang', weight=40 where ID=b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c,转换后：UPDATE PIG SET NAME='ZHANG', WEIGHT=40 WHERE ID=B1CF703E673FDE9B9C154848C645C7E7CAB05F17BFFB5B632D0B9719D1ADC96C
+2019-05-23 16:18:07.983  INFO 11436 --- [http-nio-9090-exec-3] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：update pig set name='zhang', weight=40 where ID=b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c，##########################
+2019-05-23 16:18:08.005 ERROR 11436 --- [http-nio-9090-exec-3] c.k.g.Bigchaindb.BigchainDBUtil          : 资产ID：1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96,不存在!!!!!!!
+2019-05-23 16:18:08.005  INFO 11436 --- [http-nio-9090-exec-3] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-05-23 16:18:08.005  INFO 11436 --- [http-nio-9090-exec-3] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：null
+2019-05-23 16:18:38.665  INFO 11436 --- [http-nio-9090-exec-5] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：update pig set name='zhang', weight=40 where ID='b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c',转换后：UPDATE PIG SET NAME='ZHANG', WEIGHT=40 WHERE ID='B1CF703E673FDE9B9C154848C645C7E7CAB05F17BFFB5B632D0B9719D1ADC96C'
+2019-05-23 16:18:38.665  INFO 11436 --- [http-nio-9090-exec-5] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：update pig set name='zhang', weight=40 where ID='b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c'，##########################
+2019-05-23 16:18:38.684  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:18:38.687  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:18:38.687  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:18:38.691  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:18:38.691  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:18:38.694  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:18:38.694  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的私钥
+2019-05-23 16:18:38.694  INFO 11436 --- [http-nio-9090-exec-5] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:18:38.738  INFO 11436 --- [http-nio-9090-exec-5] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-05-23 16:18:38.738  INFO 11436 --- [http-nio-9090-exec-5] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：5cb68e00de5a35e2c23be9a9e208a89cb81e0852c417eb1da51f849ff089865a
+2019-05-23 16:19:04.551  INFO 11436 --- [http-nio-9090-exec-4] com.keer.graduation.BDQLParser.BDQLUtil  : 字符串：update pig set name='wang', weight=33 where ID='b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c',转换后：UPDATE PIG SET NAME='WANG', WEIGHT=33 WHERE ID='B1CF703E673FDE9B9C154848C645C7E7CAB05F17BFFB5B632D0B9719D1ADC96C'
+2019-05-23 16:19:04.551  INFO 11436 --- [http-nio-9090-exec-4] c.keer.graduation.BDQLParser.BDQLParser  : 开始解析BDQL：update pig set name='wang', weight=33 where ID='b1cf703e673fde9b9c154848c645c7e7cab05f17bffb5b632d0b9719d1adc96c'，##########################
+2019-05-23 16:19:04.582  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:19:04.582  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:19:04.585  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:19:04.585  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:19:04.588  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的公钥
+2019-05-23 16:19:04.588  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:19:04.588  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 获得./keypair.txt中的私钥
+2019-05-23 16:19:04.591  INFO 11436 --- [http-nio-9090-exec-4] c.k.graduation.Bigchaindb.KeyPairHolder  : 成功获得./keypair.txt路径下的密钥
+2019-05-23 16:19:04.635  INFO 11436 --- [http-nio-9090-exec-4] c.keer.graduation.BDQLParser.BDQLParser  : 更新数据成功！！！！
+2019-05-23 16:19:04.635  INFO 11436 --- [http-nio-9090-exec-4] c.keer.graduation.BDQLParser.BDQLParser  : 交易ID：d41891a9367a5e8adbbedba3388d881581a5b3497944ca3887d5143db9a7dbd0
