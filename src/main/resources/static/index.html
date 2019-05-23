@@ -588,6 +588,15 @@
     $("#btn_conn").click(function () {
 
         if ($("#text_key").val() != "") {
+            const keyStr= $("#text_key").val();
+            $.get({
+                url:"/getKey/"+keyStr,
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            },function (data) {
+                alert(data.message);
+            })
             var ip = {
                 ip: $("#ip").val()
             }
@@ -600,8 +609,8 @@
             }, IP, function (allData) {
                 if(allData.status==0) {
                     alert(allData.message);
-                    var key={key:$("#text_key").val()};
-                    var KEY=JSON.stringify(key);
+                    var Kkey={key:$("#text_key").val()};
+                    var KEY=JSON.stringify(Kkey);
                     $.post({
                         url:"/getCloumns",
                         headers:{

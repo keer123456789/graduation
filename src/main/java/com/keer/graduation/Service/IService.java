@@ -5,7 +5,7 @@ import com.keer.graduation.Domain.ParserResult;
 import java.io.IOException;
 
 public interface IService {
-    ParserResult getKey();
+    ParserResult getKey(String key);
 
     ParserResult startConn(String url);
 

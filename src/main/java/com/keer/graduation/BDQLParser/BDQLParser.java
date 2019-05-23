@@ -198,9 +198,9 @@ public class BDQLParser {
 
             result.setStatus(ParserResult.SUCCESS);
             result.setData(table);
-//            result.setMessage("select");
+            result.setMessage("select");
 //            result.setMessage(""+((endTime-startTime)+(timeEnd-timeStart)));
-            result.setMessage(""+((endTime-startTime)+(timeEnd-timeStart))+","+(timeEnd-timeStart));
+//            result.setMessage(""+((endTime-startTime)+(timeEnd-timeStart))+","+(timeEnd-timeStart));
             return result;
         }
 
@@ -524,30 +524,7 @@ public class BDQLParser {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-//        ParserResult result = new ParserResult();
-//        BigchainDBRunner.StartConn();
-//        for (int j = 0; j < 10; j++) {
-//            result = BDQLUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('" + (j + 1) + "','" + (j + 2) + "','Champs-Elysees','" + (j + 3) + "','i7','" + (j + 4) + "','" + (j + 5) + "')");
-//            String id = (String) result.getData();
-//            logger.info("资产ID：" + id);
-//
-//            logger.info(BigchainDBUtil.checkTransactionExit(id) + "");
-//            ParserResult result1 = new ParserResult();
-//            for (int i = 0; i < 10; i++) {
-//                result1 = BDQLUtil.work("UPDATE Person SET FirstName = '" + i + "' , SecondName='" + j + "',age= '" + (i + j) + "',time='" + (i + j + 10) + "' WHERE ID='" + id + "'");
-//                logger.info("交易ID：" + result1.getData());
-//                Thread.sleep(500);
-//
-//            }
-//        }
-//
-//        Outputs outputs = OutputsApi.getOutputs(KeyPairHolder.pubKeyToString(KeyPairHolder.getPublic()));
-//        logger.info("交易总数1：" + outputs.getOutput().size());
-//        for (Output output : outputs.getOutput()) {
-//            logger.info("交易ID：" + output.getTransactionId() + ",密钥：" + output.getPublicKeys());
-//        }
-//        result = BDQLUtil.work("Select * from Computer where cpu= i7");
-//        logger.info(result.getData().toString());
+
 
     }
 }

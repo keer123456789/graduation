@@ -2,6 +2,13 @@ package com.keer.graduation.Controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.bigchaindb.api.OutputsApi;
+import com.bigchaindb.model.Output;
+import com.bigchaindb.model.Outputs;
+import com.keer.graduation.BDQLParser.BDQLUtil;
+import com.keer.graduation.Bigchaindb.BigchainDBRunner;
+import com.keer.graduation.Bigchaindb.BigchainDBUtil;
+import com.keer.graduation.Bigchaindb.KeyPairHolder;
 import com.keer.graduation.Domain.ParserResult;
 import com.keer.graduation.Service.IExperimentService;
 import com.keer.graduation.Util.FileUtil;
@@ -11,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +32,17 @@ public class ExperimentController {
 
     @Autowired
     FileUtil fileUtil;
+
+    @Autowired
+    BigchainDBRunner bigchainDBRunner;
+
+    @Autowired
+    BDQLUtil bdqlUtil;
+
+    @Autowired
+    KeyPairHolder keyPairHolder;
+    @Autowired
+    BigchainDBUtil bigchainDBUtil;
 
     @RequestMapping(value = "/insertExperiment/{asset}",method = RequestMethod.GET)
     public ParserResult insertExperiment(@PathVariable int asset) throws InterruptedException, IOException {
@@ -83,5 +102,36 @@ public class ExperimentController {
     @GetMapping("/selectMetadata/{total}")
     public void selectMetadata(@PathVariable int total) throws InterruptedException {
         experimentService.selectMetadata(total);
+    }
+
+    @GetMapping("/testData")
+    public void testData() throws InterruptedException, IOException {
+        bigchainDBRunner.StartConn();
+        for (int j = 0; j < 10; j++) {
+            ParserResult result = bdqlUtil.work("INSERT INTO Computer (id, ip,mac,size,cpu,ROM,RAM) VALUES ('" + (j + 1) + "','" + (j + 2) + "','Champs-Elysees','" + (j + 3) + "','i7','" + (j + 4) + "','" + (j + 5) + "')");
+            String id = (String) result.getData();
+            logger.info("资产ID：" + id);
+
+            logger.info(bigchainDBUtil.checkTransactionExit(id) + "");
+            ParserResult result1 = new ParserResult();
+            for (int i = 0; i < 10; i++) {
+                result1 = bdqlUtil.work("UPDATE Person SET FirstName = '" + i + "' , SecondName='" + j + "',age= '" + (i + j) + "',time='" + (i + j + 10) + "' WHERE ID='" + id + "'");
+                logger.info("交易ID：" + result1.getData());
+                Thread.sleep(500);
+            }
+        }
+        Outputs outputs = OutputsApi.getOutputs(keyPairHolder.pubKeyToString(keyPairHolder.getPublic()));
+        logger.info("交易总数1：" + outputs.getOutput().size());
+        for (Output output : outputs.getOutput()) {
+            logger.info("交易ID：" + output.getTransactionId() + ",密钥：" + output.getPublicKeys());
+        }
+
+    }
+
+
+    public static void main(String[] args){
+
+
+
     }
 }

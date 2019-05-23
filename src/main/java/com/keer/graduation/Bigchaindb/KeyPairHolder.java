@@ -64,16 +64,18 @@ public class KeyPairHolder {
      *
      * @param keyPair
      */
-    public  void SaveKeyPairToTXT(KeyPair keyPair) {
+    public  boolean SaveKeyPairToTXT(KeyPair keyPair) {
         try {
             logger.info("开始写密钥到"+keyPath);
             FileOutputStream fos = new FileOutputStream(keyPath);
             fos.write(KeyPairUtils.encodePrivateKeyBase64(keyPair).getBytes());
             fos.close();
             logger.info("写密钥成功");
+            return true;
         } catch (Exception e) {
             logger.error("写密钥失败");
             e.printStackTrace();
+            return false;
         }
 
     }
@@ -119,6 +121,9 @@ public class KeyPairHolder {
     public  EdDSAPrivateKey getPrivate() {
         logger.info("获得"+keyPath+"中的私钥");
         return (EdDSAPrivateKey) getKeyPairFromTXT().getPrivate();
+    }
+    public  KeyPair getKeyPairByString(String key){
+        return KeyPairUtils.decodeKeyPair(key);
     }
 
     public static void main(String[] args) {

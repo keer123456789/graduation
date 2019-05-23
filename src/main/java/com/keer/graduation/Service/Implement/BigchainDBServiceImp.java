@@ -41,27 +41,26 @@ public class BigchainDBServiceImp implements IService {
     BigchainDBUtil bigchainDBUtil;
 
 
+
+
     /**
      * 获取秘钥
      *
      * @return
      */
     @Override
-    public ParserResult getKey() {
+    public ParserResult getKey(String key) {
         ParserResult parserResult = new ParserResult();
-        if (keyPairHolder.getKeyPairFormTXT() != null) {
-            parserResult.setData(keyPairHolder.getKeyPairFormTXT());
+        if (keyPairHolder.SaveKeyPairToTXT(keyPairHolder.getKeyPairFromString(key))) {
             parserResult.setStatus(ParserResult.SUCCESS);
-            parserResult.setMessage("获取秘钥成功！！！！！");
-            logger.info("获取秘钥成功！！");
-            return parserResult;
+            parserResult.setMessage("success");
+            logger.info("设置数据密钥成功");
         } else {
-            parserResult.setData(null);
+            parserResult.setMessage("fail");
             parserResult.setStatus(ParserResult.ERROR);
-            parserResult.setMessage("获取秘钥失敗！！！！！");
-            logger.info("获取秘钥失敗！！");
-            return parserResult;
+            logger.error("设置数据密钥失败");
         }
+        return parserResult;
     }
 
     @Override
@@ -84,7 +83,8 @@ public class BigchainDBServiceImp implements IService {
         ParserResult parserResult = new ParserResult();
         Map<String, Table> map = null;
         try {
-            map = bdqlUtil.getAlltablesByPubKey(keyPairHolder.pubKeyToString((EdDSAPublicKey) keyPairHolder.getKeyPairFromString(key).getPublic()));
+            String publicKey=keyPairHolder.pubKeyToString((EdDSAPublicKey) keyPairHolder.getKeyPairFromString(key).getPublic());
+            map = bdqlUtil.getAlltablesByPubKey(publicKey);
         } catch (IOException e) {
             e.printStackTrace();
             parserResult.setData(null);
