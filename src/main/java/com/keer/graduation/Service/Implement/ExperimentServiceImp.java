@@ -312,6 +312,7 @@ public class ExperimentServiceImp implements IExperimentService {
         bigchainDBRunner.StartConn();
 
         for (int j = 0; j < 20; j++) {
+            //获得随机数sum
             double random = Math.random();
             int sum = (int) (random * total);
 
